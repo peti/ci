@@ -14,7 +14,7 @@ let
   joachim = "Joachim Breitner <mail@joachim-breitner.de>";
 in
 rec {
-  hledgerLib = genAttrs ["ghc704" "ghc742" "ghc762"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerLib = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -31,7 +31,7 @@ rec {
       meta.maintainers = [simon peti];
     })));
 
-  hledger = genAttrs ["ghc704" "ghc742" "ghc762"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledger = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -46,7 +46,7 @@ rec {
       meta.maintainers = [simon peti];
     })));
 
-  hledgerWeb = genAttrs ["ghc742" "ghc762"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerWeb = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -69,7 +69,7 @@ rec {
       meta.maintainers = [simon peti];
     })));
 
-  hledgerInterest = genAttrs ["ghc704" "ghc742" "ghc762"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerInterest = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -83,7 +83,7 @@ rec {
       meta.maintainers = [peti];
     })));
 
-  hledgerIrr = genAttrs ["ghc742" "ghc762"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerIrr = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

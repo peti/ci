@@ -26,7 +26,8 @@ rec {
       postUnpack = "sourceRoot+=/hledger-lib";
       buildDepends = with haskellPackages; [
         cmdargs csv filepath HUnit mtl parsec prettyShow regexCompat
-        regexpr safe split time transformers utf8String
+        regexpr safe split time transformers utf8String testFramework
+        testFrameworkHunit
       ];
       meta.maintainers = [simon peti];
     })));

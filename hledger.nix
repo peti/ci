@@ -65,6 +65,7 @@ rec {
         networkConduit parsec regexpr safe shakespeareCss shakespeareJs
         shakespeareText text time transformers wai waiExtra warp yaml yesod
         yesodCore yesodDefault yesodForm yesodStatic blazeHtml waiHandlerLaunch
+        yesodPlatform
       ];
       testDepends = with haskellPackages; [ yesodCore yesodDefault yesodTest ];
       meta.maintainers = [simon peti];

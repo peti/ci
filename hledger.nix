@@ -61,7 +61,7 @@ rec {
       postUnpack = "sourceRoot+=/hledger-web";
       buildDepends = with haskellPackages; [
         blazeHtml blazeMarkup clientsession cmdargs dataDefault filepath
-        hamlet hjsmin myHledger myHledgerLib httpConduit HUnit monadControl
+        hamlet hjsmin json myHledger myHledgerLib httpConduit HUnit monadControl
         networkConduit parsec regexpr safe shakespeareCss shakespeareJs
         shakespeareText text time transformers wai waiExtra warp yaml yesod
         yesodCore yesodDefault yesodForm yesodStatic blazeHtml waiHandlerLaunch

@@ -12,6 +12,8 @@ in
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      Cabal = haskellPackages.Cabal_1_16_0_3;
+      hackageDb = haskellPackages.hackageDb.override { inherit Cabal; };
     in
     haskellPackages.cabal.mkDerivation (self: {
       pname = "cabal2nix";

@@ -30,6 +30,7 @@ rec {
         testFrameworkHunit
       ];
       meta.maintainers = [simon peti];
+      meta.schedulingPriority = "200";  # build this package with a high priority
     })));
 
   hledger = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
@@ -45,6 +46,7 @@ rec {
       postUnpack = "sourceRoot+=/hledger";
       buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText ];
       meta.maintainers = [simon peti];
+      meta.schedulingPriority = "200";  # build this package with a high priority
     })));
 
   hledgerWeb = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
@@ -83,6 +85,7 @@ rec {
       version = hledgerInterestSrc.gitTag;
       buildDepends = with haskellPackages; [ myHledgerLib mtl ];
       meta.maintainers = [peti];
+      meta.schedulingPriority = "200";  # build this package with a high priority
     })));
 
   hledgerIrr = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
@@ -98,5 +101,6 @@ rec {
       preConfigure = "$SHELL hledger-irr.cabal.sh";
       buildDepends = with haskellPackages; [ myHledgerLib time Cabal statistics ];
       meta.maintainers = [joachim peti];
+      meta.schedulingPriority = "200";  # build this package with a high priority
     })));
 }

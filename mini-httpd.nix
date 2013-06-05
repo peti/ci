@@ -37,5 +37,6 @@ rec {
       name = "mini-httpd";
       src = tarball;
       buildInputs = [ pkgs.boostHeaders ];
+      meta.schedulingPriority = "200";  # build this package with a high priority
     });
 }

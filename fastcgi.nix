@@ -22,5 +22,6 @@ rec {
       name = "fastcgi";
       src = tarball;
       buildInputs = [ pkgs.boostHeaders ];
+      meta.schedulingPriority = "200";  # build this package with a high priority
     });
 }

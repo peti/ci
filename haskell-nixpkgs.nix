@@ -158,7 +158,7 @@ mapHaskellTestOn {
   funcmp = all;
   gamma = default;
   gdiff = default;
-  ghc = default;
+  ghc = all;
   ghcEvents = default;
   ghcMod = default ++ latest;
   ghcMtl = default;

@@ -154,7 +154,7 @@ mapHaskellTestOn {
   filestore = default;
   fingertree = default;
   flexibleDefaults = default;
-  fsnotify = [ ghc704 ghc742 ghc763 ];
+  fsnotify = default;
   funcmp = all;
   gamma = default;
   gdiff = default;

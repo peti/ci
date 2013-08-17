@@ -13,8 +13,7 @@ let
   ghc763  = "ghc763";
   ghcHEAD = "ghcHEAD";
   default = [ ghc763 ];
-  latest  = [ ghcHEAD ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc742 ghc763 ghcHEAD ];
+  all     = [ ghc6104 ghc6123 ghc704 ghc742 ghc763 ];
 
   allBut = platform: pkgs.lib.filter (x: platform != x) all;
 
@@ -58,7 +57,7 @@ mapHaskellTestOn {
   ansiWlPprint = default;
   asn1Data = default;
   AspectAG = default;
-  async = default ++ latest;
+  async = default;
   attempt = default;
   attoparsec = default;
   attoparsecEnumerator = default;
@@ -76,7 +75,7 @@ mapHaskellTestOn {
   blazeTextual = default;
   bloomfilter = default;
   bmp = default;
-  BNFC = default ++ latest;
+  BNFC = default;
   BNFCMeta = default;
   Boolean = default;
   bytestringMmap = default;
@@ -85,8 +84,8 @@ mapHaskellTestOn {
   Cabal_1_16_0_3 = all;
   cabal2Ghci = default;
   cabal2nix = allBut ghc6104;
-  cabalDev = default ++ latest;
-  cabalGhci = default ++ latest;
+  cabalDev = default;
+  cabalGhci = default;
   cabalInstall_1_16_0_2 = all;
   cabalInstall = all;
   cairo = default;
@@ -99,7 +98,7 @@ mapHaskellTestOn {
   citeprocHs = default;
   clientsession = default;
   cmdargs = default;
-  cmdlib = default ++ latest;
+  cmdlib = default;
   colorizeHaskell = default;
   colour = default;
   comonadsFd = default;
@@ -111,7 +110,7 @@ mapHaskellTestOn {
   cookie = default;
   cpphs = default;
   cprngAes = default;
-  criterion = default ++ latest;
+  criterion = default;
   cryptoApi = default;
   cryptocipher = default;
   Crypto = default;
@@ -133,12 +132,12 @@ mapHaskellTestOn {
   digest = default;
   digestiveFunctorsHeist = default;
   digestiveFunctorsSnap = default;
-  dimensional = default ++ latest;
-  dimensionalTf = default ++ latest;
+  dimensional = default;
+  dimensionalTf = default;
   directoryTree = default;
   dlist = default;
   dns = default;
-  doctest = default ++ latest;
+  doctest = default;
   dotgen = default;
   doubleConversion = default;
   editDistance = default;
@@ -161,7 +160,7 @@ mapHaskellTestOn {
   gdiff = default;
   ghc = all ++ [ghcHEAD];
   ghcEvents = default;
-  ghcMod = default ++ latest;
+  ghcMod = default;
   ghcMtl = default;
   ghcPaths = default;
   ghcSybUtils = default;
@@ -174,10 +173,10 @@ mapHaskellTestOn {
   gloss = default;
   GLUT = all;
   gnutls = default;
-  graphviz = default ++ latest;
+  graphviz = default;
   gtk = default;
   gtksourceview2 = default;
-  hackageDb = default ++ latest;
+  hackageDb = default;
   haddock = all;
   hakyll = default;
   hamlet = default;
@@ -200,14 +199,14 @@ mapHaskellTestOn {
   highlightingKate = default;
   hinotify = default;
   hint = default;
-  hledger = default ++ latest;
-  hledgerInterest = default ++ latest;
-  hledgerLib = default ++ latest;
+  hledger = default;
+  hledgerInterest = default;
+  hledgerLib = default;
   hledgerWeb = default;
-  hlint = default ++ latest;
-  HList = default ++ latest;
+  hlint = default;
+  HList = default;
   hmatrix = default;
-  hoogle = default ++ latest;
+  hoogle = default;
   hopenssl = all;
   hostname = default;
   hp2anyCore = default;
@@ -218,9 +217,9 @@ mapHaskellTestOn {
   hsemail = allBut ghc6104;
   hslogger = default;
   hsloggerTemplate = default;
-  hspec = default ++ latest;
+  hspec = default;
   HsSyck = default;
-  HStringTemplate = default ++ latest;
+  HStringTemplate = default;
   hsyslog = all;
   html = all;
   HTTP = all;
@@ -259,7 +258,7 @@ mapHaskellTestOn {
   MonadCatchIOTransformers = default;
   monadControl = default;
   monadLoops = default;
-  monadPar = default ++ latest;
+  monadPar = default;
   monadPeel = default;
   MonadPrompt = default;
   MonadRandom = default;
@@ -287,7 +286,7 @@ mapHaskellTestOn {
   OpenGL = all;
   optparseApplicative = allBut ghc6104;
   packunused = default;
-  pandoc = default ++ latest;
+  pandoc = default;
   pandocTypes = default;
   pango = default;
   parallel = all;
@@ -298,7 +297,7 @@ mapHaskellTestOn {
   pathPieces = default;
   pathtype = default;
   pcreLight = default;
-  permutation = default ++ latest;
+  permutation = default;
   persistent = default;
   persistentPostgresql = default;
   persistentSqlite = default;
@@ -312,7 +311,7 @@ mapHaskellTestOn {
   pwstoreFast = default;
   QuickCheck2 = default;
   QuickCheck = all;
-  random = default ++ latest;
+  random = default;
   randomFu = default;
   randomShuffle = default;
   randomSource = default;
@@ -342,13 +341,13 @@ mapHaskellTestOn {
   Shellac = default;
   shelly = default;
   simpleSendfile = default;
-  smallcheck = default ++ latest;
+  smallcheck = default;
   SMTPClient = default;
   snapCore = default;
   snap = default;
   snapLoaderStatic = default;
   snapServer = default;
-  split = default ++ latest;
+  split = default;
   srcloc = default;
   stateref = default;
   StateVar = default;
@@ -367,11 +366,11 @@ mapHaskellTestOn {
   tabular = default;
   tagged = default;
   tagsoup = default;
-  tar = default ++ latest;
+  tar = default;
   Tensor = default;
   terminfo = default;
-  testFramework = default ++ latest;
-  testFrameworkHunit = default ++ latest;
+  testFramework = default;
+  testFrameworkHunit = default;
   texmath = default;
   text = all;
   thLift = default;
@@ -393,7 +392,7 @@ mapHaskellTestOn {
   utilityHt = default;
   uuagc = default;
   uuid = default;
-  uulib = default ++ latest;
+  uulib = default;
   uuOptions = default;
   uuParsinglib = default;
   vacuum = default;
@@ -408,7 +407,7 @@ mapHaskellTestOn {
   waiExtra = default;
   waiLogger = default;
   warp = default;
-  wlPprint = default ++ latest;
+  wlPprint = default;
   wlPprintExtras = default;
   wlPprintTerminfo = default;
   X11 = default;
@@ -417,10 +416,10 @@ mapHaskellTestOn {
   xml = default;
   xmlHamlet = default;
   xmlTypes = default;
-  xmobar = default ++ latest;
-  xmonadContrib = default ++ latest;
-  xmonad = default ++ latest;
-  xmonadExtras = default ++ latest;
+  xmobar = default;
+  xmonadContrib = default;
+  xmonad = default;
+  xmonadExtras = default;
   xssSanitize = default;
   yesodAuth = default;
   yesodCore = default;

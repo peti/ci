@@ -47,7 +47,6 @@ mapHaskellTestOn {
   abstractPar = default;
   ACVector = default;
   aeson = default;
-  AgdaExecutable = default;
   alex = all;
   alexMeta = default;
   alsaCore = default;

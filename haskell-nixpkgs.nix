@@ -347,6 +347,7 @@ mapHaskellTestOn {
   snapLoaderStatic = default;
   snapServer = default;
   split = default;
+  splot = default;
   srcloc = default;
   stateref = default;
   StateVar = default;

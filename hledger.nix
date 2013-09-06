@@ -25,7 +25,7 @@ rec {
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger-lib";
       buildDepends = with haskellPackages; [
-        cmdargs csv filepath HUnit mtl parsec prettyShow regexCompat
+        cmdargs csv filepath HUnit mtl parsec prettyShow regexCompatTdfa
         regexpr safe split time transformers utf8String testFramework
         testFrameworkHunit
       ];

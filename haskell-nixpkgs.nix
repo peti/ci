@@ -15,7 +15,7 @@ let
   default = [ ghc763 ];
   all     = [ ghc6104 ghc6123 ghc704 ghc742 ghc763 ];
 
-  allBut = platform: pkgs.lib.filter (x: platform != x) all;
+  allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
   filterSupportedSystems = systems: pkgs.lib.filter (x: pkgs.lib.elem x supportedSystems) systems;
 
@@ -83,7 +83,7 @@ mapHaskellTestOn {
   Cabal_1_16_0_3 = all;
   Cabal_1_18_0 = all;
   cabal2Ghci = default;
-  cabal2nix = allBut ghc6104;
+  cabal2nix = allBut [ghc6104];
   cabalDev = default;
   cabalGhci = default;
   cabalInstall_1_18_0_1 = all;
@@ -215,7 +215,7 @@ mapHaskellTestOn {
   hS3 = default;
   hscolour = default;
   hsdns = all;
-  hsemail = allBut ghc6104;
+  hsemail = allBut [ghc6104];
   hslogger = default;
   hsloggerTemplate = default;
   hspec = default;
@@ -284,7 +284,7 @@ mapHaskellTestOn {
   OneTuple = default;
   OpenAL = all;
   OpenGL = all;
-  optparseApplicative = allBut ghc6104;
+  optparseApplicative = allBut [ghc6104];
   packunused = default;
   pandoc = default;
   pandocTypes = default;

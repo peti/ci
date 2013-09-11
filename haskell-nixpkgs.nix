@@ -375,6 +375,7 @@ mapHaskellTestOn {
   texmath = default;
   text = all;
   thLift = default;
+  thyme = default;
   timeplot = default;
   tls = default;
   tlsExtra = default;

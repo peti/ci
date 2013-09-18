@@ -272,6 +272,7 @@ mapHaskellTestOn {
   nat = default;
   nats = default;
   naturals = default;
+  ncurses = default;
   network = all;
   networkInfo = default;
   networkMulticast = default;

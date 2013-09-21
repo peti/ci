@@ -12,7 +12,7 @@ in
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      Cabal = haskellPackages.Cabal_1_18_0;
+      Cabal = haskellPackages.Cabal_1_18_1;
       hackageDb = haskellPackages.hackageDb.override { inherit Cabal; };
     in
     haskellPackages.cabal.mkDerivation (self: {

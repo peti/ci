@@ -27,7 +27,7 @@ rec {
       buildDepends = with haskellPackages; [
         cmdargs csv filepath HUnit mtl parsec prettyShow regexCompatTdfa
         regexpr safe split time transformers utf8String testFramework
-        testFrameworkHunit
+        testFrameworkHunit dataPprint
       ];
       meta.maintainers = [simon peti];
       meta.schedulingPriority = "200";  # build this package with a high priority
@@ -44,7 +44,7 @@ rec {
       src = hledgerSrc;
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger";
-      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText dataPprint ];
+      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText ];
       meta.maintainers = [simon peti];
       meta.schedulingPriority = "200";  # build this package with a high priority
     })));

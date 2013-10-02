@@ -44,7 +44,7 @@ rec {
       src = hledgerSrc;
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger";
-      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText ];
+      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText tabular ];
       meta.maintainers = [simon peti];
       meta.schedulingPriority = "200";  # build this package with a high priority
     })));

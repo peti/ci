@@ -6,7 +6,7 @@
 }:
 
 let
-  genAttrs = (import <nixpkgs> { system = "x86_64-linux"; }).lib.genAttrs;
+  genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 in
 rec {
   funcmp = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:

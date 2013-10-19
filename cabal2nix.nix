@@ -5,7 +5,7 @@
 }:
 
 let
-  genAttrs = (import <nixpkgs> { system = "x86_64-linux"; }).lib.genAttrs;
+  genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 in
 {
   cabal2nix = genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:

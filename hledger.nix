@@ -7,7 +7,7 @@
 }:
 
 let
-  genAttrs = (import <nixpkgs> { system = "x86_64-linux"; }).lib.genAttrs;
+  genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 
   peti = "Peter Simons <simons@cryp.to>";
   simon = "Simon Michael <simon@joyful.com>";

@@ -4,7 +4,7 @@
 }:
 
 let
-  pkgs = import <nixpkgs> { system = "x86_64-linux"; };
+  pkgs = import <nixpkgs> { };
   version = autoconfArchiveSrc.gitTag;
   versionSuffix = "";
 in

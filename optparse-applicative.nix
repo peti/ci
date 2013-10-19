@@ -27,7 +27,7 @@ in
         homepage = "https://github.com/pcapriotti/optparse-applicative";
         description = "Utilities and combinators for parsing command line options";
         license = self.stdenv.lib.licenses.bsd3;
-        meta.maintainers = [paolo peti];
+        maintainers = [paolo peti];
       };
     })));
 }

@@ -41,7 +41,6 @@ rec {
     pkgs.releaseTools.nixBuild {
       name = "autoconf-archive";
       src = tarball;
-      meta.schedulingPriority = "200";  # build this package with a high priority
     });
 
 }

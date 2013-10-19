@@ -18,6 +18,5 @@ rec {
       pname = "funcmp";
       src = funcmpSrc;
       version = funcmpSrc.gitTag;
-      meta.schedulingPriority = "200";  # build this package with a high priority
     })));
 }

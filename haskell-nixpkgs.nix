@@ -82,7 +82,7 @@ mapHaskellTestOn {
   bytestringTrie = default;
   Cabal_1_14_0 = [ ghc6104 ghc6123 ghc704 ];
   Cabal_1_16_0_3 = all;
-  Cabal_1_18_1_1 = allBut [ghc6104];
+  Cabal_1_18_1_2 = allBut [ghc6104];
   cabal2Ghci = default;
   cabal2nix = allBut [ghc6104];
   cabalDev = default;

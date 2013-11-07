@@ -27,7 +27,7 @@ in
         homepage = "https://github.com/peti/language-nix";
         description = "Haskell AST and Parsers for the Nix language";
         license = self.stdenv.lib.licenses.bsd3;
-        platforms = self.ghc.meta.platforms;
+        maintainers = [ self.stdenv.lib.maintainers.simons ];
       };
     })
   ));

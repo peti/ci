@@ -27,7 +27,6 @@ in
         homepage = "http://github.com/NixOS/cabal2nix";
         description = "Convert Cabal files into Nix build instructions";
         license = self.stdenv.lib.licenses.bsd3;
-        platforms = self.ghc.meta.platforms;
         maintainers = [ self.stdenv.lib.maintainers.simons ];
       };
     })));

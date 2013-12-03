@@ -13,7 +13,7 @@ let
   ghc763  = "ghc763";
   ghcHEAD = "ghcHEAD";
   default = [ ghc763 ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc742 ghc763 ];
+  all     = [ ghc6104 ghc6123 ghc704 ghc742 ghc763 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -159,7 +159,7 @@ mapHaskellTestOn {
   funcmp = all;
   gamma = default;
   gdiff = default;
-  ghc = all ++ [ghcHEAD];
+  ghc = all;
   ghcEvents = default;
   ghcMod = default;
   ghcMtl = default;

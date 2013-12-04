@@ -381,7 +381,7 @@ mapHaskellTestOn {
   timeplot = default;
   tls = default;
   tlsExtra = default;
-  transformers = all;
+  transformers = default;
   transformersBase = default;
   transformersCompat = default;
   tuple = default;

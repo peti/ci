@@ -61,13 +61,12 @@ rec {
       postUnpack = "sourceRoot+=/hledger-web";
       buildDepends = with haskellPackages; [
         blazeHtml blazeMarkup clientsession cmdargs dataDefault filepath
-        hamlet hjsmin json myHledger myHledgerLib httpConduit HUnit monadControl
-        networkConduit parsec regexpr safe shakespeareCss shakespeareJs
-        shakespeareText text time transformers wai waiExtra warp yaml yesod
-        yesodCore yesodDefault yesodForm yesodStatic blazeHtml waiHandlerLaunch
-        yesodPlatform
+        hamlet hjsmin hledger hledgerLib httpClient httpConduit HUnit json
+        networkConduit parsec regexpr safe shakespeareText text time
+        transformers wai waiExtra waiHandlerLaunch warp yaml yesod
+        yesodCore yesodStatic
       ];
-      testDepends = with haskellPackages; [ yesodCore yesodDefault yesodTest ];
+      testDepends = with haskellPackages; [ hspec yesod yesodTest ];
       meta.maintainers = [simon peti];
     })));
 

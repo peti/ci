@@ -19,9 +19,10 @@ in
       pname = "optparse-applicative";
       src = optparseApplicativeSrc;
       version = optparseApplicativeSrc.gitTag;
-      buildDepends = with haskellPackages; [ transformers ];
+      buildDepends = with haskellPackages; [ ansiWlPprint transformers ];
       testDepends = with haskellPackages; [
-        HUnit testFramework testFrameworkHunit testFrameworkThPrime
+        HUnit QuickCheck testFramework testFrameworkHunit
+        testFrameworkQuickcheck2 testFrameworkThPrime
       ];
       meta = {
         homepage = "https://github.com/pcapriotti/optparse-applicative";

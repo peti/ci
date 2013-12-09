@@ -21,7 +21,7 @@ in
       version = optparseApplicativeSrc.gitTag;
       buildDepends = with haskellPackages; [ ansiWlPprint transformers ];
       testDepends = with haskellPackages; [
-        HUnit QuickCheck testFramework testFrameworkHunit
+        HUnit QuickCheck2 testFramework testFrameworkHunit
         testFrameworkQuickcheck2 testFrameworkThPrime
       ];
       meta = {

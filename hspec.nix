@@ -10,20 +10,20 @@ let
 
   peti = "Peter Simons <simons@cryp.to>";
   simon = "Simon Hengel <sol@typeful.net>";
-in
-rec {
-  hspecExpectations = genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
+
+  hspecExpectations = doCheck: genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      hspec = haskellPackages.hspec;
+      myHspec = pkgs.lib.getAttrFromPath [ghcVer system] (hspec false);
     in
     haskellPackages.cabal.mkDerivation (self: {
-      pname = "hspec-expectations";
+      pname = "hspec-expectations" + pkgs.lib.optionalString (!doCheck) "-bootstrap";
       src = hspecExpectationsSrc;
       version = hspecExpectationsSrc.gitTag;
       buildDepends = with haskellPackages; [ HUnit ];
-      testDepends = with haskellPackages; [ hspec HUnit markdownUnlit silently ];
+      testDepends = with haskellPackages; [ myHspec HUnit markdownUnlit silently ];
+      inherit doCheck;
       meta = {
         homepage = "https://github.com/sol/hspec-expectations#readme";
         description = "Catchy combinators for HUnit";
@@ -33,14 +33,15 @@ rec {
       };
     })));
 
-  hspec = genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspec = doCheck: genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      myHspecExpectations = pkgs.lib.getAttrFromPath [ghcVer system] hspecExpectations;
+      myHspecExpectations = pkgs.lib.getAttrFromPath [ghcVer system] (hspecExpectations doCheck);
+      myHspec = pkgs.lib.getAttrFromPath [ghcVer system] (hspec false);
     in
     haskellPackages.cabal.mkDerivation (self: {
-      pname = "hspec";
+      pname = "hspec" + pkgs.lib.optionalString (!doCheck) "-bootstrap";
       src = hspecSrc;
       version = hspecSrc.gitTag;
       isLibrary = true;
@@ -50,10 +51,11 @@ rec {
         quickcheckIo random setenv time transformers
       ];
       testDepends = with haskellPackages; [
-        ansiTerminal deepseq doctest filepath ghcPaths myHspecExpectations
+        ansiTerminal deepseq doctest filepath ghcPaths myHspecExpectations myHspec
         hspecMeta HUnit QuickCheck quickcheckIo random setenv silently time
         transformers
       ];
+      inherit doCheck;
       meta = {
         homepage = "http://hspec.github.com/";
         description = "Behavior-Driven Development for Haskell";
@@ -62,4 +64,8 @@ rec {
         maintainers = [simon peti];
       };
     })));
+in
+{
+  hspecExpectations = hspecExpectations true;
+  hspec = hspec true;
 }

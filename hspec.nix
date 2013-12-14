@@ -9,7 +9,7 @@ let
   genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 
   peti = "Peter Simons <simons@cryp.to>";
-  simon = "Simon Michael <sol@typeful.net>";
+  simon = "Simon Hengel <sol@typeful.net>";
 in
 rec {
   hspecExpectations = genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:

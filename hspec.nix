@@ -24,6 +24,7 @@ let
       buildDepends = with haskellPackages; [ HUnit ];
       testDepends = with haskellPackages; [ myHspec HUnit markdownUnlit silently ];
       inherit doCheck;
+      postBuild = ":";
       meta = {
         homepage = "https://github.com/sol/hspec-expectations#readme";
         description = "Catchy combinators for HUnit";
@@ -56,6 +57,7 @@ let
         transformers
       ];
       inherit doCheck;
+      postBuild = ":";
       meta = {
         homepage = "http://hspec.github.com/";
         description = "Behavior-Driven Development for Haskell";

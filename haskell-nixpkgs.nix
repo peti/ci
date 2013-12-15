@@ -55,7 +55,6 @@ mapHaskellTestOn {
   ansiTerminal = default;
   ansiWlPprint = default;
   asn1Data = default;
-  AspectAG = default;
   async = default;
   attempt = default;
   attoparsec = default;
@@ -378,7 +377,6 @@ mapHaskellTestOn {
   text = all;
   thLift = default;
   thyme = default;
-  timeplot = default;
   tls = default;
   tlsExtra = default;
   transformers = default;

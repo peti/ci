@@ -18,13 +18,12 @@ let
       myHspec = pkgs.lib.getAttrFromPath [ghcVer system] (hspec false);
     in
     haskellPackages.cabal.mkDerivation (self: {
-      pname = "hspec-expectations" + pkgs.lib.optionalString (!doCheck) "-bootstrap";
+      pname = pkgs.lib.optionalString (!doCheck) "untested-" + "hspec-expectations";
       src = hspecExpectationsSrc;
       version = hspecExpectationsSrc.gitTag;
       buildDepends = with haskellPackages; [ HUnit ];
       testDepends = with haskellPackages; [ myHspec HUnit markdownUnlit silently ];
       inherit doCheck;
-      postBuild = ":";
       meta = {
         homepage = "https://github.com/sol/hspec-expectations#readme";
         description = "Catchy combinators for HUnit";
@@ -42,7 +41,7 @@ let
       myHspec = pkgs.lib.getAttrFromPath [ghcVer system] (hspec false);
     in
     haskellPackages.cabal.mkDerivation (self: {
-      pname = "hspec" + pkgs.lib.optionalString (!doCheck) "-bootstrap";
+      pname = pkgs.lib.optionalString (!doCheck) "untested-" + "hspec";
       src = hspecSrc;
       version = hspecSrc.gitTag;
       isLibrary = true;
@@ -57,7 +56,6 @@ let
         transformers
       ];
       inherit doCheck;
-      postBuild = ":";
       meta = {
         homepage = "http://hspec.github.com/";
         description = "Behavior-Driven Development for Haskell";
@@ -68,6 +66,6 @@ let
     })));
 in
 {
-  hspecExpectations = hspecExpectations true;
-  hspec = hspec true;
+  hspecExpectations = hspecExpectations false;
+  hspec = hspec false;
 }

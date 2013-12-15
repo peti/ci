@@ -93,7 +93,7 @@ mapHaskellTestOn {
   cautiousFile = default;
   cereal = default;
   certificate = default;
-  cgi = all;
+  cgi = default;
   Chart = default;
   citeprocHs = default;
   clientsession = default;
@@ -177,7 +177,7 @@ mapHaskellTestOn {
   gtk = default;
   gtksourceview2 = default;
   hackageDb = default;
-  haddock = all;
+  haddock = default;
   hakyll = default;
   hamlet = default;
   happstackHamlet = default;
@@ -283,7 +283,7 @@ mapHaskellTestOn {
   numtypeTf = default;
   ObjectName = default;
   OneTuple = default;
-  OpenAL = all;
+  OpenAL = default;
   OpenGL = all;
   optparseApplicative = allBut [ghc6104];
   packunused = default;

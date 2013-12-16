@@ -38,6 +38,7 @@ let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
       myHspecExpectations = pkgs.lib.getAttrFromPath [ghcVer system] (hspecExpectations doCheck);
+      myHspecMeta = haskellPackages.hspecMeta.override { hspecExpectations = myHspecExpectations; };
     in
     haskellPackages.cabal.mkDerivation (self: {
       pname = pkgs.lib.optionalString (!doCheck) "untested-" + "hspec";
@@ -51,7 +52,7 @@ let
       ];
       testDepends = with haskellPackages; [
         ansiTerminal deepseq doctest filepath ghcPaths myHspecExpectations
-        hspecMeta HUnit QuickCheck quickcheckIo random setenv silently time
+        myHspecMeta HUnit QuickCheck quickcheckIo random setenv silently time
         transformers
       ];
       inherit doCheck;

@@ -38,7 +38,6 @@ let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
       myHspecExpectations = pkgs.lib.getAttrFromPath [ghcVer system] (hspecExpectations doCheck);
-      myHspec = pkgs.lib.getAttrFromPath [ghcVer system] (hspec false);
     in
     haskellPackages.cabal.mkDerivation (self: {
       pname = pkgs.lib.optionalString (!doCheck) "untested-" + "hspec";
@@ -51,7 +50,7 @@ let
         quickcheckIo random setenv time transformers
       ];
       testDepends = with haskellPackages; [
-        ansiTerminal deepseq doctest filepath ghcPaths myHspecExpectations myHspec
+        ansiTerminal deepseq doctest filepath ghcPaths myHspecExpectations
         hspecMeta HUnit QuickCheck quickcheckIo random setenv silently time
         transformers
       ];
@@ -66,6 +65,6 @@ let
     })));
 in
 {
-  hspecExpectations = hspecExpectations false;
-  hspec = hspec false;
+  hspecExpectations = hspecExpectations true;
+  hspec = hspec true;
 }

@@ -14,6 +14,7 @@ in
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      myTestFrameworkQuickcheck2 = haskellPackages.testFrameworkQuickcheck2.override { QuickCheck = haskellPackages.QuickCheck2; };
     in
     haskellPackages.cabal.mkDerivation (self: {
       pname = "optparse-applicative";
@@ -21,8 +22,8 @@ in
       version = optparseApplicativeSrc.gitTag;
       buildDepends = with haskellPackages; [ ansiWlPprint transformers ];
       testDepends = with haskellPackages; [
-        HUnit QuickCheck2 testFramework testFrameworkHunit
-        testFrameworkQuickcheck2 testFrameworkThPrime
+        HUnit testFramework testFrameworkHunit myTestFrameworkQuickcheck2
+        testFrameworkThPrime
       ];
       meta = {
         homepage = "https://github.com/pcapriotti/optparse-applicative";

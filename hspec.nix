@@ -10,7 +10,7 @@ let
   peti = "Peter Simons <simons@cryp.to>";
   simon = "Simon Hengel <sol@typeful.net>";
 in
-{
+rec {
   hspec = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
@@ -38,6 +38,42 @@ in
         platforms = self.ghc.meta.platforms;
         maintainers = [simon peti];
       };
+    })
+  ));
+
+  hspecDiscoverIntegrationTest = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+    let
+      pkgs = import <nixpkgs> { inherit system; };
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+    in
+    haskellPackages.cabal.mkDerivation (self: {
+      pname = "hspec-discover-integration-tests";
+      src = hspecSrc;
+      version = hspecSrc.gitTag;
+      isLibrary = true;
+      noHaddock = true;
+      sourceRoot = "hspec/hspec-discover/integration-test";
+      preConfigure = "ln -s ../../Setup.lhs .";
+      testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
+      meta.maintainers = [simon peti];
+    })
+  ));
+
+  hspecDiscoverExample = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+    let
+      pkgs = import <nixpkgs> { inherit system; };
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+    in
+    haskellPackages.cabal.mkDerivation (self: {
+      pname = "hspec-discover-example";
+      src = hspecSrc;
+      version = hspecSrc.gitTag;
+      isLibrary = true;
+      noHaddock = true;
+      sourceRoot = "hspec/hspec-discover/example";
+      preConfigure = "ln -s ../../Setup.lhs .";
+      testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
+      meta.maintainers = [simon peti];
     })
   ));
 }

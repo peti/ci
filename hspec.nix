@@ -52,7 +52,7 @@ rec {
       version = hspecSrc.gitTag;
       isLibrary = true;
       noHaddock = true;
-      sourceRoot = "hspec/hspec-discover/integration-test";
+      postUnpack = "sourceRoot+=/hspec-discover/integration-test";
       preConfigure = "ln -s ../../Setup.lhs .";
       testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
       meta.maintainers = [simon peti];
@@ -70,7 +70,7 @@ rec {
       version = hspecSrc.gitTag;
       isLibrary = true;
       noHaddock = true;
-      sourceRoot = "hspec/hspec-discover/example";
+      postUnpack = "sourceRoot+=/hspec-discover/example";
       preConfigure = "ln -s ../../Setup.lhs .";
       testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
       meta.maintainers = [simon peti];

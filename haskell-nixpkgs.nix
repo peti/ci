@@ -238,6 +238,7 @@ mapHaskellTestOn {
   json = default;
   jsonTypes = default;
   keter = default;
+  LambdaHack = default;
   languageCQuote = default;
   languageJavascript = default;
   largeword = default;

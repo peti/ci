@@ -14,7 +14,7 @@ let
   joachim = "Joachim Breitner <mail@joachim-breitner.de>";
 in
 rec {
-  hledgerLib = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerLib = genAttrs ["ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

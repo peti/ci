@@ -200,10 +200,10 @@ mapHaskellTestOn {
   highlightingKate = default;
   hinotify = default;
   hint = default;
-  hledger = default;
-  hledgerInterest = default;
-  hledgerLib = default;
-  hledgerWeb = default;
+  hledger = [ ghc742 ghc763 ];
+  hledgerInterest = [ ghc704 ghc742 ghc763 ];
+  hledgerLib = [ ghc704 ghc742 ghc763 ];
+  hledgerWeb = [ ghc742 ghc763 ];
   hlint = default;
   HList = default;
   hmatrix = default;

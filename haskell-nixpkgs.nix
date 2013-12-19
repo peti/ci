@@ -325,7 +325,7 @@ mapHaskellTestOn {
   regexPCRE = default;
   regexPosix = all;
   regexpr = default;
-  regexTDFA = all;
+  regexTDFA = allBut [ghc6104];
   regular = default;
   RSA = default;
   rvar = default;

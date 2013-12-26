@@ -8,7 +8,7 @@ let
   genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 in
 {
-  hsyslog = genAttrs ["ghc6104" "ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
+  hsyslog = genAttrs ["ghc6104" "ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

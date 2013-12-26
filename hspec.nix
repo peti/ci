@@ -11,7 +11,7 @@ let
   simon = "Simon Hengel <sol@typeful.net>";
 in
 rec {
-  hspec = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspec = genAttrs ["ghc704" "ghc722" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -41,7 +41,7 @@ rec {
     })
   ));
 
-  hspecDiscoverIntegrationTest = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspecDiscoverIntegrationTest = genAttrs ["ghc704" "ghc722" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -59,7 +59,7 @@ rec {
     })
   ));
 
-  hspecDiscoverExample = genAttrs ["ghc704" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspecDiscoverExample = genAttrs ["ghc704" "ghc722" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

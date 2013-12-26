@@ -10,7 +10,7 @@ let
   paolo = "Paolo Capriotti <p.capriotti@gmail.com>";
 in
 {
-  optparseApplicative = genAttrs ["ghc6123" "ghc704" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
+  optparseApplicative = genAttrs ["ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

@@ -23,6 +23,7 @@ in
       isExecutable = true;
       buildDepends = with haskellPackages; [ Cabal filepath hackageDb HTTP mtl regexPosix ];
       testDepends = with haskellPackages; [ doctest ];
+      doCheck = self.stdenv.lib.versionOlder "7.6" self.ghc.version;
       meta = {
         homepage = "http://github.com/NixOS/cabal2nix";
         description = "Convert Cabal files into Nix build instructions";

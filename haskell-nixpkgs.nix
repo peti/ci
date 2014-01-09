@@ -6,6 +6,8 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 let
 
+  linux = import <nixpkgs/pkgs/top-level/release-lib.nix> { supportedSystems = [ "i686-linux" "x86_64-linux" ]; };
+
   ghc6104 = "ghc6104";
   ghc6123 = "ghc6123";
   ghc704  = "ghc704";
@@ -36,6 +38,12 @@ let
 
 in
 
+linux.mapTestOn {
+
+  haskellPackages.ghcPlain = [ "i686-linux" "x86_64-linux" ];
+
+}
+//
 mapTestOn {
 
   gitAndTools.gitAnnex = supportedSystems;

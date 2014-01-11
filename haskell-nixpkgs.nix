@@ -210,8 +210,8 @@ mapHaskellTestOn {
   hinotify = default;
   hint = default;
   hledger = [ ghc742 ghc763 ];
-  hledgerInterest = [ ghc704 ghc742 ghc763 ];
-  hledgerLib = [ ghc704 ghc742 ghc763 ];
+  hledgerInterest = [ ghc742 ghc763 ];
+  hledgerLib = [ ghc742 ghc763 ];
   hledgerWeb = [ ghc742 ghc763 ];
   hlint = default;
   HList = default;

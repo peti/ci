@@ -392,6 +392,7 @@ mapHaskellTestOn {
   transformers = default;
   transformersBase = default;
   transformersCompat = default;
+  trifecta = default;
   tuple = default;
   typeLevelNaturalNumber = default;
   uniplate = default;

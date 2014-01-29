@@ -388,7 +388,6 @@ mapHaskellTestOn {
   thLift = default;
   thyme = default;
   tls = default;
-  tlsExtra = default;
   transformers = default;
   transformersBase = default;
   transformersCompat = default;

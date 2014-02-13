@@ -316,6 +316,7 @@ mapHaskellTestOn {
   polyparse = default;
   ppm = default;
   prettyShow = default;
+  prettyShow_1_6_7 = all;
   primitive = all;
   PSQueue = default;
   pureMD5 = default;

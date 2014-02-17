@@ -252,6 +252,7 @@ mapHaskellTestOn {
   languageJavascript = default;
   largeword = default;
   lens = default;
+  lens_4_0_3 = all;
   libxmlSax = default;
   liftedBase = default;
   ListLike = default;

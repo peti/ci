@@ -252,7 +252,7 @@ mapHaskellTestOn {
   languageJavascript = default;
   largeword = default;
   lens = default;
-  lens_4_0_3 = all;
+  # lens_4_0_3 = all;
   libxmlSax = default;
   liftedBase = default;
   ListLike = default;
@@ -317,7 +317,7 @@ mapHaskellTestOn {
   polyparse = default;
   ppm = default;
   prettyShow = default;
-  prettyShow_1_6_7 = all;
+  # prettyShow_1_6_7 = all;
   primitive = all;
   PSQueue = default;
   pureMD5 = default;

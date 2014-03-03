@@ -43,7 +43,7 @@ rec {
       src = hledgerSrc;
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger";
-      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText tabular ];
+      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText tabular wizards ];
       noHaddock = self.ghc.ghc.version == "7.2.2";
       meta.maintainers = [simon peti];
     })));

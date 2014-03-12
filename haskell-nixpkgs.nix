@@ -198,7 +198,7 @@ mapHaskellTestOn {
   hashedStorage = default;
   haskeline = default;
   haskellLexer = default;
-  haskellPlatform = allBut [ghc722 ghcHEAD];
+  haskellPlatform = allBut [ghc722 ghc781 ghcHEAD];
   haskellSrc = all;
   haskellSrcExts = default;
   haskellSrcMeta = default;

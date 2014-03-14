@@ -2,6 +2,7 @@
 
 { hspecSrc ? { outPath = ../hspec; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
+, supportedCompilers ? ["ghc704" "ghc722" "ghc742" "ghc763" "ghc781"]
 }:
 
 let
@@ -11,7 +12,7 @@ let
   simon = "Simon Hengel <sol@typeful.net>";
 in
 rec {
-  hspec = genAttrs ["ghc704" "ghc722" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspec = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -41,7 +42,7 @@ rec {
     })
   ));
 
-  hspecDiscoverIntegrationTest = genAttrs ["ghc704" "ghc722" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspecDiscoverIntegrationTest = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -59,7 +60,7 @@ rec {
     })
   ));
 
-  hspecDiscoverExample = genAttrs ["ghc704" "ghc722" "ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hspecDiscoverExample = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

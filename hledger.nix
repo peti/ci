@@ -4,6 +4,7 @@
 , hledgerInterestSrc ? { outPath = ./.; revCount = 0; gitTag = "dirty"; }
 , hledgerIrrSrc ? { outPath = ../hledger-irr; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
+, supportedCompilers ? ["ghc742" "ghc763" "ghc781"]
 }:
 
 let
@@ -14,7 +15,7 @@ let
   joachim = "Joachim Breitner <mail@joachim-breitner.de>";
 in
 rec {
-  hledgerLib = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerLib = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -32,7 +33,7 @@ rec {
       meta.maintainers = [simon peti];
     })));
 
-  hledger = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledger = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -48,7 +49,7 @@ rec {
       meta.maintainers = [simon peti];
     })));
 
-  hledgerWeb = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerWeb = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -71,7 +72,7 @@ rec {
       meta.maintainers = [simon peti];
     })));
 
-  hledgerInterest = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerInterest = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
@@ -85,7 +86,7 @@ rec {
       meta.maintainers = [peti];
     })));
 
-  hledgerIrr = genAttrs ["ghc742" "ghc763"] (ghcVer: genAttrs supportedPlatforms (system:
+  hledgerIrr = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

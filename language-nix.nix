@@ -2,13 +2,14 @@
 
 { languageNixSrc ? { outPath = ../language-nix; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
+, supportedCompilers ? ["ghc742" "ghc763" "ghc781" "ghcHEAD"]
 }:
 
 let
   genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 in
 {
-  languageNix = genAttrs ["ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
+  languageNix = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

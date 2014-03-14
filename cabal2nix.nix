@@ -2,13 +2,14 @@
 
 { cabal2nixSrc ? { outPath = ../cabal2nix; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
+, supportedCompilers ? ["ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc781" "ghcHEAD"]
 }:
 
 let
   genAttrs = (import <nixpkgs> { }).lib.genAttrs;
 in
 {
-  cabal2nix = genAttrs ["ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghcHEAD"] (ghcVer: genAttrs supportedPlatforms (system:
+  cabal2nix = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;

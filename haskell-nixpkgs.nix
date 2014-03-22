@@ -425,6 +425,7 @@ mapHaskellTestOn {
   wlPprint = default;
   wlPprintExtras = default;
   wlPprintTerminfo = default;
+  wx = default;
   X11 = default;
   xhtml = all;
   xmlConduit = default;

@@ -25,12 +25,11 @@ rec {
       isExecutable = true;
       buildDepends = with haskellPackages; [
         ansiTerminal baseCompat deepseq filepath hspecExpectations HUnit
-        QuickCheck quickcheckIo random setenv time transformers
+        random setenv time transformers hspecMeta
       ];
       testDepends = with haskellPackages; [
         ansiTerminal baseCompat deepseq doctest filepath ghcPaths
-        hspecExpectations hspecMeta HUnit QuickCheck quickcheckIo random
-        setenv silently time transformers
+        hspecExpectations HUnit random setenv silently time transformers
       ];
       meta = {
         homepage = "http://hspec.github.com/";

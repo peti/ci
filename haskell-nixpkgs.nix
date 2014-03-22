@@ -400,6 +400,7 @@ mapHaskellTestOn {
   uniplate = default;
   uniqueid = default;
   unixCompat = default;
+  unixTime = all;
   unorderedContainers = default;
   url = default;
   utf8Light = default;

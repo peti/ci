@@ -391,7 +391,7 @@ mapHaskellTestOn {
   thLift = default;
   thyme = default;
   tls = default;
-  transformers = default;
+  transformers = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
   transformersBase = default;
   transformersCompat = default;
   trifecta = default;

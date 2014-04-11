@@ -14,10 +14,10 @@ let
   ghc722  = "ghc722";
   ghc742  = "ghc742";
   ghc763  = "ghc763";
-  ghc781  = "ghc781";
+  ghc782  = "ghc782";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc763 ghc781 ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc781 ghcHEAD ];
+  default = [ ghc763 ghc782 ];
+  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc782 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -198,7 +198,7 @@ mapHaskellTestOn {
   hashedStorage = default;
   haskeline = default;
   haskellLexer = default;
-  haskellPlatform = allBut [ghc722 ghc781 ghcHEAD];
+  haskellPlatform = allBut [ghc722 ghc782 ghcHEAD];
   haskellSrc = all;
   haskellSrcExts = default;
   haskellSrcMeta = default;

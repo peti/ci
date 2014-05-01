@@ -22,7 +22,7 @@ in
       version = cabal2nixSrc.gitTag;
       isLibrary = false;
       isExecutable = true;
-      buildDepends = with haskellPackages; [ Cabal filepath hackageDb HTTP mtl regexPosix ];
+      buildDepends = with haskellPackages; [ Cabal filepath hackageDb HTTP mtl regexPosix IfElse optparseApplicative ];
       testDepends = with haskellPackages; [ doctest ];
       doCheck = self.stdenv.lib.versionOlder "7.6" self.ghc.version;
       meta = {

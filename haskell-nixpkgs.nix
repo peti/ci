@@ -254,7 +254,6 @@ mapHaskellTestOn {
   languageJavascript = default;
   largeword = default;
   lens = default;
-  # lens_4_0_3 = all;
   libxmlSax = default;
   liftedBase = default;
   ListLike = default;
@@ -319,7 +318,6 @@ mapHaskellTestOn {
   polyparse = default;
   ppm = default;
   prettyShow = default;
-  # prettyShow_1_6_7 = all;
   primitive = all;
   PSQueue = default;
   pureMD5 = default;
@@ -392,9 +390,9 @@ mapHaskellTestOn {
   thLift = default;
   thyme = default;
   tls = default;
-  transformers = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
   transformersBase = default;
   transformersCompat = default;
+  transformers = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
   trifecta = default;
   tuple = default;
   typeLevelNaturalNumber = default;

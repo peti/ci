@@ -49,7 +49,7 @@ mapTestOn {
 
   gitAndTools.gitAnnex = supportedSystems;
   jhc = supportedSystems;
-
+  cryptol2 = supportedSystems;
 }
 //
 mapHaskellTestOn {

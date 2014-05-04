@@ -58,7 +58,6 @@ mapHaskellTestOn {
   ACVector = default;
   aeson = default;
   alex = all;
-  alexMeta = default;
   alsaCore = default;
   alsaPcm = default;
   alternativeIo = default;
@@ -81,10 +80,8 @@ mapHaskellTestOn {
   blazeBuilderEnumerator = default;
   blazeHtml = default;
   blazeTextual = default;
-  bloomfilter = default;
   bmp = default;
   BNFC = default;
-  BNFCMeta = default;
   Boolean = default;
   bytestringMmap = default;
   bytestringNums = default;
@@ -104,7 +101,6 @@ mapHaskellTestOn {
   cautiousFile = default;
   cereal = default;
   certificate = default;
-  cgi = default;
   Chart = default;
   citeprocHs = default;
   clientsession = default;
@@ -342,7 +338,6 @@ mapHaskellTestOn {
   RSA = default;
   rvar = default;
   safe = default;
-  SafeSemaphore = default;
   SDL = default;
   SDLImage = default;
   SDLMixer = default;
@@ -381,7 +376,6 @@ mapHaskellTestOn {
   tagged = default;
   tagsoup = default;
   tar = default;
-  Tensor = default;
   terminfo = default;
   testFramework = default;
   testFrameworkHunit = default;
@@ -412,7 +406,6 @@ mapHaskellTestOn {
   uuParsinglib = default;
   vacuum = default;
   vcsRevision = default;
-  Vec = default;
   vectorAlgorithms = default;
   vector = all;
   vectorSpace = default;

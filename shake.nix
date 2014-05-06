@@ -2,7 +2,7 @@
 
 { shakeSrc ? { outPath = ../shake; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? ["ghc722" "ghc742" "ghc763" "ghc782" "ghcHEAD"]
+, supportedCompilers ? ["ghc722" "ghc742" "ghc763" "ghc782"]
 }:
 
 let

@@ -338,10 +338,6 @@ mapHaskellTestOn {
   RSA = default;
   rvar = default;
   safe = default;
-  SDL = default;
-  SDLImage = default;
-  SDLMixer = default;
-  SDLTtf = default;
   semigroups = default;
   sendfile = default;
   SHA = default;

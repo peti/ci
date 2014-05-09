@@ -47,9 +47,11 @@ linux.mapTestOn {
 //
 mapTestOn {
 
+  cryptol2 = supportedSystems;
+  darcs = supportedSystems;
   gitAndTools.gitAnnex = supportedSystems;
   jhc = supportedSystems;
-  cryptol2 = supportedSystems;
+
 }
 //
 mapHaskellTestOn {
@@ -124,7 +126,6 @@ mapHaskellTestOn {
   cryptohash = default;
   cssText = default;
   csv = default;
-  darcs = default;
   dataAccessor = default;
   dataAccessorTemplate = default;
   dataDefault = default;

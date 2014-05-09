@@ -157,7 +157,7 @@ mapHaskellTestOn {
   failure = default;
   fclabels = default;
   feed = default;
-  fgl = allBut [ghcHEAD]
+  fgl = allBut [ghcHEAD];
   fileEmbed = default;
   filestore = default;
   fingertree = default;

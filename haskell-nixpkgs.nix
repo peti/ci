@@ -400,7 +400,6 @@ mapHaskellTestOn {
   uulib = default;
   uuOptions = default;
   uuParsinglib = default;
-  vacuum = default;
   vcsRevision = default;
   vectorAlgorithms = default;
   vector = all;

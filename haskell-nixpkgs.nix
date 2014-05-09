@@ -222,7 +222,7 @@ mapHaskellTestOn {
   hS3 = default;
   hscolour = default;
   hsdns = all;
-  hsemail = allBut [ghc6104];
+  hsemail = allBut [ghc6104 ghc6123];
   hslogger = default;
   hsloggerTemplate = default;
   hspec = default;

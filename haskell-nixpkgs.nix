@@ -267,7 +267,6 @@ mapHaskellTestOn {
   monadControl = default;
   monadLoops = default;
   monadPar = default;
-  monadPeel = default;
   MonadPrompt = default;
   MonadRandom = default;
   mpppc = default;

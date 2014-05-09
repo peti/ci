@@ -387,7 +387,6 @@ mapHaskellTestOn {
   tuple = default;
   typeLevelNaturalNumber = default;
   uniplate = default;
-  uniqueid = default;
   unixCompat = default;
   unixTime = allBut [ghc6104 ghc6123];
   unorderedContainers = default;

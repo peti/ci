@@ -183,7 +183,7 @@ mapHaskellTestOn {
   gtk = default;
   gtksourceview2 = default;
   hackageDb = default;
-  haddock = all;
+  haddock = allBut [ghc722];
   hakyll = default;
   hamlet = default;
   happstackHamlet = default;

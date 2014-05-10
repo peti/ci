@@ -177,7 +177,6 @@ mapHaskellTestOn {
   glade = default;
   glib = default;
   Glob = default;
-  gloss = default;
   GLUT = all;
   gnutls = default;
   graphviz = default;

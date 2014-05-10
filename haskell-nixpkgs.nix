@@ -149,7 +149,6 @@ mapHaskellTestOn {
   dotgen = default;
   doubleConversion = default;
   editDistance = default;
-  editline = default;
   emailValidate = default;
   entropy = default;
   enumerator = default;

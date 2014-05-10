@@ -173,7 +173,7 @@ mapHaskellTestOn {
   ghcSybUtils = default;
   githubBackup = default;
   github = default;
-  gitit = default;
+  gitit = [ghc763];
   glade = default;
   glib = default;
   Glob = default;

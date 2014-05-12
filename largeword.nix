@@ -13,8 +13,10 @@ in
     let
       pkgs = import <nixpkgs> { inherit system; };
       haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      Cabal = if pkgs.lib.versionOlder haskellPackages.ghc.version "7" then haskellPackages.Cabal_1_16_0_3 else null;
+      cabal = haskellPackages.cabal.override { inherit Cabal; };
     in
-    haskellPackages.cabalLatest.mkDerivation (self: {
+    cabal.mkDerivation (self: {
       pname = "largeword";
       src = largewordSrc;
       version = largewordSrc.gitTag;

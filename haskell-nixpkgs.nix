@@ -304,7 +304,6 @@ mapHaskellTestOn {
   pango = default;
   parallel = all;
   parseargs = default;
-  parsec3 = default;
   parsec = all;
   parsimony = default;
   pathPieces = default;

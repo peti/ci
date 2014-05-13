@@ -61,6 +61,7 @@ mapTestOn {
   haskellPlatformPackages."2013_2_0_0" = supportedSystems;
 
   haskellPackages_ghc763 = packagesWithMetaPlatform pkgs.haskellPackages_ghc763;
+  haskellPackages_ghc782 = packagesWithMetaPlatform pkgs.haskellPackages_ghc782;
 
 }
 //

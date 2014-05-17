@@ -250,6 +250,7 @@ mapHaskellTestOn {
   irc = default;
   iteratee = default;
   jailbreakCabal = all;
+  jhc = all;
   json = default;
   jsonTypes = default;
   keter = default;

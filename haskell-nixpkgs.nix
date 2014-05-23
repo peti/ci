@@ -79,7 +79,7 @@ mapHaskellTestOn {
   asn1Data = default;
   async = default;
   attempt = default;
-  attoparsec = all;
+  attoparsec = allBut [ghc6104];
   attoparsecEnumerator = default;
   authenticate = default;
   base64Bytestring = default;

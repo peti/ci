@@ -69,7 +69,7 @@ mapHaskellTestOn {
 
   abstractPar = default;
   ACVector = default;
-  aeson = default;
+  aeson = all;
   alex = all;
   alsaCore = default;
   alsaPcm = default;
@@ -79,7 +79,7 @@ mapHaskellTestOn {
   asn1Data = default;
   async = default;
   attempt = default;
-  attoparsec = default;
+  attoparsec = all;
   attoparsecEnumerator = default;
   authenticate = default;
   base64Bytestring = default;
@@ -345,7 +345,7 @@ mapHaskellTestOn {
   RSA = default;
   rvar = default;
   safe = default;
-  scientific = all;
+  scientific = allBut [ghc6104 ghc6123];
   semigroups = default;
   sendfile = default;
   SHA = default;

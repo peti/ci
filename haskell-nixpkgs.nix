@@ -118,7 +118,7 @@ mapHaskellTestOn {
   citeprocHs = default;
   clientsession = default;
   cmdargs = default;
-  cmdlib = all;
+  cmdlib = allBut [ghc6104];
   colorizeHaskell = default;
   colour = default;
   comonadsFd = default;

@@ -69,7 +69,7 @@ mapHaskellTestOn {
 
   abstractPar = default;
   ACVector = default;
-  aeson = all;
+  aeson = default;
   alex = all;
   alsaCore = default;
   alsaPcm = default;

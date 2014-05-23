@@ -288,7 +288,7 @@ mapHaskellTestOn {
   murmurHash = default;
   mwcRandom = default;
   nat = default;
-  nats = all;
+  nats = allBut [ghc6104 ghc6123];
   naturals = default;
   ncurses = default;
   network = all;

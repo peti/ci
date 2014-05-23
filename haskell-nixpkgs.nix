@@ -128,7 +128,7 @@ mapHaskellTestOn {
   converge = default;
   convertible = default;
   cookie = default;
-  cpphs = default;
+  cpphs = all;
   cprngAes = default;
   criterion = default;
   cryptoApi = default;

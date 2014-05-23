@@ -301,7 +301,7 @@ mapHaskellTestOn {
   OneTuple = default;
   OpenAL = default;
   OpenGL = all;
-  optparseApplicative = allBut [ghc6104];
+  optparseApplicative = default;
   packunused = default;
   pandoc = default;
   pandocTypes = default;

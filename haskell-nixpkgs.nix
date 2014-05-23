@@ -276,7 +276,7 @@ mapHaskellTestOn {
   MonadCatchIOMtl = default;
   MonadCatchIOTransformers = default;
   monadControl = default;
-  monadLoops = all;
+  monadLoops = allBut [ghc6104];
   monadPar = allBut [ghc6104];
   MonadPrompt = default;
   MonadRandom = default;

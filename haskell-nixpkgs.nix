@@ -345,6 +345,7 @@ mapHaskellTestOn {
   RSA = default;
   rvar = default;
   safe = default;
+  scientific = all;
   semigroups = default;
   sendfile = default;
   SHA = default;
@@ -358,7 +359,7 @@ mapHaskellTestOn {
   snap = default;
   snapLoaderStatic = default;
   snapServer = default;
-  split = default;
+  split = all;
   splot = default;
   srcloc = default;
   stateref = default;

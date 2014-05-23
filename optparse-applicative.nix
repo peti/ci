@@ -20,7 +20,7 @@ in
       pname = "optparse-applicative";
       src = optparseApplicativeSrc;
       version = optparseApplicativeSrc.gitTag;
-      buildDepends = with haskellPackages; [ ansiWlPprint transformers ];
+      buildDepends = with haskellPackages; [ ansiWlPprint transformers transformersCompat ];
       testDepends = with haskellPackages; [
         HUnit testFramework testFrameworkHunit testFrameworkQuickcheck2
         testFrameworkThPrime

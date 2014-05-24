@@ -79,7 +79,7 @@ mapHaskellTestOn {
   asn1Data = default;
   async = allBut [ghc6104 ghc6123];
   attempt = default;
-  attoparsec = allBut [ghc6104];
+  attoparsec = allBut [ghc6104 ghcHEAD];
   attoparsecEnumerator = default;
   authenticate = default;
   base64Bytestring = default;
@@ -118,7 +118,7 @@ mapHaskellTestOn {
   citeprocHs = default;
   clientsession = default;
   cmdargs = default;
-  cmdlib = allBut [ghc6104];
+  cmdlib = allBut [ghc6104 ghcHEAD];
   colorizeHaskell = default;
   colour = default;
   comonadsFd = default;
@@ -195,7 +195,7 @@ mapHaskellTestOn {
   gtk = default;
   gtksourceview2 = default;
   hackageDb = all;
-  haddock = allBut [ghc722];
+  haddock = allBut [ghc722 ghcHEAD];
   hakyll = default;
   hamlet = default;
   happstackHamlet = default;
@@ -260,7 +260,7 @@ mapHaskellTestOn {
   languageCQuote = default;
   languageJavascript = default;
   largeword = default;
-  lens = allBut [ghc6104 ghc6123 ghc704 ghc722];
+  lens = [ghc742] ++ default;
   libxmlSax = default;
   liftedBase = default;
   ListLike = default;
@@ -277,7 +277,7 @@ mapHaskellTestOn {
   MonadCatchIOTransformers = default;
   monadControl = default;
   monadLoops = allBut [ghc6104];
-  monadPar = allBut [ghc6104];
+  monadPar = allBut [ghc6104 ghcHEAD];
   MonadPrompt = default;
   MonadRandom = default;
   mpppc = default;
@@ -347,7 +347,7 @@ mapHaskellTestOn {
   RSA = default;
   rvar = default;
   safe = default;
-  scientific = allBut [ghc6104 ghc6123];
+  scientific = allBut [ghc6104 ghc6123 ghcHEAD];
   semigroups = default;
   sendfile = default;
   SHA = default;

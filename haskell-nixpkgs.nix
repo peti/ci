@@ -73,7 +73,6 @@ mapHaskellTestOn {
   alex = all;
   alsaCore = default;
   alsaPcm = default;
-  alternativeIo = default;
   ansiTerminal = default;
   ansiWlPprint = default;
   asn1Data = default;

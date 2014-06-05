@@ -104,7 +104,6 @@ mapHaskellTestOn {
   Cabal_1_20_0_1 = [ ghc722 ghc742 ghc763 ghc782 ];
   cabal2Ghci = default;
   cabal2nix = allBut [ghc6104];
-  cabalDev = [ghc763];
   cabalGhci = default;
   cabalInstall_1_20_0_2 = allBut [ ghc6104 ghc6123 ghc704 ];
   cabalInstall = all;

@@ -258,7 +258,7 @@ mapHaskellTestOn {
   languageCQuote = default;
   languageJavascript = default;
   largeword = default;
-  lens = [ghc742] ++ default;
+  lens = default;
   libxmlSax = default;
   liftedBase = default;
   ListLike = default;

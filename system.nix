@@ -105,6 +105,15 @@ mapTestOn {
   qemu = supportedSystems;
   qgit = supportedSystems;
   rcs = supportedSystems;
+  rPackages.data_table = supportedSystems;
+  rPackages.Defaults = supportedSystems;
+  rPackages.digest = supportedSystems;
+  rPackages.doParallel = supportedSystems;
+  rPackages.foreach = supportedSystems;
+  rPackages.memoise = supportedSystems;
+  rPackages.plan = supportedSystems;
+  rPackages.RSQLite = supportedSystems;
+  rPackages.xtable = supportedSystems;
   R = supportedSystems;
   rtorrent = supportedSystems;
   saneBackends = supportedSystems;
@@ -136,4 +145,5 @@ mapTestOn {
   xxdiff = supportedSystems;
   youtubeDL = supportedSystems;
   zlib = supportedSystems;
+
 }

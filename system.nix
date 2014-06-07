@@ -24,6 +24,7 @@ mapTestOn {
   cvs = supportedSystems;
   darcs = supportedSystems;
   dash = supportedSystems;
+  davfs2 = supportedSystems;
   dia = supportedSystems;
   dmenu = supportedSystems;
   dmidecode = supportedSystems;
@@ -61,6 +62,7 @@ mapTestOn {
   gnupg1compat = supportedSystems;
   gnuplot = supportedSystems;
   gocr = supportedSystems;
+  gparted = supportedSystems;
   gprolog = supportedSystems;
   graphviz = supportedSystems;
   gravit = supportedSystems;
@@ -93,6 +95,7 @@ mapTestOn {
   libxml2 = supportedSystems;
   libxslt = supportedSystems;
   lzip = supportedSystems;
+  magit = supportedSystems;
   manpages = supportedSystems;
   maude = supportedSystems;
   maxima = supportedSystems;
@@ -138,6 +141,7 @@ mapTestOn {
   tightvnc = supportedSystems;
   tkgate = supportedSystems;
   tree = supportedSystems;
+  unetbootin = supportedSystems;
   utillinuxCurses = supportedSystems;
   wdiff = supportedSystems;
   wget = supportedSystems;

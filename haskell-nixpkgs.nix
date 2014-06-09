@@ -413,7 +413,6 @@ mapHaskellTestOn {
   vectorAlgorithms = default;
   vector = all;
   vectorSpace = default;
-  vinyl = default;
   vty = default;
   waiAppStatic = default;
   wai = default;

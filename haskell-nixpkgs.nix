@@ -373,7 +373,7 @@ mapHaskellTestOn {
   strict = default;
   strptime = default;
   svgcairo = default;
-  syb = [ ghc704 ghc742 ghc763 ];
+  syb = allBut [ghc6104 ghc6123];
   sybWithClass = default;
   sybWithClassInstancesText = default;
   systemFileio = all;

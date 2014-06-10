@@ -95,7 +95,6 @@ mapTestOn {
   libxml2 = supportedSystems;
   libxslt = supportedSystems;
   lzip = supportedSystems;
-  magit = supportedSystems;
   manpages = supportedSystems;
   maude = supportedSystems;
   maxima = supportedSystems;

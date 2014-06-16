@@ -52,6 +52,8 @@ mapTestOn {
   gitAndTools.gitAnnex = supportedSystems;
   jhc = supportedSystems;
 
+  haskellPlatformPackages."2009_2_0_2" = supportedSystems;
+  haskellPlatformPackages."2010_1_0_0" = supportedSystems;
   haskellPlatformPackages."2010_2_0_0" = supportedSystems;
   haskellPlatformPackages."2011_2_0_0" = supportedSystems;
   haskellPlatformPackages."2011_2_0_1" = supportedSystems;

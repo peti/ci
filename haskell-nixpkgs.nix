@@ -355,7 +355,7 @@ mapHaskellTestOn {
   Shellac = default;
   shelly = default;
   simpleSendfile = default;
-  smallcheck = allBut [ghc6104 ghc6123 ghc704 ghc722];
+  smallcheck = default;
   SMTPClient = default;
   snapCore = default;
   snap = default;
@@ -378,8 +378,8 @@ mapHaskellTestOn {
   syb = allBut [ghc6104 ghc6123];
   sybWithClass = default;
   sybWithClassInstancesText = default;
-  systemFileio = all;
-  systemFilepath = all;
+  systemFileio = allBut [ghcHEAD];
+  systemFilepath = allBut [ghcHEAD];
   tabular = default;
   tagged = default;
   tagsoup = default;

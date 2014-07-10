@@ -14,10 +14,10 @@ let
   ghc722  = "ghc722";
   ghc742  = "ghc742";
   ghc763  = "ghc763";
-  ghc782  = "ghc782";
+  ghc783  = "ghc783";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc763 ghc782 ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc782 ghcHEAD ];
+  default = [ ghc763 ghc783 ];
+  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc783 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -63,7 +63,7 @@ mapTestOn {
   haskellPlatformPackages."2013_2_0_0" = supportedSystems;
 
   #haskellPackages_ghc763 = packagesWithMetaPlatform pkgs.haskellPackages_ghc763;
-  #haskellPackages_ghc782 = packagesWithMetaPlatform pkgs.haskellPackages_ghc782;
+  #haskellPackages_ghc783 = packagesWithMetaPlatform pkgs.haskellPackages_ghc783;
 
 }
 //
@@ -102,8 +102,8 @@ mapHaskellTestOn {
   bytestringTrie = default;
   Cabal_1_14_0 = [ ghc6104 ghc6123 ghc704 ];
   Cabal_1_16_0_3 = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
-  Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc782 ];
-  Cabal_1_20_0_1 = [ ghc722 ghc742 ghc763 ghc782 ];
+  Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
+  Cabal_1_20_0_1 = [ ghc722 ghc742 ghc763 ghc783 ];
   cabal2Ghci = default;
   cabal2nix = allBut [ghc6104];
   cabalGhci = default;

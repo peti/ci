@@ -2,7 +2,7 @@
 
 { languageNixSrc ? { outPath = ../language-nix; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? ["ghc742" "ghc763" "ghc782" "ghcHEAD"]
+, supportedCompilers ? ["ghc742" "ghc763" "ghc783" "ghcHEAD"]
 }:
 
 let

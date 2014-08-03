@@ -201,7 +201,7 @@ mapHaskellTestOn {
   happstackHamlet = default;
   happstackServer = default;
   happy = all;
-  hashable = default;
+  hashable = allBut [ghc6104 ghcHEAD];
   hashtables = all;
   hashedStorage = default;
   haskeline = default;
@@ -401,7 +401,7 @@ mapHaskellTestOn {
   uniplate = default;
   unixCompat = default;
   unixTime = allBut [ghc6104 ghc6123];
-  unorderedContainers = default;
+  unorderedContainers = allBut [ghc6104 ghcHEAD];
   url = default;
   utf8Light = default;
   utf8String = default;

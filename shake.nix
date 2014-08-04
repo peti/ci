@@ -28,6 +28,7 @@ in
         binary deepseq filepath hashable QuickCheck random time
         transformers unorderedContainers utf8String
       ];
+      preCheck = "testTarget=--show-details=always"; # --show-details=streaming for cabal 1.20+
       meta = {
         homepage = "https://github.com/ndmitchell/shake";
         description = "Build system library, like Make, but more accurate dependencies";

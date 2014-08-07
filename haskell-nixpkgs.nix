@@ -103,11 +103,11 @@ mapHaskellTestOn {
   Cabal_1_14_0 = [ ghc6104 ghc6123 ghc704 ];
   Cabal_1_16_0_3 = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
   Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
-  Cabal_1_20_0_2 = [ ghc722 ghc742 ghc763 ghc783 ];
+  Cabal_1_20_0_2 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
   cabal2Ghci = default;
   cabal2nix = allBut [ghc6104];
   cabalGhci = default;
-  cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ghc704 ];
+  cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ];
   cabalInstall = all;
   cairo = default;
   caseInsensitive = all;

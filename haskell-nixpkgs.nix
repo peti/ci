@@ -202,8 +202,8 @@ mapHaskellTestOn {
   happstackServer = default;
   happy = all;
   hashable = allBut [ghc6104 ghcHEAD];
-  hashtables = all;
   hashedStorage = default;
+  hashtables = all;
   haskeline = default;
   haskellLexer = default;
   haskellSrc = all;

@@ -39,21 +39,23 @@ let
 
 in
 
+/*
 linux.mapTestOn {
 
   haskellPackages.ghcPlain = [ "i686-linux" "x86_64-linux" ];
 
 }
 //
+*/
 mapTestOn {
-
+/*
   cryptol2 = supportedSystems;
   darcs = supportedSystems;
   gitAndTools.gitAnnex = supportedSystems;
   jhc = supportedSystems;
-
+*/
   haskellPlatformPackages."2009_2_0_2" = supportedSystems;
-  # haskellPlatformPackages."2010_1_0_0" = supportedSystems;
+  #haskellPlatformPackages."2010_1_0_0" = supportedSystems;
   haskellPlatformPackages."2010_2_0_0" = supportedSystems;
   #haskellPlatformPackages."2011_2_0_0" = supportedSystems;
   #haskellPlatformPackages."2011_2_0_1" = supportedSystems;
@@ -62,11 +64,10 @@ mapTestOn {
   haskellPlatformPackages."2012_4_0_0" = supportedSystems;
   haskellPlatformPackages."2013_2_0_0" = supportedSystems;
 
-  #haskellPackages_ghc763 = packagesWithMetaPlatform pkgs.haskellPackages_ghc763;
-  #haskellPackages_ghc783 = packagesWithMetaPlatform pkgs.haskellPackages_ghc783;
+  haskellPackages = packagesWithMetaPlatform pkgs.haskellPackages;
 
 }
-//
+/* //
 mapHaskellTestOn {
 
   abstractPar = default;
@@ -454,3 +455,4 @@ mapHaskellTestOn {
   zlibEnum = default;
 
 }
+*/

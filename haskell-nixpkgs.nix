@@ -209,6 +209,8 @@ mapHaskellTestOn {
   haskellSrc = all;
   haskellSrcExts = default;
   haskellSrcMeta = default;
+  haskintex = default;
+  HaTeX = default;
   HaXml = default;
   haxr = default;
   HDBC = default;

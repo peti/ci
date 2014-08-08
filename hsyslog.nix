@@ -21,8 +21,7 @@ in
       src = hsyslogSrc;
       version = hsyslogSrc.gitTag;
       testDepends = with haskellPackages; [doctest];
-      doCheck = pkgs.lib.versionOlder "7" haskellPackages.ghc.version;
-      # noHaddock = pkgs.lib.versionOlder haskellPackages.ghc.version "6.12";
+      noHaddock = pkgs.lib.versionOlder haskellPackages.ghc.version "7";
       meta = {
         homepage = "http://github.com/peti/hsyslog";
         description = "FFI interface to syslog(3) from POSIX.1-2001.";

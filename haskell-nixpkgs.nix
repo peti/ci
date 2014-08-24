@@ -39,14 +39,14 @@ let
 
 in
 
-/*
 linux.mapTestOn {
 
-  haskellPackages.ghcPlain = [ "i686-linux" "x86_64-linux" ];
+  # Build GHC in 32-bit, too, because hydra.nixos.org cannot do that for
+  # reasons nobody understands.
+  #haskellPackages.ghcPlain = [ "i686-linux" "x86_64-linux" ];
 
 }
 //
-*/
 mapTestOn {
 
   cryptol2 = supportedSystems;

@@ -78,8 +78,8 @@ mapHaskellTestOn {
   Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
   Cabal_1_20_0_2 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
   cabal2nix = allBut [ghc6104];
-  cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ];
-  cabalInstall = all;
+  cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ghcHEAD ];
+  cabalInstall = allBut [ ghcHEAD ];
   caseInsensitive = all;
   cmdlib = allBut [ghc6104 ghcHEAD];
   cpphs = all;

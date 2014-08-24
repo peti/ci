@@ -48,12 +48,12 @@ linux.mapTestOn {
 //
 */
 mapTestOn {
-/*
+
   cryptol2 = supportedSystems;
   darcs = supportedSystems;
   gitAndTools.gitAnnex = supportedSystems;
   jhc = supportedSystems;
-*/
+
   haskellPlatformPackages."2009_2_0_2" = supportedSystems;
   #haskellPlatformPackages."2010_1_0_0" = supportedSystems;
   haskellPlatformPackages."2010_2_0_0" = supportedSystems;

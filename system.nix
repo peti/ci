@@ -124,6 +124,7 @@ mapTestOn {
   rPackages.Defaults = supportedSystems;
   rPackages.digest = supportedSystems;
   rPackages.doParallel = supportedSystems;
+  rPackages.fishmethods = supportedSystems;
   rPackages.foreach = supportedSystems;
   rPackages.memoise = supportedSystems;
   rPackages.plan = supportedSystems;

@@ -91,7 +91,6 @@ mapTestOn {
   imagemagick = supportedSystems;
   lame = supportedSystems;
   ledger = supportedSystems;
-  libreoffice = supportedSystems;
   libtool = supportedSystems;
   libxml2 = supportedSystems;
   libxslt = supportedSystems;

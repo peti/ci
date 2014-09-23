@@ -21,6 +21,6 @@ rec {
     pkgs.releaseTools.nixBuild {
       name = "fastcgi";
       src = tarball;
-      buildInputs = [ pkgs.boostHeaders ];
+      buildInputs = [ pkgs.boost.out ];
     });
 }

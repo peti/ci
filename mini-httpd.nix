@@ -16,7 +16,7 @@ rec {
     inherit version versionSuffix;
     buildInputs = with pkgs; [
       git perl asciidoc libxml2 asciidoc texinfo xmlto docbook2x
-      docbook_xsl docbook_xml_dtd_45 libxslt boostHeaders
+      docbook_xsl docbook_xml_dtd_45 libxslt boost156.out
     ];
     postUnpack = ''
       cp -r ${pkgs.gnulib}/ gnulib/
@@ -36,6 +36,6 @@ rec {
     pkgs.releaseTools.nixBuild {
       name = "mini-httpd";
       src = tarball;
-      buildInputs = [ pkgs.boostHeaders ];
+      buildInputs = [ pkgs.boost156.out ];
     });
 }

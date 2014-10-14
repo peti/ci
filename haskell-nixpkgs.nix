@@ -51,7 +51,7 @@ mapTestOn {
 
   cryptol2 = supportedSystems;
   darcs = supportedSystems;
-  gitAndTools.gitAnnex = supportedSystems;
+  # gitAndTools.gitAnnex = supportedSystems;
   jhc = supportedSystems;
 
   haskellPlatformPackages."2009_2_0_2" = supportedSystems;

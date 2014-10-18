@@ -26,6 +26,7 @@ rec {
       buildDepends = with haskellPackages; [
         ansiTerminal async deepseq filepath hspecExpectations HUnit
         QuickCheck quickcheckIo random setenv tfRandom time transformers
+        stringbuilder
       ];
       testDepends = with haskellPackages; [
         ansiTerminal async deepseq doctest filepath ghcPaths

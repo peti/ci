@@ -28,7 +28,7 @@ rec {
       buildDepends = with haskellPackages; [
         cmdargs csv filepath HUnit mtl parsec prettyShow regexCompatTdfa
         regexpr safe split time transformers utf8String testFramework
-        testFrameworkHunit dataPprint
+        testFrameworkHunit dataPprint Decimal blazeMarkup
       ];
       meta.maintainers = [simon peti];
     })));

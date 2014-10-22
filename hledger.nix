@@ -4,7 +4,7 @@
 , hledgerInterestSrc ? { outPath = ./.; revCount = 0; gitTag = "dirty"; }
 , hledgerIrrSrc ? { outPath = ../hledger-irr; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? ["ghc742" "ghc763" "ghc783"]
+, supportedCompilers ? ["ghc763" "ghc783"]
 }:
 
 let

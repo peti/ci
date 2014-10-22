@@ -12,6 +12,60 @@ let
   simon = "Simon Hengel <sol@typeful.net>";
 in
 rec {
+  hspecCore = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+    let
+      pkgs = import <nixpkgs> { inherit system; };
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+    in
+    haskellPackages.cabal.mkDerivation (self: {
+      pname = "hspec-core";
+      src = hspecSrc;
+      version = hspecSrc.gitTag;
+      postUnpack = "sourceRoot+=/hspec-core";
+      buildDepends = with haskellPackages; [
+        ansiTerminal async deepseq hspecExpectations HUnit QuickCheck
+        quickcheckIo random setenv tfRandom time transformers
+      ];
+      testDepends = with haskellPackages; [
+        ansiTerminal async deepseq ghcPaths hspecExpectations hspecMeta
+        HUnit QuickCheck quickcheckIo random setenv silently tfRandom time
+        transformers
+      ];
+      meta = {
+        homepage = "http://hspec.github.io/";
+        description = "A Testing Framework for Haskell";
+        license = self.stdenv.lib.licenses.mit;
+        platforms = self.ghc.meta.platforms;
+      };
+    })
+  ));
+
+  hspecDiscover = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+    let
+      pkgs = import <nixpkgs> { inherit system; };
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+    in
+    haskellPackages.cabal.mkDerivation (self: {
+      pname = "hspec-discover";
+      src = hspecSrc;
+      version = hspecSrc.gitTag;
+      postUnpack = "sourceRoot+=/hspec-discover";
+      buildDepends = with haskellPackages; [
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspecCore)
+        filepath transformers
+      ];
+      testDepends = with haskellPackages; [
+        filepath hspecMeta stringbuilder transformers
+      ];
+      meta = {
+        homepage = "http://hspec.github.io/";
+        description = "Automatically discover and run Hspec tests";
+        license = self.stdenv.lib.licenses.mit;
+        platforms = self.ghc.meta.platforms;
+      };
+    })
+  ));
+
   hspec = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
@@ -23,19 +77,11 @@ rec {
       version = hspecSrc.gitTag;
       isLibrary = true;
       isExecutable = true;
-      buildDepends = with haskellPackages; [
-        ansiTerminal async deepseq filepath hspecExpectations HUnit
-        QuickCheck quickcheckIo random setenv tfRandom time transformers
-        stringbuilder
-      ];
-      testDepends = with haskellPackages; [
-        ansiTerminal async deepseq doctest filepath ghcPaths
-        hspecExpectations hspecMeta HUnit QuickCheck quickcheckIo random
-        setenv silently tfRandom time transformers
-      ];
+      buildDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspecDiscover) ];
+      testDepends = with haskellPackages; [ QuickCheck ];
       meta = {
         homepage = "http://hspec.github.com/";
-        description = "Behavior-Driven Development for Haskell";
+        description = "A Testing Framework for Haskell";
         license = self.stdenv.lib.licenses.bsd3;
         platforms = self.ghc.meta.platforms;
         maintainers = [simon peti];

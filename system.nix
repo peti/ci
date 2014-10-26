@@ -160,7 +160,7 @@ mapTestOn {
   xpdf = supportedSystems;
   xsane = supportedSystems;
   xxdiff = supportedSystems;
-  youtubeDL = supportedSystems;
+  youtube-dl = supportedSystems;
   zlib = supportedSystems;
 
 }

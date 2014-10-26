@@ -89,7 +89,7 @@ mapHaskellTestOn {
   funcmp = all;
   ghc = all;
   ghcPaths = all;
-  GLUT = all;
+  GLUT = allBut [ghc6104];
   hackageDb = all;
   haddock = allBut [ghc722 ghcHEAD];
   happy = all;
@@ -110,7 +110,7 @@ mapHaskellTestOn {
   mtl = all;
   nats = allBut [ghc6104 ghc6123];
   network = all;
-  OpenGL = all;
+  OpenGL = allBut [ghc6104];
   parallel = all;
   parsec = all;
   permutation = all;

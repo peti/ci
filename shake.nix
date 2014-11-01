@@ -21,11 +21,11 @@ in
       isLibrary = true;
       isExecutable = true;
       buildDepends = with haskellPackages; [
-        binary deepseq filepath hashable random time transformers
+        binary deepseq extra filepath hashable random time transformers
         unorderedContainers utf8String
       ];
       testDepends = with haskellPackages; [
-        binary deepseq filepath hashable QuickCheck random time
+        binary deepseq extra filepath hashable QuickCheck random time
         transformers unorderedContainers utf8String
       ];
       preCheck = "testTarget=--show-details=always"; # --show-details=streaming for cabal 1.20+

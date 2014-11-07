@@ -17,7 +17,7 @@ let
   ghc783  = "ghc783";
   ghcHEAD = "ghcHEAD";
   default = [ ghc783 ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc783 ghcHEAD ];
+  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc783 ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -72,28 +72,28 @@ mapHaskellTestOn {
 
   alex = all;
   async = allBut [ghc6104 ghc6123];
-  attoparsec = allBut [ghc6104 ghcHEAD];
+  attoparsec = allBut [ghc6104];
   Cabal_1_14_0 = [ ghc6104 ghc6123 ghc704 ];
   Cabal_1_16_0_3 = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
   Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
   Cabal_1_20_0_2 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
   cabal2nix = allBut [ghc6104 ghc6123];
-  cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ghcHEAD ];
-  cabalInstall = allBut [ ghcHEAD ];
+  cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ];
+  cabalInstall = all;
   caseInsensitive = all;
-  cmdlib = allBut [ghc6104 ghcHEAD];
+  cmdlib = allBut [ghc6104];
   cpphs = all;
   dataMemocombinators = all;
   doctest = allBut [ghc6104 ghc6123];
-  fgl = allBut [ghcHEAD];
+  fgl = all;
   funcmp = all;
   ghc = all;
   ghcPaths = all;
   GLUT = allBut [ghc6104];
   hackageDb = all;
-  haddock = allBut [ghc722 ghcHEAD];
+  haddock = allBut [ghc722];
   happy = all;
-  hashable = allBut [ghc6104 ghcHEAD];
+  hashable = allBut [ghc6104];
   hashtables = all;
   haskellSrc = all;
   hopenssl = all;
@@ -106,7 +106,7 @@ mapHaskellTestOn {
   IfElse = all;
   jailbreakCabal = all;
   monadLoops = allBut [ghc6104];
-  monadPar = allBut [ghc6104 ghcHEAD];
+  monadPar = allBut [ghc6104];
   mtl = all;
   nats = allBut [ghc6104 ghc6123];
   network = all;
@@ -121,18 +121,18 @@ mapHaskellTestOn {
   regexCompat = all;
   regexPosix = all;
   regexTDFA = allBut [ghc6104];
-  scientific = allBut [ghc6104 ghc6123 ghcHEAD];
+  scientific = allBut [ghc6104 ghc6123];
   split = all;
   stm = all;
   streamproc = all;
   syb = allBut [ghc6104 ghc6123];
-  systemFileio = allBut [ghcHEAD];
-  systemFilepath = allBut [ghcHEAD];
+  systemFileio = all;
+  systemFilepath = all;
   tar = all;
   text = all;
   transformers = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
   unixTime = allBut [ghc6104 ghc6123];
-  unorderedContainers = allBut [ghc6104 ghc6123 ghcHEAD];
+  unorderedContainers = allBut [ghc6104 ghc6123];
   vector = all;
   wlPprint = all;
   xhtml = all;

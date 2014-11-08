@@ -91,7 +91,7 @@ mapHaskellTestOn {
   ghcPaths = all;
   GLUT = allBut [ghc6104];
   hackageDb = all;
-  haddock = allBut [ghc722];
+  haddock = default;
   happy = all;
   hashable = allBut [ghc6104];
   hashtables = all;

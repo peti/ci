@@ -50,13 +50,9 @@ rec {
       src = hspecSrc;
       version = hspecSrc.gitTag;
       postUnpack = "sourceRoot+=/hspec-discover";
-      buildDepends = with haskellPackages; [
-        (pkgs.lib.getAttrFromPath [ghcVer system] hspecCore)
-        filepath transformers
-      ];
-      testDepends = with haskellPackages; [
-        filepath hspecMeta stringbuilder transformers
-      ];
+      buildDepends = with haskellPackages; [ filepath ];
+      testDepends = with haskellPackages; [ filepath hspecMeta ];
+      noHaddock = true;
       meta = {
         homepage = "http://hspec.github.io/";
         description = "Automatically discover and run Hspec tests";
@@ -75,10 +71,12 @@ rec {
       pname = "hspec";
       src = hspecSrc;
       version = hspecSrc.gitTag;
-      isLibrary = true;
-      isExecutable = true;
-      buildDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspecDiscover) ];
-      testDepends = with haskellPackages; [ QuickCheck ];
+      buildDepends = with haskellPackages; [
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspecDiscover) 
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspecCore)
+	hspecExpectations QuickCheck transformers
+      ];
+      testDepends = with haskellPackages; [ hspecMeta QuickCheck stringbuilder ];
       meta = {
         homepage = "http://hspec.github.com/";
         description = "A Testing Framework for Haskell";
@@ -98,10 +96,8 @@ rec {
       pname = "hspec-discover-integration-tests";
       src = hspecSrc;
       version = hspecSrc.gitTag;
-      isLibrary = true;
       noHaddock = true;
       postUnpack = "sourceRoot+=/hspec-discover/integration-test";
-      preConfigure = "ln -s ../../Setup.lhs .";
       testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
       meta.maintainers = [simon peti];
     })
@@ -116,10 +112,8 @@ rec {
       pname = "hspec-discover-example";
       src = hspecSrc;
       version = hspecSrc.gitTag;
-      isLibrary = true;
       noHaddock = true;
       postUnpack = "sourceRoot+=/hspec-discover/example";
-      preConfigure = "ln -s ../../Setup.lhs .";
       testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
       meta.maintainers = [simon peti];
     })

@@ -22,7 +22,7 @@ in
       isExecutable = true;
       buildDepends = with haskellPackages; [
         binary deepseq extra filepath hashable random time transformers
-        unorderedContainers utf8String
+        unorderedContainers utf8String jsFlot jsJquery
       ];
       testDepends = with haskellPackages; [
         binary deepseq extra filepath hashable QuickCheck random time

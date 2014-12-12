@@ -127,7 +127,6 @@ mapTestOn {
   patchelf = supportedSystems;
   pdsh = supportedSystems;
   perlPackages.DigestSHA1 = supportedSystems;
-  pinta = supportedSystems;
   pmutils = supportedSystems;
   posix_man_pages = supportedSystems;
   postfix = supportedSystems;

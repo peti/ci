@@ -94,7 +94,7 @@ mapHaskellTestOn {
   haddock = default;
   happy = all;
   hashable = allBut [ghc6104];
-  hashtables = all;
+  hashtables = allBut [ghc6104 ghc6123];
   haskellSrc = all;
   hopenssl = all;
   hsdns = all;

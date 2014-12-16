@@ -12,7 +12,7 @@ mapTestOn {
   # jhc = supportedSystems;
 
   ghc6101Binary = supportedSystems;
-  ghc6102inary = supportedSystems;
+  ghc6102Binary = supportedSystems;
   ghc6121Binary = supportedSystems;
   ghc642Binary = supportedSystems;
   ghc704Binary = supportedSystems;

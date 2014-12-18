@@ -8,7 +8,7 @@ mapTestOn {
 
   androidenv.platformTools = supportedSystems;
   antiword = supportedSystems;
-  asciidocFull = supportedSystems;
+  asciidoc = supportedSystems;
   aspellDicts.de = supportedSystems;
   aspellDicts.en = supportedSystems;
   aspell = supportedSystems;
@@ -58,7 +58,6 @@ mapTestOn {
   gettext = supportedSystems;
   ghostscriptX = supportedSystems;
   gitAndTools.gitAnnex = supportedSystems;
-  gitAndTools.qgit = supportedSystems;
   gitFull = supportedSystems;
   glxinfo = supportedSystems;
   gmpxx = supportedSystems;
@@ -73,7 +72,6 @@ mapTestOn {
   gparted = supportedSystems;
   gprolog = supportedSystems;
   graphviz = supportedSystems;
-  gravit = supportedSystems;
   grip = supportedSystems;
   gv = supportedSystems;
   hardlink = supportedSystems;
@@ -158,7 +156,6 @@ mapTestOn {
   telnet = supportedSystems;
   texLiveFull = supportedSystems;
   tightvnc = supportedSystems;
-  tkgate = supportedSystems;
   tree = supportedSystems;
   unetbootin = supportedSystems;
   utillinuxCurses = supportedSystems;

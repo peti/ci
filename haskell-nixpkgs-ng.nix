@@ -18,23 +18,9 @@ mapTestOn (if big then {
   ghc704Binary = supportedSystems;
   ghc742Binary = supportedSystems;
 
-  ghc6101 = supportedSystems;
-  ghc6102 = supportedSystems;
-  ghc6103 = supportedSystems;
   ghc6104 = supportedSystems;
-  # ghc611 = supportedSystems;
-  ghc6121 = supportedSystems;
-  ghc6122 = supportedSystems;
   ghc6123 = supportedSystems;
-  ghc642 = supportedSystems;
-  # ghc661 = supportedSystems;
-  ghc682 = supportedSystems;
-  # ghc683 = supportedSystems;
-  ghc701 = supportedSystems;
-  ghc702 = supportedSystems;
-  ghc703 = supportedSystems;
   ghc704 = supportedSystems;
-  ghc721 = supportedSystems;
   ghc722 = supportedSystems;
   ghc741 = supportedSystems;
   ghc742 = supportedSystems;

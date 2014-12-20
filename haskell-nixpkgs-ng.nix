@@ -8,8 +8,8 @@ mapTestOn (if big then {
 
   # cryptol2 = supportedSystems;
   # darcs = supportedSystems;
-  # gitAndTools.gitAnnex = supportedSystems;
   # jhc = supportedSystems;
+  pandoc = supportedSystems;
 
   ghc6101Binary = supportedSystems;
   ghc6102Binary = supportedSystems;
@@ -38,6 +38,7 @@ mapTestOn (if big then {
   ghc6104 = supportedSystems;
   ghc722 = supportedSystems;
   ghc783 = supportedSystems;
+  pandoc = supportedSystems;
 
   haskellPackages = {
     ghc = supportedSystems;

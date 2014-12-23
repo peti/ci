@@ -2,7 +2,7 @@
 
 { hspecSrc ? { outPath = ../hspec; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? ["ghc704" "ghc722" "ghc742" "ghc763" "ghc783"]
+, supportedCompilers ? ["ghc704" "ghc722" "ghc742" "ghc763" "ghc784"]
 }:
 
 let

@@ -14,10 +14,10 @@ let
   ghc722  = "ghc722";
   ghc742  = "ghc742";
   ghc763  = "ghc763";
-  ghc783  = "ghc783";
+  ghc784  = "ghc784";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc783 ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc783 ];
+  default = [ ghc784 ];
+  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc784 ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -75,8 +75,8 @@ mapHaskellTestOn {
   attoparsec = allBut [ghc6104];
   Cabal_1_14_0 = [ ghc6104 ghc6123 ghc704 ];
   Cabal_1_16_0_3 = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
-  Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
-  Cabal_1_20_0_2 = [ ghc704 ghc722 ghc742 ghc763 ghc783 ];
+  Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc784 ];
+  Cabal_1_20_0_2 = [ ghc704 ghc722 ghc742 ghc763 ghc784 ];
   cabal2nix = allBut [ghc6104 ghc6123];
   cabalInstall_1_20_0_3 = allBut [ ghc6104 ghc6123 ];
   cabalInstall = all;

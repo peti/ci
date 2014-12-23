@@ -28,6 +28,7 @@ mapTestOn (if big then {
   ghc762 = supportedSystems;
   ghc763 = supportedSystems;
   ghc783 = supportedSystems;
+  ghc784 = supportedSystems;
   ghcHEAD = supportedSystems;
   ghc = supportedSystems;
 

@@ -35,11 +35,6 @@ mapTestOn (if big then {
 
 } else {
 
-  ghc6104 = supportedSystems;
-  ghc722 = supportedSystems;
-  ghc783 = supportedSystems;
-  pandoc = supportedSystems;
-
   haskellPackages = {
     ghc = supportedSystems;
     git-annex = supportedSystems;

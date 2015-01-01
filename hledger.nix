@@ -86,6 +86,9 @@ rec {
       meta.maintainers = [peti];
     })));
 
+  /* Disabled: there seems no point in running those builds because
+     errors reported by Hydra don't get fixed anyway.
+
   hledgerIrr = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
@@ -100,4 +103,5 @@ rec {
       buildDepends = with haskellPackages; [ myHledgerLib time Cabal statistics ];
       meta.maintainers = [joachim peti];
     })));
+   */
 }

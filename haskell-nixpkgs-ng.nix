@@ -127,6 +127,8 @@ mapTestOn (if big then {
     free = supportedSystems;
     funcmp = supportedSystems;
     generic-deriving = supportedSystems;
+    ghcjs-prim = supportedSystems;
+    ghcjs = supportedSystems;
     ghc-paths = supportedSystems;
     ghc = supportedSystems;
     git-annex = supportedSystems;
@@ -276,10 +278,12 @@ mapTestOn (if big then {
     tasty = supportedSystems;
     tasty-th = supportedSystems;
     temporary = supportedSystems;
+    terminfo = supportedSystems;
     test-framework-hunit = supportedSystems;
     test-framework-quickcheck2 = supportedSystems;
     test-framework-th = supportedSystems;
     texmath = supportedSystems;
+    text-binary = supportedSystems;
     text-icu = supportedSystems;
     text = supportedSystems;
     th-expand-syns = supportedSystems;
@@ -307,6 +311,7 @@ mapTestOn (if big then {
     warp = supportedSystems;
     warp-tls = supportedSystems;
     wl-pprint = supportedSystems;
+    wl-pprint-text = supportedSystems;
     word8 = supportedSystems;
     x509-store = supportedSystems;
     x509 = supportedSystems;

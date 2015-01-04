@@ -37,8 +37,6 @@ mapTestOn (if big then {
 } else {
 
   haskellPackages = {
-    ghc = supportedSystems;
-    git-annex = supportedSystems;
 
     aeson-qq = supportedSystems;
     aeson = supportedSystems;
@@ -130,6 +128,8 @@ mapTestOn (if big then {
     funcmp = supportedSystems;
     generic-deriving = supportedSystems;
     ghc-paths = supportedSystems;
+    ghc = supportedSystems;
+    git-annex = supportedSystems;
     GLUT = supportedSystems;
     gnuidn = supportedSystems;
     gnutls = supportedSystems;

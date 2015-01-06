@@ -316,7 +316,6 @@ mapTestOn (if big then {
     tasty-th = supportedSystems;
     temporary = supportedSystems;
     terminal-progress-bar = supportedSystems;
-    terminfo = supportedSystems;
     test-framework-hunit = supportedSystems;
     test-framework-quickcheck2 = supportedSystems;
     test-framework-th = supportedSystems;

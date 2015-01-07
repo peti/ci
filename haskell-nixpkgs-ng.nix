@@ -6,37 +6,39 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 mapTestOn (if big then {
 
-  # cryptol2 = supportedSystems;
-  # darcs = supportedSystems;
-  # jhc = supportedSystems;
+  cryptol2 = supportedSystems;
+  darcs = supportedSystems;
+  jhc = supportedSystems;
   pandoc = supportedSystems;
 
-  ghc6101Binary = supportedSystems;
-  ghc6102Binary = supportedSystems;
-  ghc6121Binary = supportedSystems;
-  ghc642Binary = supportedSystems;
-  ghc704Binary = supportedSystems;
-  ghc742Binary = supportedSystems;
+  haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;
 
-  ghc6104 = supportedSystems;
-  ghc6123 = supportedSystems;
-  ghc704 = supportedSystems;
-  ghc722 = supportedSystems;
-  ghc741 = supportedSystems;
-  ghc742 = supportedSystems;
-  ghc761 = supportedSystems;
-  ghc762 = supportedSystems;
-  ghc763 = supportedSystems;
-  ghc783 = supportedSystems;
-  ghc784 = supportedSystems;
-  ghcHEAD = supportedSystems;
-  ghc = supportedSystems;
+  haskell-ng.compiler = {
+    ghc6101Binary = supportedSystems;
+    ghc6102Binary = supportedSystems;
+    ghc6121Binary = supportedSystems;
+    ghc642Binary = supportedSystems;
+    ghc704Binary = supportedSystems;
+    ghc742Binary = supportedSystems;
 
-  haskellPackages = packagesWithMetaPlatform pkgs.haskellPackages;
+    ghc6104 = supportedSystems;
+    ghc6123 = supportedSystems;
+    ghc704 = supportedSystems;
+    ghc722 = supportedSystems;
+    ghc741 = supportedSystems;
+    ghc742 = supportedSystems;
+    ghc761 = supportedSystems;
+    ghc762 = supportedSystems;
+    ghc763 = supportedSystems;
+    ghc783 = supportedSystems;
+    ghc784 = supportedSystems;
+    ghcHEAD = supportedSystems;
+    ghc = supportedSystems;
+  };
 
 } else {
 
-  haskellPackages = {
+  haskellngPackages = {
 
     aeson-qq = supportedSystems;
     aeson = supportedSystems;

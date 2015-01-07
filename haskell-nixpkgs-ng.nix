@@ -12,29 +12,7 @@ mapTestOn (if big then {
   pandoc = supportedSystems;
 
   haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;
-
-  haskell-ng.compiler = {
-    ghc6101Binary = supportedSystems;
-    ghc6102Binary = supportedSystems;
-    ghc6121Binary = supportedSystems;
-    ghc642Binary = supportedSystems;
-    ghc704Binary = supportedSystems;
-    ghc742Binary = supportedSystems;
-
-    ghc6104 = supportedSystems;
-    ghc6123 = supportedSystems;
-    ghc704 = supportedSystems;
-    ghc722 = supportedSystems;
-    ghc741 = supportedSystems;
-    ghc742 = supportedSystems;
-    ghc761 = supportedSystems;
-    ghc762 = supportedSystems;
-    ghc763 = supportedSystems;
-    ghc783 = supportedSystems;
-    ghc784 = supportedSystems;
-    ghcHEAD = supportedSystems;
-    ghc = supportedSystems;
-  };
+  haskell-ng.compiler = packagesWithMetaPlatform pkgs.haskell-ng.compiler;
 
 } else {
 

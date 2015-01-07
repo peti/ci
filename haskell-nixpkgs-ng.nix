@@ -141,8 +141,6 @@ mapTestOn (if big then {
     free = supportedSystems;
     funcmp = supportedSystems;
     generic-deriving = supportedSystems;
-    ghcjs-prim = supportedSystems;
-    ghcjs = supportedSystems;
     ghc-mtl = supportedSystems;
     ghc-paths = supportedSystems;
     ghc = supportedSystems;

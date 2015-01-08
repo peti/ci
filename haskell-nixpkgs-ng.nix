@@ -67,6 +67,7 @@ mapTestOn (if big then {
     conduit = supportedSystems;
     connection = supportedSystems;
     contravariant = supportedSystems;
+    control-monad-free = supportedSystems;
     cookie = supportedSystems;
     cpphs = supportedSystems;
     cprng-aes = supportedSystems;
@@ -81,6 +82,7 @@ mapTestOn (if big then {
     crypto-pubkey-types = supportedSystems;
     crypto-random = supportedSystems;
     css-text = supportedSystems;
+    csv = supportedSystems;
     curl = supportedSystems;
     data-default-class = supportedSystems;
     data-default-instances-base = supportedSystems;
@@ -93,6 +95,7 @@ mapTestOn (if big then {
     data-memocombinators = supportedSystems;
     DAV = supportedSystems;
     dbus = supportedSystems;
+    Decimal = supportedSystems;
     deepseq-generics = supportedSystems;
     Diff = supportedSystems;
     digest = supportedSystems;
@@ -141,6 +144,8 @@ mapTestOn (if big then {
     happy = supportedSystems;
     hashable = supportedSystems;
     hashtables = supportedSystems;
+    haskeline = supportedSystems;
+    haskell-lexer = supportedSystems;
     haskell-src-exts = supportedSystems;
     haskell-src-meta = supportedSystems;
     haskell-src = supportedSystems;
@@ -151,6 +156,9 @@ mapTestOn (if big then {
     hinotify = supportedSystems;
     hint = supportedSystems;
     hjsmin = supportedSystems;
+    hledger-lib = supportedSystems;
+    hledger = supportedSystems;
+    hledger-web = supportedSystems;
     hlint = supportedSystems;
     HList = supportedSystems;
     hopenssl = supportedSystems;
@@ -208,6 +216,7 @@ mapTestOn (if big then {
     monad-par = supportedSystems;
     MonadRandom = supportedSystems;
     monads-tf = supportedSystems;
+    mtlparse = supportedSystems;
     mtl = supportedSystems;
     mwc-random = supportedSystems;
     nanospec = supportedSystems;
@@ -239,6 +248,7 @@ mapTestOn (if big then {
     polyparse = supportedSystems;
     prelude-extras = supportedSystems;
     prelude-safeenum = supportedSystems;
+    pretty-show = supportedSystems;
     primitive = supportedSystems;
     profunctors = supportedSystems;
     publicsuffixlist = supportedSystems;
@@ -252,6 +262,7 @@ mapTestOn (if big then {
     regex-compat = supportedSystems;
     regex-pcre = supportedSystems;
     regex-posix = supportedSystems;
+    regexpr = supportedSystems;
     regex-tdfa-rc = supportedSystems;
     regex-tdfa = supportedSystems;
     resource-pool = supportedSystems;
@@ -264,6 +275,7 @@ mapTestOn (if big then {
     semigroups = supportedSystems;
     setenv = supportedSystems;
     shakespeare = supportedSystems;
+    shakespeare-text = supportedSystems;
     SHA = supportedSystems;
     shelly = supportedSystems;
     silently = supportedSystems;
@@ -284,6 +296,7 @@ mapTestOn (if big then {
     syb = supportedSystems;
     system-fileio = supportedSystems;
     system-filepath = supportedSystems;
+    tabular = supportedSystems;
     tagged = supportedSystems;
     tagsoup = supportedSystems;
     tagstream-conduit = supportedSystems;
@@ -297,6 +310,7 @@ mapTestOn (if big then {
     tasty-th = supportedSystems;
     temporary = supportedSystems;
     terminal-progress-bar = supportedSystems;
+    terminfo = supportedSystems;
     test-framework-hunit = supportedSystems;
     test-framework-quickcheck2 = supportedSystems;
     test-framework-th = supportedSystems;
@@ -336,6 +350,7 @@ mapTestOn (if big then {
     wai = supportedSystems;
     warp = supportedSystems;
     warp-tls = supportedSystems;
+    wizards = supportedSystems;
     wl-pprint-extras = supportedSystems;
     wl-pprint = supportedSystems;
     wl-pprint-text = supportedSystems;

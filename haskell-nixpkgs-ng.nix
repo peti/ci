@@ -16,6 +16,9 @@ mapTestOn (if big then {
 
 } else {
 
+  haskell-ng.compiler.ghcHEAD = supportedSystems;
+  haskell-ng.compiler.ghc763 = supportedSystems;
+
   haskellngPackages = {
 
     aeson-qq = supportedSystems;

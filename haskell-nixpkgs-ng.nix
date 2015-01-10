@@ -25,6 +25,7 @@ mapTestOn (if big then {
     hsemail = supportedSystems;
     hsyslog = supportedSystems;
     hsdns = supportedSystems;
+    jailbreak-cabal = supportedSystems;
   };
 
   haskellngPackages = {

@@ -19,6 +19,14 @@ mapTestOn (if big then {
   haskell-ng.compiler.ghcHEAD = supportedSystems;
   haskell-ng.compiler.ghc763 = supportedSystems;
 
+  haskell-ng.packages.ghcHEAD = {
+    ghc = supportedSystems;
+    lens = supportedSystems;
+    hsemail = supportedSystems;
+    hsyslog = supportedSystems;
+    hsadns = supportedSystems;
+  };
+
   haskellngPackages = {
 
     aeson-qq = supportedSystems;

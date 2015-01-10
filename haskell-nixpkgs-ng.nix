@@ -29,7 +29,10 @@ mapTestOn (if big then {
     aeson = supportedSystems;
   };
 
+  darcs = supportedSystems;
+
   haskellngPackages = {
+    darcs = supportedSystems;
 
     aeson-qq = supportedSystems;
     aeson = supportedSystems;

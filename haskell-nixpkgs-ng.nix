@@ -24,7 +24,7 @@ mapTestOn (if big then {
     lens = supportedSystems;
     hsemail = supportedSystems;
     hsyslog = supportedSystems;
-    hsadns = supportedSystems;
+    hsdns = supportedSystems;
   };
 
   haskellngPackages = {

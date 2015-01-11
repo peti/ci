@@ -57,8 +57,9 @@ mapTestOn {
   attoparsec = allBut [ghc6104];
   # Cabal_1_14_0 = [ghc6104 ghc6123 ghc704];
   # Cabal_1_16_0_3 = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
-  # Cabal_1_18_1_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
-  Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
+  Cabal_1_18_1_6 = [/*ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD];
+  Cabal_1_20_0_3 = [/*ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD];
+  Cabal_1_22_0_0 = [/*ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD];
   cabal2nix = allBut [ghc6104 ghc6123];
   cabal-install = all;
   case-insensitive = all;
@@ -111,13 +112,12 @@ mapTestOn {
   system-filepath = all;
   tar = all;
   text = all;
-  transformers = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
+  transformers = [/*ghc6104 ghc6123 ghc704 ghc722 ghc742*/ ghc763];
   transformers-compat = all;
   unix-time = allBut [ghc6104 ghc6123];
   unordered-containers = allBut [ghc6104 ghc6123];
   vector = all;
   wl-pprint = all;
-  xhtml = all;
   zlib = all;
 
 }

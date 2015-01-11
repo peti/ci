@@ -46,6 +46,7 @@ mapTestOn {
 }
 // pkgs.lib.optionalAttrs big (mapTestOn {
 
+  haskell-ng.compiler = packagesWithMetaPlatform pkgs.haskell-ng.compiler;
   haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;
 
 })

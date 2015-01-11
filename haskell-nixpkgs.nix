@@ -1,12 +1,10 @@
 /* Essential Haskell packages in Nixpkgs that must build. */
 
-{ supportedSystems ? [ "x86_64-linux" ] }:
+{ supportedSystems ? [ "x86_64-linux" ], big ? false }:
 
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
 let
-
-  linux = import <nixpkgs/pkgs/top-level/release-lib.nix> { supportedSystems = [ "i686-linux" "x86_64-linux" ]; };
 
   ghc6104 = "ghc6104";
   ghc6123 = "ghc6123";
@@ -17,7 +15,7 @@ let
   ghc784  = "ghc784";
   ghcHEAD = "ghcHEAD";
   default = [ ghc784 ];
-  all     = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ghc784 ];
+  all     = [ /*ghc6104 ghc6123 ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -35,39 +33,33 @@ let
       map (system: mkSystemJob system ghc pkg) systems;
 
   mkSystemJob = system: ghc: pkg:
-    pkgs.lib.nameValuePair "${ghc}" (pkgs.lib.setAttrByPath [system] ((pkgs.lib.getAttrFromPath ["haskellPackages_${ghc}" "${pkg}"] (pkgsFor system))));
+    pkgs.lib.nameValuePair "${ghc}" (pkgs.lib.setAttrByPath [system] ((pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghc pkg] (pkgsFor system))));
 
 in
 
-linux.mapTestOn {
-
-  # Build GHC in 32-bit, too, because hydra.nixos.org cannot do that for
-  # reasons nobody understands.
-  #haskellPackages.ghcPlain = [ "i686-linux" "x86_64-linux" ];
-
-}
-//
 mapTestOn {
 
   cryptol2 = supportedSystems;
   darcs = supportedSystems;
   jhc = supportedSystems;
 
-  haskellPackages = packagesWithMetaPlatform pkgs.haskellPackages;
-
 }
-//
-mapHaskellTestOn {
+// pkgs.lib.optionalAttrs big (mapTestOn {
+
+  haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;
+
+})
+// mapHaskellTestOn {
 
   alex = all;
   async = allBut [ghc6104 ghc6123];
   attoparsec = allBut [ghc6104];
-  Cabal_1_14_0 = [ ghc6104 ghc6123 ghc704 ];
-  Cabal_1_16_0_3 = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
-  Cabal_1_18_1_3 = [ ghc704 ghc722 ghc742 ghc763 ghc784 ];
-  Cabal_1_20_0_3 = [ ghc704 ghc722 ghc742 ghc763 ghc784 ];
+  Cabal_1_14_0 = [ghc6104 ghc6123 ghc704];
+  Cabal_1_16_0_3 = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
+  Cabal_1_18_1_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
+  Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
   cabal2nix = allBut [ghc6104 ghc6123];
-  cabalInstall_1_20_0_6 = allBut [ ghc6104 ghc6123 ];
+  cabalInstall_1_20_0_6 = allBut [ghc6104 ghc6123];
   cabalInstall = all;
   caseInsensitive = all;
   cmdlib = allBut [ghc6104];
@@ -119,7 +111,7 @@ mapHaskellTestOn {
   systemFilepath = all;
   tar = all;
   text = all;
-  transformers = [ ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763 ];
+  transformers = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
   unixTime = allBut [ghc6104 ghc6123];
   unorderedContainers = allBut [ghc6104 ghc6123];
   vector = all;

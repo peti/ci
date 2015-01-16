@@ -78,6 +78,7 @@ mapTestOn {
   hashable = allBut [ghc6104];
   hashtables = allBut [ghc6104 ghc6123];
   haskell-src = all;
+  hledger = default;
   hopenssl = all;
   hsdns = all;
   hsemail = allBut [ghc6104 ghc6123];
@@ -112,8 +113,8 @@ mapTestOn {
   system-filepath = all;
   tar = all;
   text = all;
-  transformers = [/*ghc6104 ghc6123 ghc704 ghc722 ghc742*/ ghc763];
   transformers-compat = all;
+  transformers = [/*ghc6104 ghc6123 ghc704 ghc722 ghc742*/ ghc763];
   unix-time = allBut [ghc6104 ghc6123];
   unordered-containers = allBut [ghc6104 ghc6123];
   vector = all;

@@ -118,6 +118,7 @@ mapTestOn {
   unix-time = allBut [ghc6104 ghc6123];
   unordered-containers = allBut [ghc6104 ghc6123];
   vector = all;
+  wizards = default;
   wl-pprint = all;
   zlib = all;
 

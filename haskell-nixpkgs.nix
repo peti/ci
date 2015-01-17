@@ -37,14 +37,11 @@ let
 
 in
 
-mapTestOn {
+pkgs.lib.optionalAttrs big (mapTestOn {
 
   cryptol2 = supportedSystems;
   darcs = supportedSystems;
   jhc = supportedSystems;
-
-}
-// pkgs.lib.optionalAttrs big (mapTestOn {
 
   haskell-ng.compiler = packagesWithMetaPlatform pkgs.haskell-ng.compiler;
   haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;

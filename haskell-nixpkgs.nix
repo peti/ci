@@ -15,7 +15,7 @@ let
   ghc784  = "ghc784";
   ghcHEAD = "ghcHEAD";
   default = [ ghc784 ];
-  all     = [ /*ghc6104 ghc6123 ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD ];
+  all     = [ /*ghc6104*/ ghc6123 ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -57,10 +57,10 @@ mapTestOn {
   attoparsec = allBut [ghc6104];
   # Cabal_1_14_0 = [ghc6104 ghc6123 ghc704];
   # Cabal_1_16_0_3 = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
-  Cabal_1_18_1_6 = [/*ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD];
-  Cabal_1_20_0_3 = [/*ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD];
-  Cabal_1_22_0_0 = [/*ghc704 ghc722 ghc742*/ ghc763 ghc784 ghcHEAD];
-  cabal2nix = default; # allBut [ghc6104 ghc6123];
+  Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
+  Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
+  Cabal_1_22_0_0 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
+  cabal2nix = allBut [ghc6104 ghc6123];
   cabal-install = all;
   case-insensitive = all;
   cmdlib = allBut [ghc6104];
@@ -114,7 +114,7 @@ mapTestOn {
   tar = all;
   text = all;
   transformers-compat = all;
-  transformers = [/*ghc6104 ghc6123 ghc704 ghc722 ghc742*/ ghc763];
+  transformers = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
   unix-time = allBut [ghc6104 ghc6123];
   unordered-containers = allBut [ghc6104 ghc6123];
   vector = all;

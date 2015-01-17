@@ -2,7 +2,7 @@
 
 { funcmpSrc ? { outPath = ../funcmp; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? [ "ghc6104" "ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" /*"ghcHEAD"*/ ]
+, supportedCompilers ? [ "ghc6104" "ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghcHEAD" ]
 }:
 
 let
@@ -12,7 +12,7 @@ rec {
   funcmp = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
     haskellPackages.cabal.mkDerivation (self: {
       pname = "funcmp";

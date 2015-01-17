@@ -1,8 +1,8 @@
 /* Generate Haskell build instructions for the continuous integration system Hydra. */
 
 { gitSource, expressionPath
-, supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? [ "ghc6104" "ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghcHEAD" ]
+, supportedPlatforms ? ["x86_64-linux"]
+, supportedCompilers ? ["ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghcHEAD"]
 }:
 
 let

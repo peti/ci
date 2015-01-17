@@ -111,7 +111,7 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   tar = all;
   text = all;
   transformers-compat = all;
-  transformers = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
+  transformers = [ghc6123 ghc704 ghc722 ghc742 ghc763];
   unix-time = allBut [ghc6104 ghc6123];
   unordered-containers = allBut [ghc6104 ghc6123];
   vector = all;

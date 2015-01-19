@@ -2,7 +2,7 @@
 
 { hspecSrc ? { outPath = ../hspec; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? ["ghc704" "ghc722" "ghc742" "ghc763" "ghc784"]
+, supportedCompilers ? ["ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghc7101" "ghcHEAD"]
 }:
 
 let
@@ -12,110 +12,111 @@ let
   simon = "Simon Hengel <sol@typeful.net>";
 in
 rec {
-  hspecCore = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+  hspec-core = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hspec-core";
       src = hspecSrc;
       version = hspecSrc.gitTag;
       postUnpack = "sourceRoot+=/hspec-core";
       buildDepends = with haskellPackages; [
-        ansiTerminal async deepseq hspecExpectations HUnit QuickCheck
-        quickcheckIo random setenv tfRandom time transformers
+        ansi-terminal async base deepseq hspec-expectations HUnit
+        QuickCheck quickcheck-io random setenv tf-random time transformers
       ];
       testDepends = with haskellPackages; [
-        ansiTerminal async deepseq ghcPaths hspecExpectations hspecMeta
-        HUnit QuickCheck quickcheckIo random setenv silently tfRandom time
-        transformers
+        ansi-terminal async base deepseq hspec-expectations hspec-meta
+        HUnit process QuickCheck quickcheck-io random setenv silently
+        tf-random time transformers
       ];
-      meta = {
-        homepage = "http://hspec.github.io/";
-        description = "A Testing Framework for Haskell";
-        license = self.stdenv.lib.licenses.mit;
-        platforms = self.ghc.meta.platforms;
-      };
-    })
-  ));
+      homepage = "http://hspec.github.io/";
+      description = "A Testing Framework for Haskell";
+      license = pkgs.stdenv.lib.licenses.mit;
+      maintainers = [simon peti];
+    }));
 
-  hspecDiscover = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+  hspec-discover = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hspec-discover";
       src = hspecSrc;
       version = hspecSrc.gitTag;
       postUnpack = "sourceRoot+=/hspec-discover";
-      buildDepends = with haskellPackages; [ filepath ];
-      testDepends = with haskellPackages; [ filepath hspecMeta ];
-      noHaddock = true;
-      meta = {
-        homepage = "http://hspec.github.io/";
-        description = "Automatically discover and run Hspec tests";
-        license = self.stdenv.lib.licenses.mit;
-        platforms = self.ghc.meta.platforms;
-      };
-    })
-  ));
+      isLibrary = true;
+      isExecutable = true;
+      doHaddock = false;
+      buildDepends = with haskellPackages; [ base directory filepath ];
+      testDepends = with haskellPackages; [ base directory filepath hspec-meta ];
+      homepage = "http://hspec.github.io/";
+      description = "Automatically discover and run Hspec tests";
+      license = pkgs.stdenv.lib.licenses.mit;
+      maintainers = [simon peti];
+    }));
 
   hspec = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hspec";
       src = hspecSrc;
       version = hspecSrc.gitTag;
       buildDepends = with haskellPackages; [
-        (pkgs.lib.getAttrFromPath [ghcVer system] hspecDiscover) 
-        (pkgs.lib.getAttrFromPath [ghcVer system] hspecCore)
-	hspecExpectations QuickCheck transformers
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspec-discover)
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspec-core)
+        base hspec-expectations HUnit QuickCheck transformers
       ];
-      testDepends = with haskellPackages; [ hspecMeta QuickCheck stringbuilder ];
-      meta = {
-        homepage = "http://hspec.github.com/";
-        description = "A Testing Framework for Haskell";
-        license = self.stdenv.lib.licenses.bsd3;
-        platforms = self.ghc.meta.platforms;
-        maintainers = [simon peti];
-      };
-    })
-  ));
+      testDepends = with haskellPackages; [
+        base directory hspec-meta stringbuilder
+      ];
+      homepage = "http://hspec.github.io/";
+      description = "A Testing Framework for Haskell";
+      license = pkgs.stdenv.lib.licenses.mit;
+      maintainers = [simon peti];
+    }));
 
-  hspecDiscoverIntegrationTest = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+  hspec-discover-integration-test = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
-    haskellPackages.cabal.mkDerivation (self: {
-      pname = "hspec-discover-integration-tests";
+    haskellPackages.mkDerivation {
+      pname = "hspec-discover-integration-test";
       src = hspecSrc;
       version = hspecSrc.gitTag;
-      noHaddock = true;
+      doHaddock = false;
       postUnpack = "sourceRoot+=/hspec-discover/integration-test";
-      testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
-      meta.maintainers = [simon peti];
-    })
-  ));
+      testDepends = with haskellPackages; [
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspec)
+        base transformers
+      ];
+      license = pkgs.stdenv.lib.licenses.unfree;
+      maintainers = [simon peti];
+    }));
 
-  hspecDiscoverExample = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+  hspec-discover-example = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hspec-discover-example";
       src = hspecSrc;
       version = hspecSrc.gitTag;
-      noHaddock = true;
+      doHaddock = false;
       postUnpack = "sourceRoot+=/hspec-discover/example";
-      testDepends = [ (pkgs.lib.getAttrFromPath [ghcVer system] hspec) ];
-      meta.maintainers = [simon peti];
-    })
-  ));
+      testDepends = with haskellPackages; [
+        (pkgs.lib.getAttrFromPath [ghcVer system] hspec)
+        base QuickCheck
+      ];
+      license = pkgs.stdenv.lib.licenses.unfree;
+      maintainers = [simon peti];
+    }));
+
 }

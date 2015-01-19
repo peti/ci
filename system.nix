@@ -76,9 +76,9 @@ mapTestOn {
   gv = supportedSystems;
   hardlink = supportedSystems;
   haskellngPackages.BNFC = supportedSystems;
-  haskellngPackages.cabalInstall = supportedSystems;
+  haskellngPackages.cabal-install = supportedSystems;
   haskellngPackages.doctest = supportedSystems;
-  haskellngPackages.ghcMod = supportedSystems;
+  haskellngPackages.ghc-mod = supportedSystems;
   haskellngPackages.GLUT = supportedSystems;
   haskellngPackages.HList = supportedSystems;
   haskellngPackages.hspec = supportedSystems;
@@ -86,10 +86,10 @@ mapTestOn {
   haskellngPackages.OpenGL = supportedSystems;
   haskellngPackages.pandoc = supportedSystems;
   haskellngPackages.smallcheck = supportedSystems;
-  haskellngPackages.uuParsinglib = supportedSystems;
+  haskellngPackages.uu-parsinglib = supportedSystems;
   haskellngPackages.xmobar = supportedSystems;
-  haskellngPackages.xmonadContrib = supportedSystems;
-  haskellngPackages.xmonadExtras = supportedSystems;
+  haskellngPackages.xmonad-contrib = supportedSystems;
+  haskellngPackages.xmonad-extras = supportedSystems;
   haskellngPackages.xmonad = supportedSystems;
   htmlTidy = supportedSystems;
   htop = supportedSystems;

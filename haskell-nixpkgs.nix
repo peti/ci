@@ -52,7 +52,6 @@ pkgs.lib.optionalAttrs big (mapTestOn {
 
   alex = all;
   async = allBut [ghc6104 ghc6123];
-  attoparsec = allBut [ghc6104];
   # Cabal_1_14_0 = [ghc6104 ghc6123 ghc704];
   # Cabal_1_16_0_3 = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
   Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
@@ -102,7 +101,6 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   regex-compat = all;
   regex-posix = all;
   regex-TDFA = allBut [ghc6104];
-  scientific = allBut [ghc6104 ghc6123];
   split = all;
   stm = all;
   streamproc = all;

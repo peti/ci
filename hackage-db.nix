@@ -7,7 +7,7 @@
   hackageDb = import ./generate-haskell-build.nix {
     gitSource = hackageDbSrc;
     expressionPath = ./hackage-db-pkg.nix;
-    supportedCompilers = ["ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" /*"ghcHEAD"*/];
+    supportedCompilers = ["ghc6123" "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghc7101" /*"ghcHEAD"*/];
   };
 
 }

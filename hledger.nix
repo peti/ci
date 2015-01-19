@@ -4,7 +4,7 @@
 , hledgerInterestSrc ? { outPath = ./.; revCount = 0; gitTag = "dirty"; }
 , hledgerIrrSrc ? { outPath = ../hledger-irr; revCount = 0; gitTag = "dirty"; }
 , supportedPlatforms ? [ "x86_64-linux" ]
-, supportedCompilers ? ["ghc763" "ghc784"]
+, supportedCompilers ? ["ghc763" "ghc784" "ghc7101"]
 }:
 
 let
@@ -12,96 +12,114 @@ let
 
   peti = "Peter Simons <simons@cryp.to>";
   simon = "Simon Michael <simon@joyful.com>";
-  joachim = "Joachim Breitner <mail@joachim-breitner.de>";
 in
 rec {
-  hledgerLib = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+
+  hledger-lib = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hledger-lib";
       src = hledgerSrc;
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger-lib";
       buildDepends = with haskellPackages; [
-        cmdargs csv filepath HUnit mtl parsec prettyShow regexCompatTdfa
-        regexpr safe split time transformers utf8String testFramework
-        testFrameworkHunit dataPprint Decimal blazeMarkup
+        array base blaze-markup bytestring cmdargs containers csv Decimal
+        directory filepath HUnit mtl old-locale old-time parsec pretty-show
+        regex-tdfa regexpr safe split time transformers utf8-string
       ];
-      meta.maintainers = [simon peti];
-    })));
+      testDepends = with haskellPackages; [
+        array base blaze-markup cmdargs containers csv Decimal directory
+        filepath HUnit mtl old-locale old-time parsec pretty-show
+        regex-tdfa regexpr safe split test-framework test-framework-hunit
+        time transformers
+      ];
+      homepage = "http://hledger.org";
+      description = "Core data types, parsers and utilities for the hledger accounting tool";
+      license = "GPL";
+      maintainers = [simon peti];
+    }));
 
   hledger = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      myHledgerLib = pkgs.lib.getAttrFromPath [ghcVer system] hledgerLib;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      my-hledger-lib = pkgs.lib.getAttrFromPath [ghcVer system] hledger-lib;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hledger";
       src = hledgerSrc;
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger";
-      buildDepends = with haskellPackages; [ myHledgerLib haskeline shakespeareText tabular wizards ];
-      noHaddock = self.ghc.ghc.version == "7.2.2";
-      meta.maintainers = [simon peti];
-    })));
+      isLibrary = true;
+      isExecutable = true;
+      buildDepends = with haskellPackages; [
+        base cmdargs containers csv directory filepath haskeline
+        my-hledger-lib HUnit mtl old-locale old-time parsec pretty-show
+        process regex-tdfa regexpr safe shakespeare shakespeare-text split
+        tabular text time utf8-string wizards
+      ];
+      testDepends = with haskellPackages; [
+        base cmdargs containers csv directory filepath haskeline
+        my-hledger-lib HUnit mtl old-locale old-time parsec pretty-show
+        process regex-tdfa regexpr safe shakespeare shakespeare-text split
+        tabular test-framework test-framework-hunit text time transformers
+        wizards
+      ];
+      homepage = "http://hledger.org";
+      description = "The main command-line interface for the hledger accounting tool";
+      license = "GPL";
+      maintainers = [simon peti];
+    }));
 
-  hledgerWeb = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+  hledger-web = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      myHledgerLib = pkgs.lib.getAttrFromPath [ghcVer system] hledgerLib;
-      myHledger = pkgs.lib.getAttrFromPath [ghcVer system] hledger;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      my-hledger-lib = pkgs.lib.getAttrFromPath [ghcVer system] hledger-lib;
+      my-hledger = pkgs.lib.getAttrFromPath [ghcVer system] hledger;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hledger-web";
       src = hledgerSrc;
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger-web";
+      isLibrary = true;
+      isExecutable = true;
       buildDepends = with haskellPackages; [
-        blazeHtml blazeMarkup clientsession cmdargs dataDefault filepath
-        hamlet hjsmin myHledger myHledgerLib httpClient httpConduit HUnit json
-        networkConduit parsec regexpr safe shakespeareText text time
-        transformers wai waiExtra waiHandlerLaunch warp yaml yesod
-        yesodCore yesodStatic
+        base blaze-html blaze-markup bytestring clientsession cmdargs
+        conduit-extra data-default directory filepath hjsmin my-hledger
+        my-hledger-lib http-client http-conduit HUnit json network-conduit
+        old-locale parsec regexpr safe shakespeare template-haskell text
+        time transformers wai wai-extra wai-handler-launch warp yaml yesod
+        yesod-core yesod-static
       ];
-      testDepends = with haskellPackages; [ hspec yesod yesodTest ];
-      meta.maintainers = [simon peti];
-    })));
+      testDepends = with haskellPackages; [ base hspec yesod yesod-test ];
+      homepage = "http://hledger.org";
+      description = "A web interface for the hledger accounting tool";
+      license = "GPL";
+      maintainers = [simon peti];
+    }));
 
-  hledgerInterest = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
+  hledger-interest = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      myHledgerLib = pkgs.lib.getAttrFromPath [ghcVer system] hledgerLib;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      my-hledger-lib = pkgs.lib.getAttrFromPath [ghcVer system] hledger-lib;
     in
-    haskellPackages.cabal.mkDerivation (self: {
+    haskellPackages.mkDerivation {
       pname = "hledger-interest";
       src = hledgerInterestSrc;
       version = hledgerInterestSrc.gitTag;
-      buildDepends = with haskellPackages; [ myHledgerLib mtl ];
-      meta.maintainers = [peti];
-    })));
+      isLibrary = false;
+      isExecutable = true;
+      buildDepends = with haskellPackages; [ base Cabal Decimal my-hledger-lib mtl parsec time ];
+      homepage = "http://github.com/peti/hledger-interest";
+      description = "computes interest for a given account";
+      license = pkgs.stdenv.lib.licenses.bsd3;
+      maintainers = [peti];
+    }));
 
-  /* Disabled: there seems no point in running those builds because
-     errors reported by Hydra don't get fixed anyway.
-
-  hledgerIrr = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
-    let
-      pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskellPackages_${ghcVer}"] pkgs;
-      myHledgerLib = pkgs.lib.getAttrFromPath [ghcVer system] hledgerLib;
-    in
-    haskellPackages.cabal.mkDerivation (self: {
-      pname = "hledger-irr";
-      src = hledgerIrrSrc;
-      version = hledgerInterestSrc.gitTag;
-      preConfigure = "$SHELL hledger-irr.cabal.sh";
-      buildDepends = with haskellPackages; [ myHledgerLib time Cabal statistics ];
-      meta.maintainers = [joachim peti];
-    })));
-   */
 }

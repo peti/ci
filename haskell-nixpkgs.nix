@@ -57,7 +57,7 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
   Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
   Cabal_1_22_0_0 = [ghc722 ghc742 ghc763 ghc784 ghcHEAD];
-  cabal2nix = allBut [ghc6104 ghc6123];
+  cabal2nix = default;
   cabal-install = all;
   case-insensitive = all;
   cmdlib = allBut [ghc6104];

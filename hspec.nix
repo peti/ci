@@ -96,7 +96,7 @@ rec {
         (pkgs.lib.getAttrFromPath [ghcVer system] hspec)
         base transformers
       ];
-      license = pkgs.stdenv.lib.licenses.unfree;
+      license = "unknown";
       maintainers = [simon peti];
     }));
 
@@ -115,7 +115,7 @@ rec {
         (pkgs.lib.getAttrFromPath [ghcVer system] hspec)
         base QuickCheck
       ];
-      license = pkgs.stdenv.lib.licenses.unfree;
+      license = "unknown";
       maintainers = [simon peti];
     }));
 

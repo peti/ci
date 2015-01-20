@@ -68,7 +68,7 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   funcmp = all;
   ghc = all;
   ghc-paths = all;
-  GLUT = allBut [ghc6104];
+  GLUT = allBut [ghc6104 ghc6123];
   hackage-db = all;
   haddock = default;
   happy = all;
@@ -90,7 +90,7 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   mtl = all;
   nats = allBut [ghc6104 ghc6123];
   network = all;
-  OpenGL = allBut [ghc6104];
+  OpenGL = allBut [ghc6104 ghc6123];
   parallel = all;
   parsec = all;
   permutation = all;

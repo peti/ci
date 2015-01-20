@@ -93,7 +93,6 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   OpenGL = allBut [ghc6104 ghc6123];
   parallel = all;
   parsec = all;
-  permutation = all;
   polyparse = all;
   primitive = all;
   QuickCheck = all;

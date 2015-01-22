@@ -135,7 +135,6 @@ mapTestOn {
   rcs = supportedSystems;
   redis = supportedSystems;
   rPackages.data_table = supportedSystems;
-  rPackages.Defaults = supportedSystems;
   rPackages.digest = supportedSystems;
   rPackages.doParallel = supportedSystems;
   rPackages.fishmethods = supportedSystems;

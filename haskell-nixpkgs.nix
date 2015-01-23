@@ -40,9 +40,10 @@ in
 
 pkgs.lib.optionalAttrs big (mapTestOn {
 
-  cryptol2 = supportedSystems;
+  cryptol = supportedSystems;
   darcs = supportedSystems;
   jhc = supportedSystems;
+  pandoc = supportedSystems;
 
   haskell-ng.compiler = packagesWithMetaPlatform pkgs.haskell-ng.compiler;
   haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;

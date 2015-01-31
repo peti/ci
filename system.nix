@@ -17,6 +17,7 @@ mapTestOn {
   autoconf = supportedSystems;
   automake114x = supportedSystems;
   automake = supportedSystems;
+  awscli = supportedSystems;
   banner = supportedSystems;
   bc = supportedSystems;
   bison = supportedSystems;
@@ -38,7 +39,8 @@ mapTestOn {
   emacs24Packages.bbdb = supportedSystems;
   emacs24Packages.ensime = supportedSystems;
   emacs24Packages.ess = supportedSystems;
-  emacs24Packages.haskellMode = supportedSystems;
+  emacs24Packages.flycheck = supportedSystems;
+  emacs24Packages.haskellModeGit = supportedSystems;
   emacs24Packages.magit = supportedSystems;
   emacs24Packages.maudeMode = supportedSystems;
   emacs24Packages.rainbowDelimiters = supportedSystems;
@@ -134,6 +136,7 @@ mapTestOn {
   qemu = supportedSystems;
   rcs = supportedSystems;
   redis = supportedSystems;
+  rPackages.BerlinData = supportedSystems;
   rPackages.data_table = supportedSystems;
   rPackages.digest = supportedSystems;
   rPackages.doParallel = supportedSystems;
@@ -145,7 +148,6 @@ mapTestOn {
   rPackages.xtable = supportedSystems;
   rtorrent = supportedSystems;
   rWrapper = supportedSystems;
-  s3cmd = supportedSystems;
   saneBackends = supportedSystems;
   scala = supportedSystems;
   simpleBuildTool = supportedSystems;

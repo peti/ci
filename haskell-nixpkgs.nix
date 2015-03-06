@@ -6,7 +6,6 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 let
 
-  ghc6104 = "ghc6104";
   ghc6123 = "ghc6123";
   ghc704  = "ghc704";
   ghc722  = "ghc722";
@@ -16,7 +15,7 @@ let
   ghc7101 = "ghc7101";
   ghcHEAD = "ghcHEAD";
   default = [ ghc784 ];
-  all     = [ /*ghc6104*/ ghc6123 ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD ];
+  all     = [ ghc6123 ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -52,46 +51,44 @@ pkgs.lib.optionalAttrs big (mapTestOn {
 // mapHaskellTestOn {
 
   alex = all;
-  async = allBut [ghc6104 ghc6123];
-  # Cabal_1_14_0 = [ghc6104 ghc6123 ghc704];
-  # Cabal_1_16_0_3 = [ghc6104 ghc6123 ghc704 ghc722 ghc742 ghc763];
-  Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
-  Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghcHEAD];
-  Cabal_1_22_1_0 = [ghc722 ghc742 ghc763 ghc784 ghcHEAD];
+  async = allBut [ghc6123];
+  Cabal = all;
+  Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD];
+  Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD];
+  Cabal_1_22_1_0 = [ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD];
   cabal2nix = default;
   cabal-install = all;
   case-insensitive = all;
-  cmdlib = allBut [ghc6104];
   cpphs = all;
   data-memocombinators = all;
-  doctest = allBut [ghc6104 ghc6123];
+  doctest = allBut [ghc6123];
   fgl = all;
   funcmp = all;
   ghc = all;
   ghc-paths = all;
-  GLUT = allBut [ghc6104 ghc6123];
+  GLUT = allBut [ghc6123];
   hackage-db = all;
   haddock = default;
   happy = all;
-  hashable = allBut [ghc6104];
-  hashtables = allBut [ghc6104 ghc6123];
+  hashable = all;
+  hashtables = allBut [ghc6123];
   haskell-src = all;
   hledger = default;
   hopenssl = all;
   hsdns = all;
-  hsemail = allBut [ghc6104 ghc6123];
+  hsemail = allBut [ghc6123];
   hsyslog = all;
   html = all;
   HTTP = all;
   HUnit = all;
   IfElse = all;
   jailbreak-cabal = all;
-  monad-loops = allBut [ghc6104];
-  monad-par = allBut [ghc6104];
+  monad-loops = all;
+  monad-par = all;
   mtl = all;
-  nats = allBut [ghc6104 ghc6123];
+  nats = allBut [ghc6123];
   network = all;
-  OpenGL = allBut [ghc6104 ghc6123];
+  OpenGL = allBut [ghc6123];
   parallel = all;
   parsec = all;
   polyparse = all;
@@ -100,19 +97,19 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   regex-base = all;
   regex-compat = all;
   regex-posix = all;
-  regex-TDFA = allBut [ghc6104];
+  regex-TDFA = all;
   split = all;
   stm = all;
   streamproc = all;
-  syb = allBut [ghc6104 ghc6123];
+  syb = allBut [ghc6123];
   system-fileio = all;
   system-filepath = all;
   tar = all;
   text = all;
   transformers-compat = all;
   transformers = [ghc6123 ghc704 ghc722 ghc742 ghc763];
-  unix-time = allBut [ghc6104 ghc6123];
-  unordered-containers = allBut [ghc6104 ghc6123];
+  unix-time = allBut [ghc6123];
+  unordered-containers = allBut [ghc6123];
   vector = all;
   wizards = default;
   wl-pprint = all;

@@ -43,6 +43,7 @@ pkgs.lib.optionalAttrs big (mapTestOn {
   darcs = supportedSystems;
   jhc = supportedSystems;
   pandoc = supportedSystems;
+  uhc = supportedSystems;
 
   haskell-ng.compiler = packagesWithMetaPlatform pkgs.haskell-ng.compiler;
   haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;

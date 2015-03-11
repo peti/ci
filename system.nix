@@ -8,6 +8,7 @@ mapTestOn {
 
   androidenv.platformTools = supportedSystems;
   antiword = supportedSystems;
+  anki = supportedSystems;
   asciidoc = supportedSystems;
   aspellDicts.de = supportedSystems;
   aspellDicts.en = supportedSystems;

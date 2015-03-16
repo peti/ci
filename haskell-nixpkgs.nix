@@ -1,6 +1,9 @@
 /* Essential Haskell packages in Nixpkgs that must build. */
 
-{ supportedSystems ? [ "x86_64-linux" ], big ? false }:
+{ buildAllNGPackages ? false
+, buildDarwin ? false
+, supportedSystems ? ["x86_64-linux"] ++ (if buildDarwin then ["x86_64-darwin"] else [])
+}:
 
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
@@ -37,7 +40,7 @@ let
 
 in
 
-pkgs.lib.optionalAttrs big (mapTestOn {
+pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
 
   cryptol = supportedSystems;
   darcs = supportedSystems;

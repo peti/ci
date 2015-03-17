@@ -143,6 +143,7 @@ mapTestOn {
   rPackages.doParallel = supportedSystems;
   rPackages.fishmethods = supportedSystems;
   rPackages.foreach = supportedSystems;
+  rPackages.lintr = supportedSystems;
   rPackages.memoise = supportedSystems;
   rPackages.plan = supportedSystems;
   rPackages.RSQLite = supportedSystems;

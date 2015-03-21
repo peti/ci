@@ -48,8 +48,8 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   pandoc = supportedSystems;
   uhc = supportedSystems;
 
-  haskell-ng.compiler = packagesWithMetaPlatform pkgs.haskell-ng.compiler;
-  haskellngPackages = packagesWithMetaPlatform pkgs.haskellngPackages;
+  haskell-ng.compiler = packagePlatforms pkgs.haskell-ng.compiler;
+  haskellngPackages = packagePlatforms pkgs.haskellngPackages;
 
 })
 // mapHaskellTestOn {

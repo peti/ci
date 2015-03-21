@@ -5,5 +5,5 @@
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
 mapTestOn {
-  rPackages = packagesWithMetaPlatform pkgs.rPackages;
+  rPackages = packagePlatforms pkgs.rPackages;
 }

@@ -137,6 +137,7 @@ mapTestOn {
   qemu = supportedSystems;
   rcs = supportedSystems;
   redis = supportedSystems;
+  rPackages.assertthat = supportedSystems;
   rPackages.BerlinData = supportedSystems;
   rPackages.data_table = supportedSystems;
   rPackages.digest = supportedSystems;

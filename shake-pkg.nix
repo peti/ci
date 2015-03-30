@@ -5,11 +5,11 @@
 }:
 mkDerivation {
   pname = "shake";
-  version = "0.14.3";
+  version = "0.15";
   src = fetchgit {
     url = "git://github.com/ndmitchell/shake.git";
-    sha256 = "63ae26b3cdbd5007c100b83fc6e9a1e291b9c2aace0ae3c880b5cda3b4c0c11d";
-    rev = "d44aaf4e1bd018c993d586f0e09ac7755a99bf06";
+    sha256 = "143f73127293d68458059972be510a9934b612a8423b87fc761f8e8850af0db5";
+    rev = "400114857f3d9ef4398d913a3fe454a754423a85";
   };
   isLibrary = true;
   isExecutable = true;
@@ -23,7 +23,7 @@ mkDerivation {
     js-flot js-jquery old-time process QuickCheck random time
     transformers unix unordered-containers utf8-string
   ];
-  homepage = "http://www.shakebuild.com/";
+  homepage = "http://shakebuild.com";
   description = "Build system library, like Make, but more accurate dependencies";
   license = stdenv.lib.licenses.bsd3;
 }

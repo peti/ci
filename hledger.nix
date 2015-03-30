@@ -26,13 +26,14 @@ rec {
       version = hledgerSrc.gitTag;
       postUnpack = "sourceRoot+=/hledger-lib";
       buildDepends = with haskellPackages; [
-        array base blaze-markup bytestring cmdargs containers csv Decimal
-        directory filepath HUnit mtl old-locale old-time parsec pretty-show
-        regex-tdfa regexpr safe split time transformers utf8-string
+        array base base-compat blaze-markup bytestring cmdargs containers
+        csv Decimal directory filepath HUnit mtl mtl-compat old-time parsec
+        pretty-show regex-tdfa regexpr safe split time transformers
+        utf8-string
       ];
       testDepends = with haskellPackages; [
-        array base blaze-markup cmdargs containers csv Decimal directory
-        filepath HUnit mtl old-locale old-time parsec pretty-show
+        array base base-compat blaze-markup cmdargs containers csv Decimal
+        directory filepath HUnit mtl mtl-compat old-time parsec pretty-show
         regex-tdfa regexpr safe split test-framework test-framework-hunit
         time transformers
       ];
@@ -56,17 +57,18 @@ rec {
       isLibrary = true;
       isExecutable = true;
       buildDepends = with haskellPackages; [
-        base cmdargs containers csv directory filepath haskeline
-        my-hledger-lib HUnit mtl old-locale old-time parsec pretty-show
-        process regex-tdfa regexpr safe shakespeare shakespeare-text split
-        tabular text time utf8-string wizards
+        base base-compat cmdargs containers csv directory filepath
+        haskeline my-hledger-lib HUnit mtl mtl-compat old-time parsec
+        pretty-show process regex-tdfa regexpr safe shakespeare
+        shakespeare-text split tabular terminfo text time utf8-string
+        wizards
       ];
       testDepends = with haskellPackages; [
-        base cmdargs containers csv directory filepath haskeline
-        my-hledger-lib HUnit mtl old-locale old-time parsec pretty-show
-        process regex-tdfa regexpr safe shakespeare shakespeare-text split
-        tabular test-framework test-framework-hunit text time transformers
-        wizards
+        base base-compat cmdargs containers csv directory filepath
+        haskeline my-hledger-lib HUnit mtl mtl-compat old-time parsec
+        pretty-show process regex-tdfa regexpr safe shakespeare
+        shakespeare-text split tabular test-framework test-framework-hunit
+        text time transformers wizards
       ];
       homepage = "http://hledger.org";
       description = "The main command-line interface for the hledger accounting tool";
@@ -89,14 +91,14 @@ rec {
       isLibrary = true;
       isExecutable = true;
       buildDepends = with haskellPackages; [
-        base blaze-html blaze-markup bytestring clientsession cmdargs
-        conduit-extra data-default directory filepath hjsmin my-hledger
-        my-hledger-lib http-client http-conduit HUnit json network-conduit
-        old-locale parsec regexpr safe shakespeare template-haskell text
-        time transformers wai wai-extra wai-handler-launch warp yaml yesod
-        yesod-core yesod-static
+        base base-compat blaze-html blaze-markup bytestring clientsession
+        cmdargs conduit-extra data-default directory filepath hjsmin
+        my-hledger my-hledger-lib http-client http-conduit HUnit json
+        network-conduit parsec regexpr safe shakespeare template-haskell
+        text time transformers wai wai-extra wai-handler-launch warp yaml
+        yesod yesod-core yesod-form yesod-static
       ];
-      testDepends = with haskellPackages; [ base hspec yesod yesod-test ];
+      testDepends = with haskellPackages; [ base base-compat hspec yesod yesod-test ];
       homepage = "http://hledger.org";
       description = "A web interface for the hledger accounting tool";
       license = "GPL";

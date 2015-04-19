@@ -78,12 +78,9 @@ mapTestOn {
   grip = supportedSystems;
   gv = supportedSystems;
   hardlink = supportedSystems;
-  haskellngPackages.BNFC = supportedSystems;
   haskellngPackages.cabal-install = supportedSystems;
   haskellngPackages.doctest = supportedSystems;
-  haskellngPackages.ghc-mod = supportedSystems;
   haskellngPackages.GLUT = supportedSystems;
-  haskellngPackages.HList = supportedSystems;
   haskellngPackages.hspec = supportedSystems;
   haskellngPackages.lens = supportedSystems;
   haskellngPackages.OpenGL = supportedSystems;

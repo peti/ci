@@ -16,7 +16,7 @@ rec {
     inherit version versionSuffix;
     dontBuild = false;
     buildInputs = with pkgs; [
-      git perl texinfo5 python lzip htmlTidy
+      git perl texinfo5 python3 lzip htmlTidy
       (texLiveAggregationFun { paths = [ texLive texLiveCMSuper texinfo5 ]; })
     ];
     postUnpack = ''
@@ -26,11 +26,11 @@ rec {
       ln -s ../gnulib $sourceRoot/gnulib
     '';
     buildPhase = ''
-      make -j$NIX_BUILD_CORES maintainer-all all
-      make web-manual && bash fix-website.sh
+      make -j$NIX_BUILD_CORES PYTHON=python3 maintainer-all all
+      make PYTHON=python3 web-manual && bash fix-website.sh
     '';
     distPhase = ''
-      make distcheck
+      make PYTHON=python3 distcheck
       mkdir $out/tarballs
       mv -v autoconf-archive-*.tar* $out/tarballs/
     '';

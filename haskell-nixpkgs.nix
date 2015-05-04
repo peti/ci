@@ -30,7 +30,7 @@ let
 
   mkJob = ghc: pkg:
     let
-      pkgPath = ["haskellPackages_${ghc}" "${pkg}"];
+      pkgPath = ["haskell-ng" "packages" ghc pkg];
       systems = filterSupportedSystems (pkgs.lib.attrByPath (pkgPath ++ ["meta" "platforms"]) [] pkgs);
     in
       map (system: mkSystemJob system ghc pkg) systems;

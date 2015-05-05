@@ -111,7 +111,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   system-filepath = all;
   tar = all;
   text = all;
-  transformers-compat = all;
+  transformers-compat = allBut [ghc6123];
   transformers = [ghc6123 ghc704 ghc722 ghc742 ghc763];
   unix-time = allBut [ghc6123];
   unordered-containers = allBut [ghc6123];

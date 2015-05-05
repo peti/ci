@@ -89,7 +89,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   IfElse = all;
   jailbreak-cabal = all;
   monad-loops = all;
-  monad-par = all;
+  monad-par = allBut [ghcHEAD];
   mtl = all;
   nats = allBut [ghc6123];
   network = all;

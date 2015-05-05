@@ -55,7 +55,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
 })
 // mapHaskellTestOn {
 
-  alex = all;
+  alex = allBut [ghcHEAD];
   async = allBut [ghc6123];
   Cabal = all;
   Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD];

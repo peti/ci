@@ -82,6 +82,8 @@ mapTestOn {
   haskellngPackages.doctest = supportedSystems;
   haskellngPackages.GLUT = supportedSystems;
   haskellngPackages.hspec = supportedSystems;
+  haskellngPackages.hakyll = supportedSystems;
+  haskellngPackages.haskintex = supportedSystems;
   haskellngPackages.lens = supportedSystems;
   haskellngPackages.OpenGL = supportedSystems;
   haskellngPackages.pandoc = supportedSystems;

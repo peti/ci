@@ -9,6 +9,7 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 let
 
+  ghc6104 = "ghc6104";
   ghc6123 = "ghc6123";
   ghc704  = "ghc704";
   ghc722  = "ghc722";
@@ -18,7 +19,7 @@ let
   ghc7101 = "ghc7101";
   ghcHEAD = "ghcHEAD";
   default = [ ghc7101 ];
-  all     = [ ghc6123 ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD ];
+  all     = [ /*ghc6123*/ ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -112,7 +113,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   tar = all;
   text = all;
   transformers-compat = allBut [ghc6123];
-  transformers = [ghc6123 ghc704 ghc722 ghc742 ghc763];
+  transformers = [/*ghc6123*/ ghc704 ghc722 ghc742 ghc763];
   unix-time = allBut [ghc6123];
   unordered-containers = allBut [ghc6123];
   vector = all;

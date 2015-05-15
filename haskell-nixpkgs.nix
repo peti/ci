@@ -46,9 +46,8 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   cryptol = supportedSystems;
   darcs = supportedSystems;
   gitAndTools.gitAnnex = supportedSystems;
-  jhc = supportedSystems;
+  hugs = supportedSystems;
   pandoc = supportedSystems;
-  uhc = supportedSystems;
 
   haskell-ng.compiler = packagePlatforms pkgs.haskell-ng.compiler;
   haskellngPackages = packagePlatforms pkgs.haskellngPackages;

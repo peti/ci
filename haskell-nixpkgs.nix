@@ -107,8 +107,6 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   stm = all;
   streamproc = all;
   syb = allBut [ghc6123];
-  system-fileio = all;
-  system-filepath = all;
   tar = all;
   text = all;
   transformers-compat = allBut [ghc6123];

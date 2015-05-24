@@ -14,7 +14,6 @@ mapTestOn {
   aspellDicts.en = supportedSystems;
   aspell = supportedSystems;
   asymptote = supportedSystems;
-  audacious = supportedSystems;
   autoconf = supportedSystems;
   automake114x = supportedSystems;
   automake = supportedSystems;
@@ -31,7 +30,6 @@ mapTestOn {
   davfs2 = supportedSystems;
   dia = supportedSystems;
   dmenu = supportedSystems;
-  dmidecode = supportedSystems;
   docbook2x = supportedSystems;
   docbook_xml_dtd_45 = supportedSystems;
   docbook_xml_xslt = supportedSystems;
@@ -71,7 +69,6 @@ mapTestOn {
   gnupg1compat = supportedSystems;
   gnuplot = supportedSystems;
   gnutls = supportedSystems;
-  gocr = supportedSystems;
   gparted = supportedSystems;
   gprolog = supportedSystems;
   graphviz = supportedSystems;

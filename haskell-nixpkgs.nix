@@ -45,7 +45,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
 
   cryptol = supportedSystems;
   darcs = supportedSystems;
-  gitAndTools.gitAnnex = supportedSystems;
+  gitAndTools.git-annex = supportedSystems;
   hugs = supportedSystems;
   pandoc = supportedSystems;
 

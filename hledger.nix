@@ -18,7 +18,7 @@ rec {
   hledger-lib = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell" "packages" ghcVer] pkgs;
     in
     haskellPackages.mkDerivation {
       pname = "hledger-lib";
@@ -46,7 +46,7 @@ rec {
   hledger = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell" "packages" ghcVer] pkgs;
       my-hledger-lib = pkgs.lib.getAttrFromPath [ghcVer system] hledger-lib;
     in
     haskellPackages.mkDerivation {
@@ -79,7 +79,7 @@ rec {
   hledger-web = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell" "packages" ghcVer] pkgs;
       my-hledger-lib = pkgs.lib.getAttrFromPath [ghcVer system] hledger-lib;
       my-hledger = pkgs.lib.getAttrFromPath [ghcVer system] hledger;
     in
@@ -108,7 +108,7 @@ rec {
   hledger-interest = genAttrs supportedCompilers (ghcVer: genAttrs supportedPlatforms (system:
     let
       pkgs = import <nixpkgs> { inherit system; };
-      haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghcVer] pkgs;
+      haskellPackages = pkgs.lib.getAttrFromPath ["haskell" "packages" ghcVer] pkgs;
       my-hledger-lib = pkgs.lib.getAttrFromPath [ghcVer system] hledger-lib;
     in
     haskellPackages.mkDerivation {

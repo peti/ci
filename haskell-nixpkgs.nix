@@ -31,13 +31,13 @@ let
 
   mkJob = ghc: pkg:
     let
-      pkgPath = ["haskell-ng" "packages" ghc pkg];
+      pkgPath = ["haskell" "packages" ghc pkg];
       systems = filterSupportedSystems (pkgs.lib.attrByPath (pkgPath ++ ["meta" "platforms"]) [] pkgs);
     in
       map (system: mkSystemJob system ghc pkg) systems;
 
   mkSystemJob = system: ghc: pkg:
-    pkgs.lib.nameValuePair "${ghc}" (pkgs.lib.setAttrByPath [system] ((pkgs.lib.getAttrFromPath ["haskell-ng" "packages" ghc pkg] (pkgsFor system))));
+    pkgs.lib.nameValuePair "${ghc}" (pkgs.lib.setAttrByPath [system] ((pkgs.lib.getAttrFromPath ["haskell" "packages" ghc pkg] (pkgsFor system))));
 
 in
 
@@ -49,8 +49,8 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   hugs = supportedSystems;
   pandoc = supportedSystems;
 
-  haskell-ng.compiler = packagePlatforms pkgs.haskell-ng.compiler;
-  haskellngPackages = packagePlatforms pkgs.haskellngPackages;
+  haskell.compiler = packagePlatforms pkgs.haskell.compiler;
+  haskellPackages = packagePlatforms pkgs.haskellPackages;
 
 })
 // mapHaskellTestOn {

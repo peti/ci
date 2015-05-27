@@ -10,7 +10,7 @@ let
 
   genBuild = system: compiler: path: gitSource:
     let pkgs = import <nixpkgs> { inherit system; };
-        haskellPackages = pkgs.lib.getAttrFromPath ["haskell-ng" "packages" compiler] pkgs;
+        haskellPackages = pkgs.lib.getAttrFromPath ["haskell" "packages" compiler] pkgs;
     in
       haskellPackages.callPackage path {
         mkDerivation = expr: haskellPackages.mkDerivation (expr // {

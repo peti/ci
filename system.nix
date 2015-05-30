@@ -58,7 +58,7 @@ mapTestOn {
   gdb = supportedSystems;
   gettext = supportedSystems;
   ghostscriptX = supportedSystems;
-  gitAndTools.gitAnnex = supportedSystems;
+  gitAndTools.git-annex = supportedSystems;
   gitFull = supportedSystems;
   glxinfo = supportedSystems;
   gmpxx = supportedSystems;

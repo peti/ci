@@ -21,6 +21,7 @@ mapTestOn {
   banner = supportedSystems;
   bc = supportedSystems;
   bison = supportedSystems;
+  cabal2nix = supportedSystems;
   celestia = supportedSystems;
   curl = supportedSystems;
   cvsps = supportedSystems;

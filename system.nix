@@ -105,7 +105,7 @@ mapTestOn {
   manpages = supportedSystems;
   maude = supportedSystems;
   maxima = supportedSystems;
-  mercurial = supportedSystems;
+  mercurialFull = supportedSystems;
   mesa_noglu = supportedSystems;
   miniHttpd = supportedSystems;
   mpack = supportedSystems;

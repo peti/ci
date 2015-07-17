@@ -4,7 +4,7 @@
 }:
 
 let
-  pkgs = import <nixpkgs> { };
+  pkgs = import <nixpkgs> { config.allowTexliveBuilds = true; };
   version = autoconfArchiveSrc.gitTag;
   versionSuffix = "";
 in

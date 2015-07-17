@@ -5,7 +5,7 @@
 , supportedSystems ? ["x86_64-linux"] ++ (if buildDarwin then ["x86_64-darwin"] else [])
 }:
 
-with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
+with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; allowTexliveBuilds = true; });
 
 let
 

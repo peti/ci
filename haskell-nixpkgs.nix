@@ -16,10 +16,10 @@ let
   ghc742  = "ghc742";
   ghc763  = "ghc763";
   ghc784  = "ghc784";
-  ghc7101 = "ghc7101";
+  ghc7102 = "ghc7102";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc7101 ];
-  all     = [ /*ghc6123*/ ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD ];
+  default = [ ghc7102 ];
+  all     = [ /*ghc6123*/ ghc704 ghc722 ghc742 ghc763 ghc784 ghc7102 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -58,9 +58,9 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   alex = allBut [ghcHEAD];
   async = allBut [ghc6123];
   Cabal = all;
-  Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD];
+  Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghc7102 ghcHEAD];
   Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
-  Cabal_1_22_1_0 = [ghc722 ghc742 ghc763 ghc784 ghc7101 ghcHEAD];
+  Cabal_1_22_1_0 = [ghc722 ghc742 ghc763 ghc784 ghc7102 ghcHEAD];
   cabal2nix = default;
   cabal-install = allBut [ghc6123];
   case-insensitive = all;

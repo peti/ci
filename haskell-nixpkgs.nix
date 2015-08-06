@@ -45,6 +45,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
 
   cryptol = supportedSystems;
   darcs = supportedSystems;
+  emacsPackages.haskellMode = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   hugs = supportedSystems;
   pandoc = supportedSystems;

@@ -40,7 +40,7 @@ mapTestOn {
   emacs24Packages.ensime = supportedSystems;
   emacs24Packages.ess = supportedSystems;
   emacs24Packages.flycheck = supportedSystems;
-  emacs24Packages.haskellModeGit = supportedSystems;
+  emacs24Packages.haskellMode = supportedSystems;
   emacs24Packages.magit = supportedSystems;
   emacs24Packages.maudeMode = supportedSystems;
   emacs24Packages.rainbowDelimiters = supportedSystems;

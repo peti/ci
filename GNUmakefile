@@ -1,6 +1,6 @@
 # GNUmakefile
 
-packages := funcmp hackage-db hsyslog largeword shake
+packages := funcmp hackage-db hsyslog largeword shake hledger-interest
 nixFiles := $(foreach pkg,$(packages),$(pkg)-pkg.nix)
 
 all:	$(nixFiles)
@@ -8,6 +8,11 @@ all:	$(nixFiles)
 funcmp-pkg.nix:
 	rm -f $@
 	cabal2nix http://git.savannah.gnu.org/r/funcmp.git >$@
+	chmod -w $@
+
+hledger-interest-pkg.nix:
+	rm -f $@
+	cabal2nix git://github.com/peti/hledger-interest.git >$@
 	chmod -w $@
 
 hackage-db-pkg.nix:

@@ -9,7 +9,7 @@ mkDerivation {
     sha256 = "214030ce5794b6684d6a5b3ad49538b42492f206a1186e95aeba70cdc38c98db";
     rev = "0b32fe92f54a607c780b8c4674f359ce63d599bd";
   };
-  buildDepends = [
+  libraryHaskellDepends = [
     base bytestring Cabal containers directory filepath tar utf8-string
   ];
   homepage = "http://github.com/peti/hackage-db";

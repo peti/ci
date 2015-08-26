@@ -4,14 +4,14 @@
 }:
 mkDerivation {
   pname = "largeword";
-  version = "1.2.3";
+  version = "1.2.4";
   src = fetchgit {
     url = "git://github.com/idontgetoutmuch/largeword.git";
-    sha256 = "4f9be69ea9c1a55977ca3fafd1dd7a7b708c49ad4a797476afa2f9cc7ca0a1fa";
-    rev = "50978f18168c37da7c9ee73bdb545131ac40b9c9";
+    sha256 = "6c41e67578a42859377c57e4302b41d979e30ce40bfcb29d3e6cfcbc33501bb8";
+    rev = "7abd809c137281d29fd5c49f1f1c3f086b75648c";
   };
-  buildDepends = [ base binary ];
-  testDepends = [
+  libraryHaskellDepends = [ base binary ];
+  testHaskellDepends = [
     base binary bytestring HUnit QuickCheck test-framework
     test-framework-hunit test-framework-quickcheck2
   ];

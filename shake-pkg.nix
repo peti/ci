@@ -5,20 +5,25 @@
 }:
 mkDerivation {
   pname = "shake";
-  version = "0.15";
+  version = "0.15.5";
   src = fetchgit {
     url = "git://github.com/ndmitchell/shake.git";
-    sha256 = "143f73127293d68458059972be510a9934b612a8423b87fc761f8e8850af0db5";
-    rev = "400114857f3d9ef4398d913a3fe454a754423a85";
+    sha256 = "081198a3f6087fa48d22f3683907850db17c0c76ebf479ad970d8687f41042c5";
+    rev = "45bbd6fe52a691ecf46256d34761f9e5c16ef3b2";
   };
   isLibrary = true;
   isExecutable = true;
-  buildDepends = [
+  libraryHaskellDepends = [
     base binary bytestring deepseq directory extra filepath hashable
     js-flot js-jquery old-time process random time transformers unix
     unordered-containers utf8-string
   ];
-  testDepends = [
+  executableHaskellDepends = [
+    base binary bytestring deepseq directory extra filepath hashable
+    js-flot js-jquery old-time process random time transformers unix
+    unordered-containers utf8-string
+  ];
+  testHaskellDepends = [
     base binary bytestring deepseq directory extra filepath hashable
     js-flot js-jquery old-time process QuickCheck random time
     transformers unix unordered-containers utf8-string

@@ -37,15 +37,12 @@ mapTestOn {
   doxygen = supportedSystems;
   duplicity = supportedSystems;
   emacs24Packages.bbdb = supportedSystems;
-  emacs24Packages.ensime = supportedSystems;
   emacs24Packages.ess = supportedSystems;
   emacs24Packages.flycheck = supportedSystems;
   emacs24Packages.haskellMode = supportedSystems;
   emacs24Packages.magit = supportedSystems;
   emacs24Packages.maudeMode = supportedSystems;
   emacs24Packages.rainbowDelimiters = supportedSystems;
-  emacs24Packages.sbtMode = supportedSystems;
-  emacs24Packages.scalaMode2 = supportedSystems;
   emacs24Packages.writeGood = supportedSystems;
   emacs = supportedSystems;
   eukleides = supportedSystems;
@@ -149,8 +146,6 @@ mapTestOn {
   rtorrent = supportedSystems;
   rWrapper = supportedSystems;
   saneBackends = supportedSystems;
-  scala = supportedSystems;
-  simpleBuildTool = supportedSystems;
   sqliteInteractive = supportedSystems;
   stellarium = supportedSystems;
   subversion = supportedSystems;

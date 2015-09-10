@@ -1,30 +1,19 @@
-{ mkDerivation, base, containers, doctest, fetchgit, hspec, HUnit
-, mtl, parsec, QuickCheck, stdenv, transformers
-, transformers-compat
+{ mkDerivation, base, deepseq, doctest, fetchgit, lens, pretty
+, QuickCheck, regex-posix, stdenv
 }:
 mkDerivation {
   pname = "language-nix";
-  version = "1.0.1";
+  version = "2";
   src = fetchgit {
     url = "git://github.com/peti/language-nix.git";
-    sha256 = "d410efa889272956e6595cc0eb37792df2a197724562224f11e846916a02e9bd";
-    rev = "e0641777d1e7292429c5c152e8370d2b2dab919b";
+    sha256 = "33e46fe4acf182487386b06c0eaf7076c1a77ceb1d9111e804a28424e7c302c1";
+    rev = "3a287152877cf10f3bb052b5ccc2906357f02f01";
   };
-  isLibrary = true;
-  isExecutable = true;
-  libraryHaskellDepends = [
-    base containers mtl parsec QuickCheck transformers
-    transformers-compat
-  ];
-  executableHaskellDepends = [
-    base containers mtl parsec QuickCheck transformers
-    transformers-compat
-  ];
+  libraryHaskellDepends = [ base deepseq lens pretty regex-posix ];
   testHaskellDepends = [
-    base containers doctest hspec HUnit mtl parsec QuickCheck
-    transformers transformers-compat
+    base deepseq doctest lens pretty QuickCheck regex-posix
   ];
-  homepage = "https://github.com/peti/language-nix";
+  homepage = "https://github.com/peti/language-nix#readme";
   description = "Data types and useful functions to represent and manipulate the Nix language";
   license = stdenv.lib.licenses.bsd3;
 }

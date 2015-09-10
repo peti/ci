@@ -1,16 +1,15 @@
-{ mkDerivation, base, fetchgit, nix, process, stdenv
-}:
+{ mkDerivation, base, fetchgit, nix, process, stdenv }:
 mkDerivation {
   pname = "nix-paths";
   version = "1";
   src = fetchgit {
     url = "git://github.com/peti/nix-paths.git";
-    sha256 = "4d4139b6defabd1f864165224e79f7cc618c437a088d28408665cd8b3c7f7f40";
-    rev = "e199a9691fd6478ba21799947dcc63759f8d785f";
+    sha256 = "60a68389523cbbfaeb9ac7da57930c6d88decf85dcbfef8e95dd29220b537d46";
+    rev = "a208463f9fd26f8a69d7547cbac5a97ca3651162";
   };
   libraryHaskellDepends = [ base process ];
   libraryToolDepends = [ nix ];
-  homepage = "https://github.com/nixos/cabal2nix#readme";
+  homepage = "https://github.com/peti/nix-paths";
   description = "Knowledge of Nix's installation directories";
   license = stdenv.lib.licenses.bsd3;
 }

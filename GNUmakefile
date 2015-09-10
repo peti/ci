@@ -1,6 +1,6 @@
 # GNUmakefile
 
-packages := funcmp hackage-db hsyslog largeword shake hledger-interest language-nix
+packages := funcmp hackage-db hsyslog largeword shake hledger-interest language-nix nix-paths
 nixFiles := $(foreach pkg,$(packages),$(pkg)-pkg.nix)
 
 all:	$(nixFiles)
@@ -38,6 +38,11 @@ shake-pkg.nix:
 largeword-pkg.nix:
 	rm -f $@
 	cabal2nix git://github.com/idontgetoutmuch/largeword.git >$@
+	chmod -w $@
+
+nix-paths-pkg.nix:
+	rm -f $@
+	cabal2nix git://github.com/peti/nix-paths.git >$@
 	chmod -w $@
 
 clean::

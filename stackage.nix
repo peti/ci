@@ -38,7 +38,12 @@ let
 
 in
 
-mapHaskellTestOn {
+mapTestOn {
+
+  haskell.packages.lts-3_5 = packagePlatforms pkgs.haskell.packages.lts-3_5;
+
+}
+// mapHaskellTestOn {
 
   mtl = all;
 

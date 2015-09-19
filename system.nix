@@ -6,7 +6,7 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 mapTestOn {
 
-  androidenv.platformTools = supportedSystems;
+  # androidenv.platformTools = supportedSystems;
   antiword = supportedSystems;
   anki = supportedSystems;
   asciidoc = supportedSystems;

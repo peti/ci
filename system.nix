@@ -6,7 +6,7 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 mapTestOn {
 
-  # androidenv.platformTools = supportedSystems;
+  androidenv.platformTools = supportedSystems;
   antiword = supportedSystems;
   anki = supportedSystems;
   asciidoc = supportedSystems;
@@ -40,6 +40,8 @@ mapTestOn {
   emacs24Packages.ess = supportedSystems;
   emacs24Packages.flycheck = supportedSystems;
   emacs24Packages.haskellMode = supportedSystems;
+  emacs24Packages.ido-ubiquitous = supportedSystems;
+  emacs24Packages.markdownMode = supportedSystems;
   emacs24Packages.magit = supportedSystems;
   emacs24Packages.maudeMode = supportedSystems;
   emacs24Packages.rainbowDelimiters = supportedSystems;

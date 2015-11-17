@@ -138,7 +138,6 @@ mapTestOn {
   rPackages.data_table = supportedSystems;
   rPackages.digest = supportedSystems;
   rPackages.doParallel = supportedSystems;
-  rPackages.fishmethods = supportedSystems;
   rPackages.foreach = supportedSystems;
   rPackages.lintr = supportedSystems;
   rPackages.memoise = supportedSystems;

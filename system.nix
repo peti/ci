@@ -2,7 +2,7 @@
 
 { supportedSystems ? [ "x86_64-linux" ] }:
 
-with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; allowTexliveBuilds = true; });
+with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
 mapTestOn {
 
@@ -151,7 +151,6 @@ mapTestOn {
   stellarium = supportedSystems;
   subversion = supportedSystems;
   telnet = supportedSystems;
-  texLiveFull = supportedSystems;
   tightvnc = supportedSystems;
   tree = supportedSystems;
   unetbootin = supportedSystems;

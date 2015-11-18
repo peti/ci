@@ -4,7 +4,7 @@
 }:
 
 let
-  pkgs = import <nixpkgs> { config.allowTexliveBuilds = true; };
+  pkgs = import <nixpkgs> { };
   version = autoconfArchiveSrc.gitTag;
   versionSuffix = "";
 in
@@ -17,7 +17,7 @@ rec {
     dontBuild = false;
     buildInputs = with pkgs; [
       git perl texinfo5 python3 lzip htmlTidy
-      (texLiveAggregationFun { paths = [ texLive texLiveCMSuper texinfo5 ]; })
+      (texlive.combine { inherit (texlive) scheme-small; })
     ];
     postUnpack = ''
       cp -r ${pkgs.gnulib}/ gnulib/

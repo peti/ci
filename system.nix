@@ -55,8 +55,10 @@ mapTestOn {
   firefoxWrapper = supportedSystems;
   flex = supportedSystems;
   gcc = supportedSystems;
+  gnome.GConf = supportedSystems;
   gdb = supportedSystems;
   gettext = supportedSystems;
+  ghostscript = supportedSystems;
   ghostscriptX = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   gitFull = supportedSystems;
@@ -95,6 +97,7 @@ mapTestOn {
   id3v2 = supportedSystems;
   ikiwiki = supportedSystems;
   imagemagick = supportedSystems;
+  imlib2 = supportedSystems;
   lame = supportedSystems;
   ledger2 = supportedSystems;
   ledger = supportedSystems;
@@ -174,6 +177,7 @@ mapTestOn {
   xmlto = supportedSystems;
   xpdf = supportedSystems;
   xsane = supportedSystems;
+  xterm = supportedSystems;
   xxdiff = supportedSystems;
   youtube-dl = supportedSystems;
   zlib = supportedSystems;

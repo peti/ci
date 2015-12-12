@@ -115,6 +115,7 @@ mapTestOn {
   mpfr = supportedSystems;
   mpg123 = supportedSystems;
   mplayer = supportedSystems;
+  mpv = supportedSystems;
   nbd = supportedSystems;
   ncftp = supportedSystems;
   ncurses = supportedSystems;

@@ -7,8 +7,8 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 mapTestOn {
 
   androidenv.platformTools = supportedSystems;
-  antiword = supportedSystems;
   anki = supportedSystems;
+  antiword = supportedSystems;
   asciidoc = supportedSystems;
   aspellDicts.de = supportedSystems;
   aspellDicts.en = supportedSystems;
@@ -41,8 +41,8 @@ mapTestOn {
   emacs24Packages.flycheck = supportedSystems;
   emacs24Packages.haskellMode = supportedSystems;
   emacs24Packages.ido-ubiquitous = supportedSystems;
-  emacs24Packages.markdownMode = supportedSystems;
   emacs24Packages.magit = supportedSystems;
+  emacs24Packages.markdownMode = supportedSystems;
   emacs24Packages.maudeMode = supportedSystems;
   emacs24Packages.rainbowDelimiters = supportedSystems;
   emacs24Packages.writeGood = supportedSystems;
@@ -55,16 +55,17 @@ mapTestOn {
   firefoxWrapper = supportedSystems;
   flex = supportedSystems;
   gcc = supportedSystems;
-  gnome.GConf = supportedSystems;
   gdb = supportedSystems;
   gettext = supportedSystems;
   ghostscript = supportedSystems;
   ghostscriptX = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
+  gitAndTools.gitRemoteGcrypt  = supportedSystems;
   gitFull = supportedSystems;
   glxinfo = supportedSystems;
   gmpxx = supportedSystems;
   gmrun = supportedSystems;
+  gnome.GConf = supportedSystems;
   gnucash = supportedSystems;
   gnum4 = supportedSystems;
   gnumake = supportedSystems;
@@ -80,9 +81,9 @@ mapTestOn {
   haskellPackages.cabal-install = supportedSystems;
   haskellPackages.doctest = supportedSystems;
   haskellPackages.GLUT = supportedSystems;
-  haskellPackages.hspec = supportedSystems;
   haskellPackages.hakyll = supportedSystems;
   haskellPackages.haskintex = supportedSystems;
+  haskellPackages.hspec = supportedSystems;
   haskellPackages.lens = supportedSystems;
   haskellPackages.OpenGL = supportedSystems;
   haskellPackages.pandoc = supportedSystems;
@@ -119,7 +120,7 @@ mapTestOn {
   nbd = supportedSystems;
   ncftp = supportedSystems;
   ncurses = supportedSystems;
-  nixops = supportedSystems;
+  nixopsUnstable = supportedSystems;
   nixpkgs-lint = supportedSystems;
   nix-repl = supportedSystems;
   openjdk = supportedSystems;
@@ -132,6 +133,7 @@ mapTestOn {
   posix_man_pages = supportedSystems;
   postfix = supportedSystems;
   procmail = supportedSystems;
+  pylint = supportedSystems;
   python3 = supportedSystems;
   python = supportedSystems;
   qemu = supportedSystems;
@@ -151,6 +153,7 @@ mapTestOn {
   rtorrent = supportedSystems;
   rWrapper = supportedSystems;
   saneBackends = supportedSystems;
+  scons = supportedSystems;
   sqliteInteractive = supportedSystems;
   stellarium = supportedSystems;
   subversion = supportedSystems;

@@ -129,7 +129,7 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
   Cabal_1_22_1_0 = [ghc722 ghc742 ghc763 ghc784 ghc7103 ghcHEAD];
   cabal2nix = default;
-  cabal-install = allBut [ghc6123 ghcHEAD];
+  cabal-install = allBut [ghc6123 ghc704 ghc722 ghc742 ghc763 ghcHEAD];
   case-insensitive = all;
   cpphs = all;
   data-memocombinators = all;

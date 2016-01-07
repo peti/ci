@@ -129,7 +129,6 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   Cabal_1_18_1_6 = [ghc704 ghc722 ghc742 ghc763 ghc784 ghc7103];
   Cabal_1_20_0_3 = [ghc704 ghc722 ghc742 ghc763 ghc784];
   Cabal_1_22_1_0 = [ghc722 ghc742 ghc763 ghc784 ghc7103 ghcHEAD];
-  cabal2nix = default;
   cabal-install = allBut [ghc6123 ghc704 ghc722 ghc742 ghc763 ghcHEAD];
   case-insensitive = all;
   cpphs = all;
@@ -139,14 +138,11 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   funcmp = all;
   ghc = all;
   ghc-paths = all;
-  GLUT = allBut [ghc6123];
   hackage-db = all;
-  haddock = default;
   happy = all;
   hashable = all;
   hashtables = allBut [ghc6123];
   haskell-src = all;
-  hledger = default;
   hopenssl = all;
   hsdns = all;
   hsemail = allBut [ghc6123];
@@ -161,7 +157,6 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   mtl = all;
   nats = allBut [ghc6123];
   network = all;
-  OpenGL = allBut [ghc6123];
   parallel = all;
   parsec = all;
   polyparse = all;
@@ -182,7 +177,6 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   unix-time = allBut [ghc6123];
   unordered-containers = allBut [ghc6123];
   vector = all;
-  wizards = default;
   wl-pprint = all;
   zlib = all;
 

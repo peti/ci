@@ -2,7 +2,7 @@
 
 { gitSource, expressionPath
 , supportedPlatforms ? ["x86_64-linux"]
-, supportedCompilers ? [/*"ghc6123"*/ "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghc7103" /*"ghcHEAD"*/]
+, supportedCompilers ? [/*"ghc6123"*/ "ghc704" "ghc722" "ghc742" "ghc763" "ghc784" "ghc7103" "ghc801" /*"ghcHEAD"*/]
 }:
 
 let

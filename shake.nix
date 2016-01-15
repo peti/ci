@@ -5,7 +5,7 @@
 {
 
   shake = import ./generate-haskell-build.nix {
-    supportedCompilers = ["ghc722" "ghc742" "ghc763" "ghc784"];
+    supportedCompilers = ["ghc722" "ghc742" "ghc763" "ghc784" "ghc7123" "ghc801"];
     gitSource = shakeSrc;
     expressionPath = ./shake-pkg.nix;
   };

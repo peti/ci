@@ -7,7 +7,7 @@
   language-nix = import ./generate-haskell-build.nix {
     gitSource = languageNixSrc;
     expressionPath = ./language-nix-pkg.nix;
-    supportedCompilers = ["ghc763" "ghc784" "ghc7103"];
+    supportedCompilers = ["ghc763" "ghc784" "ghc7103" "ghc801"];
   };
 
 }

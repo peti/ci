@@ -120,7 +120,8 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   # haskell.packages.lts-3_19 = packagePlatforms pkgs.haskell.packages.lts-3_19;
   # haskell.packages.lts-3_20 = packagePlatforms pkgs.haskell.packages.lts-3_20;
   # haskell.packages.lts-4_0 = packagePlatforms pkgs.haskell.packages.lts-4_0;
-  haskell.packages.lts-4_1 = packagePlatforms pkgs.haskell.packages.lts-4_1;
+  # haskell.packages.lts-4_1 = packagePlatforms pkgs.haskell.packages.lts-4_1;
+  haskell.packages.lts-4_2 = packagePlatforms pkgs.haskell.packages.lts-4_2;
 
 })
 // mapHaskellTestOn {

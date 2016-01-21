@@ -15,10 +15,12 @@ mapTestOn {
   aspell = supportedSystems;
   asymptote = supportedSystems;
   autoconf = supportedSystems;
+  audacity = supportedSystems;
   automake114x = supportedSystems;
   automake = supportedSystems;
   awscli = supportedSystems;
   banner = supportedSystems;
+  blender = supportedSystems;
   bc = supportedSystems;
   bison = supportedSystems;
   cabal2nix = supportedSystems;

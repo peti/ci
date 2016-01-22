@@ -54,7 +54,7 @@ mapTestOn {
   fetchmail = supportedSystems;
   ffmpeg = supportedSystems;
   file = supportedSystems;
-  firefoxWrapper = supportedSystems;
+  firefox = supportedSystems;
   flex = supportedSystems;
   gcc = supportedSystems;
   gdb = supportedSystems;

@@ -156,6 +156,7 @@ mapTestOn {
   rWrapper = supportedSystems;
   saneBackends = supportedSystems;
   scons = supportedSystems;
+  simplescreenrecorder = supportedSystems;
   sqliteInteractive = supportedSystems;
   stellarium = supportedSystems;
   subversion = supportedSystems;

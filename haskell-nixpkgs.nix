@@ -1,9 +1,6 @@
 /* Essential Haskell packages in Nixpkgs that must build. */
 
-{ buildAllNGPackages ? false
-, buildDarwin ? false
-, supportedSystems ? ["x86_64-linux"] ++ (if buildDarwin then ["x86_64-darwin"] else [])
-}:
+{ supportedSystems ? ["x86_64-linux"] }:
 
 with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
 
@@ -40,7 +37,7 @@ let
 
 in
 
-pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
+mapTestOn {
 
   cryptol = supportedSystems;
   darcs = supportedSystems;
@@ -49,12 +46,11 @@ pkgs.lib.optionalAttrs buildAllNGPackages (mapTestOn {
   hugs = supportedSystems;
   pandoc = supportedSystems;
 
-  haskell.compiler = packagePlatforms pkgs.haskell.compiler;
-  haskellPackages = packagePlatforms pkgs.haskellPackages;
-  # haskell.packages.lts-4_2 = packagePlatforms pkgs.haskell.packages.lts-4_2;
+  # haskell.compiler = packagePlatforms pkgs.haskell.compiler;
+  # haskellPackages = packagePlatforms pkgs.haskellPackages;
+  haskell.packages.lts-5_0 = packagePlatforms pkgs.haskell.packages.lts-5_0;
 
-})
-// mapHaskellTestOn {
+} // mapHaskellTestOn {
 
   funcmp = all;
   hackage-db = all;

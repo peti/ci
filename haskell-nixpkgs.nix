@@ -52,6 +52,8 @@ mapTestOn {
 
 } // mapHaskellTestOn {
 
+  cabal-install = all;
+
   funcmp = all;
   hackage-db = all;
   hopenssl = all;

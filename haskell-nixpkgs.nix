@@ -39,20 +39,20 @@ in
 
 mapTestOn {
 
+  cabal-install = supportedSystems;
   cryptol = supportedSystems;
   darcs = supportedSystems;
   emacsPackages.haskellMode = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   hugs = supportedSystems;
   pandoc = supportedSystems;
+  stack = supportedSystems;
 
   # haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   # haskellPackages = packagePlatforms pkgs.haskellPackages;
   haskell.packages.lts = packagePlatforms pkgs.haskell.packages.lts;
 
 } // mapHaskellTestOn {
-
-  cabal-install = all;
 
   funcmp = all;
   hackage-db = all;

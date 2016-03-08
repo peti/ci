@@ -40,6 +40,7 @@ in
 mapTestOn {
 
   cabal-install = supportedSystems;
+  cabal2nix = supportedSystems;
   cryptol = supportedSystems;
   darcs = supportedSystems;
   emacsPackages.haskellMode = supportedSystems;

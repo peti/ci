@@ -49,8 +49,8 @@ mapTestOn {
   pandoc = supportedSystems;
   stack = supportedSystems;
 
-  # haskell.compiler = packagePlatforms pkgs.haskell.compiler;
-  # haskellPackages = packagePlatforms pkgs.haskellPackages;
+  haskell.compiler = packagePlatforms pkgs.haskell.compiler;
+  haskellPackages = packagePlatforms pkgs.haskellPackages;
   haskell.packages.lts = packagePlatforms pkgs.haskell.packages.lts;
 
 } // mapHaskellTestOn {

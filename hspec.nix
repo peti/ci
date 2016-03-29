@@ -49,7 +49,6 @@ rec {
       postUnpack = "sourceRoot+=/hspec-discover";
       isLibrary = true;
       isExecutable = true;
-      doHaddock = false;
       buildDepends = with haskellPackages; [ base directory filepath ];
       testDepends = with haskellPackages; [ base directory filepath hspec-meta ];
       homepage = "http://hspec.github.io/";

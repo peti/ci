@@ -1,6 +1,6 @@
 # GNUmakefile
 
-packages := funcmp hackage-db hsyslog largeword shake hledger-interest language-nix nix-paths hsdns
+packages := funcmp hackage-db hsyslog hledger-interest language-nix nix-paths hsdns
 nixFiles := $(foreach pkg,$(packages),$(pkg)-pkg.nix)
 
 all:	$(nixFiles)
@@ -28,16 +28,6 @@ language-nix-pkg.nix:
 hsyslog-pkg.nix:
 	rm -f $@
 	cabal2nix git://github.com/peti/hsyslog.git >$@
-	chmod -w $@
-
-shake-pkg.nix:
-	rm -f $@
-	cabal2nix git://github.com/ndmitchell/shake.git >$@
-	chmod -w $@
-
-largeword-pkg.nix:
-	rm -f $@
-	cabal2nix git://github.com/idontgetoutmuch/largeword.git >$@
 	chmod -w $@
 
 nix-paths-pkg.nix:

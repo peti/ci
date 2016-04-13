@@ -59,8 +59,9 @@ mapTestOn {
   hackage-db = all;
   hopenssl = all;
   hsdns = all;
-  hsemail = allBut [ghc801];
-  hsyslog = allBut [ghc801];
+  hsemail = all;
+  hsyslog = all;
   jailbreak-cabal = all;
+  language-nix = all;
 
 }

@@ -7,6 +7,7 @@ let
   pkgs = import <nixpkgs> { };
   version = petidomoSrc.gitTag;
   versionSuffix = "";
+  texLiveEnv = pkgs.texlive.combine { inherit (pkgs.texlive) scheme-medium lastpage; };
 in
 rec {
 
@@ -14,7 +15,7 @@ rec {
     name = "petidomo-tarball";
     src = petidomoSrc;
     inherit version versionSuffix;
-    buildInputs = with pkgs; [ git perl flex bison texLiveFull ];
+    buildInputs = with pkgs; [ git perl flex bison texLiveEnv ];
     postUnpack = ''
       cp -r ${pkgs.gnulib}/ gnulib/
       chmod -R u+w gnulib

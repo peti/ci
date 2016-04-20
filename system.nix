@@ -15,7 +15,6 @@ mapTestOn {
   aspell = supportedSystems;
   asymptote = supportedSystems;
   autoconf = supportedSystems;
-  audacity = supportedSystems;
   automake114x = supportedSystems;
   automake = supportedSystems;
   awscli = supportedSystems;

@@ -134,6 +134,7 @@ mapTestOn {
   stellarium = supportedSystems;
   subversion = supportedSystems;
   telnet = supportedSystems;
+  texlive.combined.scheme-full = supportedSystems;
   tightvnc = supportedSystems;
   tree = supportedSystems;
   unetbootin = supportedSystems;

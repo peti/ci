@@ -1,6 +1,7 @@
 /* Build instructions for the continuous integration system Hydra. */
 
 { autoconfArchiveSrc ? { outPath = ../autoconf-archive; revCount = 0; gitTag = "dirty"; }
+, gnulibSrc ? { outPath = ../gnulib; revCount = 0; gitTag = "dirty"; }
 }:
 
 let
@@ -20,7 +21,7 @@ rec {
       (texlive.combine { inherit (texlive) scheme-small; })
     ];
     postUnpack = ''
-      cp -r ${pkgs.gnulib}/ gnulib/
+      cp -r ${gnulibSrc}/ gnulib/
       chmod -R u+w gnulib
       patchShebangs gnulib
       ln -s ../gnulib $sourceRoot/gnulib

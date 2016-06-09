@@ -51,7 +51,6 @@ mapTestOn {
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;
-  haskell.packages.lts = packagePlatforms pkgs.haskell.packages.lts;
 
 } // mapHaskellTestOn {
 

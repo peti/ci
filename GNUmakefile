@@ -1,6 +1,7 @@
 # GNUmakefile
 
 packages := funcmp hackage-db hsyslog hledger-interest language-nix nix-paths hsdns
+packages += distribution-nixpkgs cabal2nix
 nixFiles := $(foreach pkg,$(packages),$(pkg)-pkg.nix)
 
 all:	$(nixFiles)
@@ -15,6 +16,11 @@ hledger-interest-pkg.nix:
 	cabal2nix git://github.com/peti/hledger-interest.git >$@
 	chmod -w $@
 
+cabal2nix-pkg.nix:
+	rm -f $@
+	cabal2nix git://github.com/NixOS/cabal2nix.git >$@
+	chmod -w $@
+
 hackage-db-pkg.nix:
 	rm -f $@
 	cabal2nix git://github.com/peti/hackage-db.git >$@
@@ -23,6 +29,11 @@ hackage-db-pkg.nix:
 language-nix-pkg.nix:
 	rm -f $@
 	cabal2nix git://github.com/peti/language-nix.git >$@
+	chmod -w $@
+
+distribution-nixpkgs-pkg.nix:
+	rm -f $@
+	cabal2nix git://github.com/peti/distribution-nixpkgs.git >$@
 	chmod -w $@
 
 hsyslog-pkg.nix:

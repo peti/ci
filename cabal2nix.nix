@@ -7,7 +7,7 @@
   cabal2nix = import ./generate-haskell-build.nix {
     gitSource = cabal2nixSrc;
     expressionPath = ./cabal2nix-pkg.nix;
-    supportedCompilers = ["ghc763" "ghc784" "ghc7103" "ghc801"];
+    supportedCompilers = ["ghc801"];
   };
 
 }

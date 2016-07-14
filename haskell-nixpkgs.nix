@@ -59,7 +59,6 @@ mapTestOn {
   hopenssl = all;
   hsdns = all;
   hsemail = all;
-  hsyslog = all;
   jailbreak-cabal = all;
   language-nix = allBut [ ghc704 ghc722 ghc742 ];
 

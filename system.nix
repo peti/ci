@@ -108,7 +108,6 @@ mapTestOn {
   posix_man_pages = supportedSystems;
   postfix = supportedSystems;
   procmail = supportedSystems;
-  pylint = supportedSystems;
   python = supportedSystems;
   python3 = supportedSystems;
   qemu = supportedSystems;

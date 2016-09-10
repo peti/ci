@@ -7,7 +7,7 @@ let
   pkgs = import <nixpkgs> { };
   version = petidomoSrc.gitTag;
   versionSuffix = "";
-  texLiveEnv = pkgs.texlive.combine { inherit (pkgs.texlive) scheme-medium lastpage; };
+  texLiveEnv = pkgs.texlive.combine { inherit (pkgs.texlive) scheme-medium lastpage tex4ht; };
 in
 rec {
 

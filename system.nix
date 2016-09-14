@@ -55,7 +55,6 @@ mapTestOn {
   glxinfo = supportedSystems;
   gmpxx = supportedSystems;
   gmrun = supportedSystems;
-  gnome.GConf = supportedSystems;
   gnucash = supportedSystems;
   gnum4 = supportedSystems;
   gnumake = supportedSystems;

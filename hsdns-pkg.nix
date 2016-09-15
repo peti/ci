@@ -5,12 +5,12 @@ mkDerivation {
   version = "1.6.1";
   src = fetchgit {
     url = "git://github.com/peti/hsdns.git";
-    sha256 = "786372383ff0d6ec50d06dfc812fe975fb20cf88fe837837123dadd9a9daf516";
-    rev = "cb42aa8ac9e8820e53cb5629ae3c052e6a4993d9";
+    sha256 = "16ycmr3x2fhk4irqirgckrxhk2mrqyg1hghb5lc64d1b83115wna";
+    rev = "932ea9466db7c3ace7e83ef0e58bb593bc1a8e02";
   };
   libraryHaskellDepends = [ base containers network ];
   librarySystemDepends = [ adns ];
   homepage = "http://github.com/peti/hsdns";
   description = "Asynchronous DNS Resolver";
-  license = stdenv.lib.licenses.gpl3;
+  license = stdenv.lib.licenses.lgpl3;
 }

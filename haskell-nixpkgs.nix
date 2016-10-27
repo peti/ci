@@ -54,6 +54,7 @@ mapTestOn {
 
 } // mapHaskellTestOn {
 
+  distribution-nixpkgs = default;
   funcmp = all;
   hackage-db = all;
   hopenssl = all;
@@ -61,5 +62,7 @@ mapTestOn {
   hsemail = all;
   jailbreak-cabal = all;
   language-nix = allBut [ ghc704 ghc722 ghc742 ];
+  nix-paths = default;
+  titlecase = default;
 
 }

@@ -13,9 +13,10 @@ let
   ghc784  = "ghc784";
   ghc7103 = "ghc7103";
   ghc801  = "ghc801";
+  ghc802  = "ghc802";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc801 ];
-  all     = [ ghc704 ghc722 ghc742 ghc763 ghc784 ghc7103 ghc801 /*ghcHEAD*/ ];
+  default = [ ghc801 ghc802 ];
+  all     = [ ghc704 ghc722 ghc742 ghc763 ghc784 ghc7103 ghc801 ghc802 ghcHEAD ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 

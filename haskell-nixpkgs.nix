@@ -58,9 +58,10 @@ mapTestOn {
   distribution-nixpkgs = default;
   funcmp = all;
   hackage-db = all;
-  hopenssl = all;
+  hopenssl = allBut [ ghc704 ghc722 ghc742 ];
   hsdns = all;
   hsemail = all;
+  hsyslog = allBut [ ghc704 ghc722 ghc742 ];
   jailbreak-cabal = all;
   language-nix = allBut [ ghc704 ghc722 ghc742 ];
   nix-paths = default;

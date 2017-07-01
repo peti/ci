@@ -65,7 +65,7 @@ mapTestOn {
   hsyslog = allBut [ ghc704 ghc722 ghc742 ];
   jailbreak-cabal = all;
   language-nix = allBut [ ghc704 ghc722 ghc742 ];
-  nix-paths = default;
-  titlecase = default;
+  nix-paths = all;
+  titlecase = allBut [ ghc704 ghc722 ghc742 ];
 
 }

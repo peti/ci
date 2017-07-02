@@ -1,18 +1,18 @@
 { mkDerivation, base, Cabal, Decimal, fetchgit, hledger-lib, mtl
-, parsec, stdenv, time
+, stdenv, text, time
 }:
 mkDerivation {
   pname = "hledger-interest";
-  version = "1.5";
+  version = "1.5.1";
   src = fetchgit {
     url = "git://github.com/peti/hledger-interest.git";
-    sha256 = "54ed90e78ea98e13c502f688c8c95fbe49d1cfd7fff1e66c4e8af042dfafb2a4";
-    rev = "11249f31c57b10fb582f8df3391e969ca2a514bd";
+    sha256 = "1m2ps4amc9rpqk19v8g682khhhplb5kjgh6bpjml02adn776ggjz";
+    rev = "1f38ae5f858269a99f3aab85204077c4e857e778";
   };
   isLibrary = false;
   isExecutable = true;
   executableHaskellDepends = [
-    base Cabal Decimal hledger-lib mtl parsec time
+    base Cabal Decimal hledger-lib mtl text time
   ];
   homepage = "http://github.com/peti/hledger-interest";
   description = "computes interest for a given account";

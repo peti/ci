@@ -7,7 +7,7 @@
   hledger-interest = import ./generate-haskell-build.nix {
     gitSource = hledgerInterestSrc;
     expressionPath = ./hledger-interest-pkg.nix;
-    supportedCompilers = ["ghc784" "ghc7103" "ghc801"];
+    supportedCompilers = ["ghc784" "ghc7103" "ghc802"];
   };
 
 }

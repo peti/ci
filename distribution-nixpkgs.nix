@@ -7,7 +7,7 @@
   distribution-nixpkgs = import ./generate-haskell-build.nix {
     gitSource = distributionNixpkgsSrc;
     expressionPath = ./distribution-nixpkgs-pkg.nix;
-    supportedCompilers = ["ghc801"];
+    supportedCompilers = ["ghc802"];
   };
 
 }

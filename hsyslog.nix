@@ -7,7 +7,7 @@
   hsyslog = import ./generate-haskell-build.nix {
     gitSource = hsyslogSrc;
     expressionPath = ./hsyslog-pkg.nix;
-    supportedCompilers = ["ghc763" "ghc784" "ghc7103" "ghc801"];
+    supportedCompilers = ["ghc763" "ghc784" "ghc7103" "ghc802"];
   };
 
 }

@@ -58,7 +58,7 @@ mapTestOn {
   distribution-nixpkgs = default;
   funcmp = all;
   hackage-db = all;
-  hopenssl = allBut [ ghc704 ghc722 ghc742 ];
+  hopenssl = default;
   hsdns = all;
   hsemail = all;
   hsyslog = allBut [ ghc704 ghc722 ghc742 ];

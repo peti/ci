@@ -47,6 +47,7 @@ mapTestOn {
   emacsPackages.haskellMode = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   hugs = supportedSystems;
+  multi-ghc-travis = supportedSystems;
   pandoc = supportedSystems;
   stack = supportedSystems;
 

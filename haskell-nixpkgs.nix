@@ -48,8 +48,6 @@ mapTestOn {
   gitAndTools.git-annex = supportedSystems;
   hugs = supportedSystems;
   multi-ghc-travis = supportedSystems;
-  pandoc = supportedSystems;
-  stack = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;
@@ -58,6 +56,7 @@ mapTestOn {
 
   distribution-nixpkgs = default;
   funcmp = all;
+  git-annex = default;
   hackage-db = all;
   hopenssl = default;
   hsdns = all;
@@ -66,6 +65,8 @@ mapTestOn {
   jailbreak-cabal = all;
   language-nix = allBut [ ghc704 ghc722 ghc742 ];
   nix-paths = all;
+  pandoc = default;
+  stack = default;
   titlecase = allBut [ ghc704 ghc722 ghc742 ];
 
 }

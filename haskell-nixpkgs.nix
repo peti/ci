@@ -58,6 +58,8 @@ mapTestOn {
   funcmp = all;
   git-annex = default;
   hackage-db = all;
+  hledger = default;
+  hledger-ui = default;
   hopenssl = default;
   hsdns = all;
   hsemail = all;

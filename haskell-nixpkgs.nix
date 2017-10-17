@@ -66,6 +66,7 @@ mapTestOn {
   hsyslog = default;
   jailbreak-cabal = all;
   language-nix = allBut [ ghc704 ghc722 ghc742 ];
+  liquidhaskell = [ ghc821 ];
   nix-paths = all;
   pandoc = default;
   stack = default;

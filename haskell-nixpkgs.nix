@@ -16,7 +16,7 @@ let
   ghc822  = "ghc822";
   ghcHEAD = "ghcHEAD";
   default = [ ghc822 ];
-  all     = [ ghc704 /*ghc722*/ ghc742 ghc763 ghc784 ghc7103 ghc802 ghc822 /*ghcHEAD*/ ];
+  all     = [ /*ghc704 ghc722 ghc742 ghc763 ghc784*/ ghc7103 ghc802 ghc822 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 

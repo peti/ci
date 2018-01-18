@@ -65,10 +65,10 @@ mapTestOn {
   hsemail = all;
   hsyslog = default;
   jailbreak-cabal = all;
-  language-nix = allBut [ ghc704 ghc722 ghc742 ];
+  language-nix = all;
   nix-paths = all;
   pandoc = default;
   stack = default;
-  titlecase = allBut [ ghc704 ghc722 ghc742 ];
+  titlecase = all;
 
 }

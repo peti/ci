@@ -14,9 +14,10 @@ let
   ghc7103 = "ghc7103";
   ghc802  = "ghc802";
   ghc822  = "ghc822";
+  ghc841  = "ghc841";
   ghcHEAD = "ghcHEAD";
   default = [ ghc822 ];
-  all     = [ /*ghc704 ghc722 ghc742 ghc763 ghc784*/ ghc7103 ghc802 ghc822 /*ghcHEAD*/ ];
+  all     = [ /*ghc704 ghc722 ghc742 ghc763 ghc784*/ ghc7103 ghc802 ghc822 ghc841 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -54,21 +55,21 @@ mapTestOn {
 
 } // mapHaskellTestOn {
 
-  distribution-nixpkgs = default;
+  distribution-nixpkgs = all;
   funcmp = all;
-  git-annex = default;
+  git-annex = default ++ [ghc841];
   hackage-db = all;
-  hledger = default;
+  hledger = default ++ [ghc841];
   hledger-ui = default;
-  hopenssl = default;
+  hopenssl = all;
   hsdns = all;
   hsemail = all;
-  hsyslog = default;
+  hsyslog = all;
   jailbreak-cabal = all;
   language-nix = all;
   nix-paths = all;
-  pandoc = default;
-  stack = default;
+  pandoc = default ++ [ghc841];
+  stack = default ++ [ghc841];
   titlecase = all;
 
 }

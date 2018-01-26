@@ -55,16 +55,16 @@ mapTestOn {
 
 } // mapHaskellTestOn {
 
-  distribution-nixpkgs = all;
+  distribution-nixpkgs = default;
   funcmp = all;
   git-annex = default ++ [ghc841];
   hackage-db = all;
   hledger = default ++ [ghc841];
   hledger-ui = default;
-  hopenssl = all;
+  hopenssl = default;
   hsdns = all;
-  hsemail = all;
-  hsyslog = all;
+  hsemail = default;
+  hsyslog = default;
   jailbreak-cabal = all;
   language-nix = all;
   nix-paths = all;

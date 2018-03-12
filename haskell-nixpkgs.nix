@@ -60,7 +60,7 @@ mapTestOn {
   git-annex = default ++ [ghc841];
   hackage-db = all;
   hledger = default ++ [ghc841];
-  hledger-ui = default;
+  hledger-ui = default ++ [ghc841];
   hopenssl = default;
   hsdns = all;
   hsemail = default;

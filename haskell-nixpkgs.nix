@@ -66,5 +66,6 @@ mapTestOn {
   pandoc = default ++ [ghc841];
   stack = default ++ [ghc841];
   titlecase = all;
+  xmonad = default ++ [ghc841];
 
 }

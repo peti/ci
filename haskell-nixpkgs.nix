@@ -22,12 +22,8 @@ let
 
   mkJobs = pkg: ghcs: builtins.listToAttrs (pkgs.lib.concatMap (ghc: mkJob ghc pkg) ghcs);
 
-  mkJob = ghc: pkg:
-    let
-      pkgPath = ["haskell" "packages" ghc pkg];
-      systems = filterSupportedSystems (pkgs.lib.attrByPath (pkgPath ++ ["meta" "platforms"]) [] pkgs);
-    in
-      map (system: mkSystemJob system ghc pkg) systems;
+  mkJob = ghc: pkg: map (system: mkSystemJob system ghc pkg)
+                        (supportedMatches pkgs.haskell.packages.${ghc}.${pkg}.meta.platforms);
 
   mkSystemJob = system: ghc: pkg:
     pkgs.lib.nameValuePair "${ghc}" (pkgs.lib.setAttrByPath [system] ((pkgs.lib.getAttrFromPath ["haskell" "packages" ghc pkg] (pkgsFor system))));

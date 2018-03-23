@@ -57,6 +57,8 @@ mapTestOn {
   hsemail = default;
   hsyslog = default;
   jailbreak-cabal = all;
+  lambdabot-core = default ++ [ghc841];
+  lambdabot-irc-plugins = default ++ [ghc841];
   language-nix = all;
   nix-paths = all;
   pandoc = default ++ [ghc841];

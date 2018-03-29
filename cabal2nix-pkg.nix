@@ -1,21 +1,20 @@
 { mkDerivation, aeson, ansi-wl-pprint, base, bytestring, Cabal
-, cabal-doctest, containers, deepseq, directory
-, distribution-nixpkgs, doctest, fetchgit, filepath, hackage-db
-, hopenssl, hpack, language-nix, lens, monad-par, monad-par-extras
-, mtl, optparse-applicative, pretty, process, split, stdenv, text
-, time, transformers, utf8-string, yaml
+, containers, deepseq, directory, distribution-nixpkgs, fetchgit
+, filepath, hackage-db, hopenssl, hpack, language-nix, lens
+, monad-par, monad-par-extras, mtl, optparse-applicative, pretty
+, process, split, stdenv, tasty, tasty-golden, text, time
+, transformers, yaml
 }:
 mkDerivation {
   pname = "cabal2nix";
-  version = "2.7";
+  version = "2.9.2";
   src = fetchgit {
     url = "git://github.com/NixOS/cabal2nix.git";
-    sha256 = "0h7395vmh0fpypjbqn6yqn2ms71g13w1wlwhnhz85ljdlfdhjq85";
-    rev = "cba06639637a6764d78ab11bc0961a6815f699fd";
+    sha256 = "1v9811zrlv3cmc07a46i6nzab4xz9nlxakrqcj7wn5sawrc236v4";
+    rev = "5b271abdcc771da46dc45ca781788c73c0b3dd9f";
   };
   isLibrary = true;
   isExecutable = true;
-  setupHaskellDepends = [ base Cabal cabal-doctest ];
   libraryHaskellDepends = [
     aeson ansi-wl-pprint base bytestring Cabal containers deepseq
     directory distribution-nixpkgs filepath hackage-db hopenssl hpack
@@ -23,17 +22,12 @@ mkDerivation {
     time transformers yaml
   ];
   executableHaskellDepends = [
-    aeson ansi-wl-pprint base bytestring Cabal containers deepseq
-    directory distribution-nixpkgs filepath hackage-db hopenssl hpack
-    language-nix lens monad-par monad-par-extras mtl
-    optparse-applicative pretty process split text time transformers
-    utf8-string yaml
+    aeson base bytestring Cabal containers directory
+    distribution-nixpkgs filepath hopenssl language-nix lens monad-par
+    monad-par-extras mtl optparse-applicative pretty
   ];
   testHaskellDepends = [
-    aeson ansi-wl-pprint base bytestring Cabal containers deepseq
-    directory distribution-nixpkgs doctest filepath hackage-db hopenssl
-    hpack language-nix lens optparse-applicative pretty process split
-    text time transformers yaml
+    base Cabal filepath language-nix lens pretty tasty tasty-golden
   ];
   homepage = "https://github.com/nixos/cabal2nix#readme";
   description = "Convert Cabal files into Nix build instructions";

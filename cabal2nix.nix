@@ -8,7 +8,7 @@
     gitSource = cabal2nixSrc;
     expressionPath = ./cabal2nix-pkg.nix;
     supportedCompilers = ["ghc841"];
-    supportedPlatforms = ["i686-linux" "x86_64-linux" "x86_64-darwin"];
+    supportedPlatforms = ["x86_64-linux" "x86_64-darwin"];
   };
 
 }

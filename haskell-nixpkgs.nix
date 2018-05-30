@@ -9,11 +9,10 @@ let
   ghc7103 = "ghc7103";
   ghc802  = "ghc802";
   ghc822  = "ghc822";
-  ghc842  = "ghc842";
   ghc843  = "ghc843";
   ghcHEAD = "ghcHEAD";
   default = [ ghc822 ];
-  all     = [ /*ghc7103*/ ghc802 ghc822 ghc842 ghc843 /*ghcHEAD*/ ];
+  all     = [ /*ghc7103*/ ghc802 ghc822 ghc843 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -49,22 +48,22 @@ mapTestOn {
 
   distribution-nixpkgs = default;
   funcmp = all;
-  git-annex = default ++ [ghc842 ghc843];
+  git-annex = default ++ [ghc843];
   hackage-db = all;
-  hledger = default ++ [ghc842 ghc843];
-  hledger-ui = default ++ [ghc842 ghc843];
+  hledger = default ++ [ghc843];
+  hledger-ui = default ++ [ghc843];
   hopenssl = default;
   hsdns = all;
   hsemail = default;
   hsyslog = default;
   jailbreak-cabal = all;
-  lambdabot-core = default ++ [ghc842 ghc843];
-  lambdabot-irc-plugins = default ++ [ghc842 ghc843];
+  lambdabot-core = default ++ [ghc843];
+  lambdabot-irc-plugins = default ++ [ghc843];
   language-nix = all;
   nix-paths = all;
-  pandoc = default ++ [ghc842 ghc843];
-  stack = default ++ [ghc842 ghc843];
+  pandoc = default ++ [ghc843];
+  stack = default ++ [ghc843];
   titlecase = all;
-  xmonad = default ++ [ghc842 ghc843];
+  xmonad = default ++ [ghc843];
 
 }

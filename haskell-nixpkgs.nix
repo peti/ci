@@ -36,7 +36,6 @@ mapTestOn {
   cabal2nix = supportedSystems;
   cryptol = supportedSystems;
   darcs = supportedSystems;
-  emacsPackages.haskellMode = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   hugs = supportedSystems;
   multi-ghc-travis = supportedSystems;

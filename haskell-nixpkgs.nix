@@ -45,6 +45,8 @@ mapTestOn {
 
 } // mapHaskellTestOn {
 
+  base-compat = all;
+  base-compat-batteries = all;
   distribution-nixpkgs = default;
   funcmp = all;
   git-annex = default ++ [ghc843];

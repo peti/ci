@@ -51,7 +51,7 @@ mapTestOn {
   distribution-nixpkgs = default;
   funcmp = all;
   git-annex = default;
-  hackage-db = all;
+  hackage-db = default;
   hledger = default;
   hledger-ui = default;
   hopenssl = default;

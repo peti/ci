@@ -35,11 +35,10 @@ mapTestOn {
 
   cabal-install = supportedSystems;
   cabal2nix = supportedSystems;
-  cryptol = supportedSystems;
   darcs = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
+  haskell-ci = supportedSystems;
   hugs = supportedSystems;
-  multi-ghc-travis = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;

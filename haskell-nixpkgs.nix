@@ -39,6 +39,7 @@ mapTestOn {
   gitAndTools.git-annex = supportedSystems;
   haskell-ci = supportedSystems;
   hugs = supportedSystems;
+  stack = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;

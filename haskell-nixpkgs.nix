@@ -39,6 +39,7 @@ mapTestOn {
   gitAndTools.git-annex = supportedSystems;
   haskell-ci = supportedSystems;
   hugs = supportedSystems;
+  pandoc = supportedSystems;
   stack = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
@@ -59,13 +60,13 @@ mapTestOn {
   hsemail = default ++ [ ghc861 ];
   hsyslog = default ++ [ ghc861 ];
   jailbreak-cabal = all;
-  lambdabot-core = default ;
+  lambdabot-core = default ++ [ ghc861 ];
   lambdabot-irc-plugins = default ++ [ ghc861 ];
   language-nix = all;
   nix-paths = all;
   pandoc = default ++ [ ghc861 ];
   stack = default ++ [ ghc861 ];
   titlecase = all;
-  xmonad = default;
+  xmonad = default ++ [ ghc861 ];
 
 }

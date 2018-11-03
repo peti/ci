@@ -6,14 +6,12 @@ with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems
 
 let
 
-  ghc7103 = "ghc7103";
-  ghc802  = "ghc802";
   ghc822  = "ghc822";
-  ghc843  = "ghc843";
+  ghc844  = "ghc844";
   ghc861  = "ghc861";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc843 ];
-  all     = [ /*ghc7103*/ ghc802 ghc822 ghc843 ghc861 /*ghcHEAD*/ ];
+  default = [ ghc844 ];
+  all     = [ ghc822 ghc844 ghc861 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 

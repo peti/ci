@@ -2,9 +2,12 @@
 
 { supportedSystems ? ["x86_64-linux"] }:
 
-with (import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; });
-
 let
+  releaseTools = import <nixpkgs/pkgs/top-level/release-lib.nix> { inherit supportedSystems; };
+
+  inherit (releaseTools) pkgs supportedMatches mapTestOn packagePlatforms;
+
+  pkgsFor = releaseTools.mkPkgsFor null;
 
   ghc822  = "ghc822";
   ghc844  = "ghc844";

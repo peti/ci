@@ -39,9 +39,11 @@ mapTestOn {
   darcs = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   haskell-ci = supportedSystems;
+  hlint = supportedSystems;
   hugs = supportedSystems;
   pandoc = supportedSystems;
   stack = supportedSystems;
+  stylish-cabal = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;

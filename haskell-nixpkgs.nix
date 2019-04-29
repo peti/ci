@@ -9,13 +9,12 @@ let
 
   pkgsFor = releaseTools.mkPkgsFor null;
 
-  ghc822  = "ghc822";
   ghc844  = "ghc844";
-  ghc864  = "ghc864";
   ghc865  = "ghc865";
+  ghc881  = "ghc881";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc864 ];
-  all     = [ ghc822 ghc844 ghc864 ghc865 /*ghcHEAD*/ ];
+  default = [ ghc865 ];
+  all     = [ ghc844 ghc865 ghc881 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -53,24 +52,24 @@ mapTestOn {
 
   base-compat = all;
   base-compat-batteries = all;
-  distribution-nixpkgs = default;
+  distribution-nixpkgs = [ghc881];
   funcmp = all;
-  git-annex = default;
-  hackage-db = default;
-  hledger = default;
-  hledger-ui = default;
-  hopenssl = default;
+  git-annex = [ghc881];
+  hackage-db = [ghc881];
+  hledger = [ghc881];
+  hledger-ui = [ghc881];
+  hopenssl = [ghc881];
   hsdns = all;
-  hsemail = default;
-  hsyslog = default;
+  hsemail = [ghc881];
+  hsyslog = [ghc881];
   jailbreak-cabal = all;
-  lambdabot-core = default;
-  lambdabot-irc-plugins = default;
+  lambdabot-core = [ghc881];
+  lambdabot-irc-plugins = [ghc881];
   language-nix = all;
   nix-paths = all;
-  pandoc = default;
-  stack = default;
+  pandoc = [ghc881];
+  stack = [ghc881];
   titlecase = all;
-  xmonad = default;
+  xmonad = [ghc881];
 
 }

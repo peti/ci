@@ -52,6 +52,7 @@ mapTestOn {
 
   base-compat = all;
   base-compat-batteries = all;
+  cabal-install = [ghc881];
   distribution-nixpkgs = [ghc881];
   funcmp = all;
   git-annex = [ghc881];

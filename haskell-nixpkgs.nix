@@ -53,23 +53,24 @@ mapTestOn {
 
   base-compat = all;
   base-compat-batteries = all;
-  # cabal-install = [ghc881];
+  Cabal_3_0_0_0 = all;
+  cabal-install = [ghc881];
   # distribution-nixpkgs = [ghc881];
   funcmp = all;
   # git-annex = [ghc881];
   # hackage-db = [ghc881];
   # hledger = [ghc881];
   # hledger-ui = [ghc881];
-  # hopenssl = [ghc881];
+  hopenssl = [ghc881];
   hsdns = all;
-  # hsemail = [ghc881];
-  # hsyslog = [ghc881];
+  hsemail = [ghc881];
+  hsyslog = [ghc881];
   jailbreak-cabal = all;
   language-nix = all;
   nix-paths = all;
   # pandoc = [ghc881];
   # stack = [ghc881];
   titlecase = all;
-  # xmonad = [ghc881];
+  xmonad = [ghc881];
 
 }

@@ -54,10 +54,10 @@ mapTestOn {
   cabal-install = [ghc881];
   distribution-nixpkgs = [ghc881];
   funcmp = all;
-  git-annex = [ghc881];
+  # git-annex = [ghc881];
   hackage-db = [ghc881];
-  hledger = [ghc881];
-  hledger-ui = [ghc881];
+  # hledger = [ghc881];
+  # hledger-ui = [ghc881];
   hopenssl = [ghc881];
   hsdns = all;
   hsemail = [ghc881];
@@ -66,7 +66,7 @@ mapTestOn {
   language-nix = all;
   nix-paths = all;
   pandoc = [ghc881];
-  stack = [ghc881];
+  # stack = [ghc881];
   titlecase = all;
   xmonad = [ghc881];
   xmonad-contrib = [ghc881];

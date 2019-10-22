@@ -52,6 +52,7 @@ mapTestOn {
 
   Cabal_3_0_0_0 = all;
   cabal-install = [ghc881];
+  cabal-plan = default;
   distribution-nixpkgs = [ghc881];
   funcmp = all;
   # git-annex = [ghc881];

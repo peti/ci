@@ -59,6 +59,7 @@ mapTestOn {
   hackage-db = [ghc881];
   # hledger = [ghc881];
   # hledger-ui = [ghc881];
+  hoogle = all;
   hopenssl = [ghc881];
   hsdns = all;
   hsemail = [ghc881];

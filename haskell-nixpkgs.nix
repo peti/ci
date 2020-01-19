@@ -11,12 +11,11 @@ let
 
   ghc844  = "ghc844";
   ghc865  = "ghc865";
-  ghc881  = "ghc881";
   ghc882  = "ghc882";
   ghc8101 = "ghc8101";
   ghcHEAD = "ghcHEAD";
   default = [ ghc865 ];
-  all     = [ ghc844 ghc865 ghc881 ghc882 ghc8101 /*ghcHEAD*/ ];
+  all     = [ ghc844 ghc865 ghc882 ghc8101 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -53,26 +52,26 @@ mapTestOn {
 } // mapHaskellTestOn {
 
   Cabal_3_0_0_0 = all;
-  cabal-install = [ghc881 ghc882 ghc8101];
+  cabal-install = [ghc882 ghc8101];
   cabal-plan = default;
-  distribution-nixpkgs = [ghc881 ghc882 ghc8101];
+  distribution-nixpkgs = [ghc882 ghc8101];
   funcmp = all;
-  # git-annex = [ghc881 ghc882 ghc8101];
-  hackage-db = [ghc881 ghc882 ghc8101];
-  hledger = [ghc881 ghc882 ghc8101];
-  hledger-ui = [ghc881 ghc882 ghc8101];
+  git-annex = [ghc882 ghc8101];
+  hackage-db = [ghc882 ghc8101];
+  hledger = [ghc882 ghc8101];
+  hledger-ui = [ghc882 ghc8101];
   hoogle = all;
-  hopenssl = [ghc881 ghc882 ghc8101];
+  hopenssl = [ghc882 ghc8101];
   hsdns = all;
-  hsemail = [ghc881 ghc882 ghc8101];
-  hsyslog = [ghc881 ghc882 ghc8101];
+  hsemail = [ghc882 ghc8101];
+  hsyslog = [ghc882 ghc8101];
   jailbreak-cabal = all;
   language-nix = all;
   nix-paths = all;
-  pandoc = [ghc881 ghc882 ghc8101];
-  # stack = [ghc881 ghc882 ghc8101];
+  pandoc = [ghc882 ghc8101];
+  # stack = [ghc882 ghc8101];
   titlecase = all;
-  xmonad = [ghc881 ghc882 ghc8101];
-  xmonad-contrib = [ghc881 ghc882 ghc8101];
+  xmonad = [ghc882 ghc8101];
+  xmonad-contrib = [ghc882 ghc8101];
 
 }

@@ -56,7 +56,7 @@ mapTestOn {
   cabal-plan = default;
   distribution-nixpkgs = [ghc882 ghc8101];
   funcmp = all;
-  git-annex = [ghc882 ghc8101];
+  # git-annex = [ghc882 ghc8101];
   hackage-db = [ghc882 ghc8101];
   hledger = [ghc882 ghc8101];
   hledger-ui = [ghc882 ghc8101];

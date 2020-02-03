@@ -52,6 +52,7 @@ mapTestOn {
 } // mapHaskellTestOn {
 
   Cabal_3_0_0_0 = all;
+  policeman = [ghc882];
   cabal-install = [ghc882 ghc8101];
   cabal-plan = default;
   distribution-nixpkgs = [ghc882 ghc8101];

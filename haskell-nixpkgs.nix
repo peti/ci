@@ -14,7 +14,7 @@ let
   ghc882  = "ghc882";
   ghc8101 = "ghc8101";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc865 ];
+  default = [ ghc882 ];
   all     = [ ghc844 ghc865 ghc882 ghc8101 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
@@ -52,7 +52,7 @@ mapTestOn {
 } // mapHaskellTestOn {
 
   Cabal_3_0_0_0 = all;
-  policeman = [ghc882];
+  policeman = default;
   cabal-install = [ghc882 ghc8101];
   cabal-plan = default;
   distribution-nixpkgs = [ghc882 ghc8101];

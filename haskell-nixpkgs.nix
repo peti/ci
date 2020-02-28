@@ -38,13 +38,13 @@ mapTestOn {
 
   cabal-install = supportedSystems;
   cabal2nix = supportedSystems;
-  darcs = supportedSystems;
+  # darcs = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
   # haskell-ci = supportedSystems;
   hlint = supportedSystems;
   hugs = supportedSystems;
   pandoc = supportedSystems;
-  stack = supportedSystems;
+  # stack = supportedSystems;
   stylish-cabal = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;

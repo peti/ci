@@ -45,6 +45,7 @@ mapTestOn {
   hugs = supportedSystems;
   pandoc = supportedSystems;
   # stack = supportedSystems;
+  shellcheck = supportedSystems;
   stylish-cabal = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;

@@ -52,7 +52,7 @@ mapTestOn {
 
 } // mapHaskellTestOn {
 
-  Cabal_3_0_0_0 = all;
+  Cabal_3_2_0_0 = all;
   policeman = default;
   cabal-install = [ghc883 ghc8101];
   cabal-plan = default;

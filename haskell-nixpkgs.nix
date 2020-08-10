@@ -11,10 +11,10 @@ let
 
   ghc865  = "ghc865";
   ghc884  = "ghc884";
-  ghc8101 = "ghc8101";
+  ghc8102 = "ghc8102";
   ghcHEAD = "ghcHEAD";
   default = [ ghc884 ];
-  all     = [ ghc865 ghc884 ghc8101 /*ghcHEAD*/ ];
+  all     = [ ghc865 ghc884 ghc8102 /*ghcHEAD*/ ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -53,26 +53,26 @@ mapTestOn {
 
   Cabal_3_2_0_0 = all;
   policeman = default;
-  cabal-install = [ghc884 ghc8101];
+  cabal-install = [ghc884 ghc8102];
   cabal-plan = default;
-  distribution-nixpkgs = [ghc884 ghc8101];
+  distribution-nixpkgs = [ghc884 ghc8102];
   funcmp = all;
-  git-annex = [ghc884 ghc8101];
-  hackage-db = [ghc884 ghc8101];
-  hledger = [ghc884 ghc8101];
-  hledger-ui = [ghc884 ghc8101];
+  git-annex = [ghc884 ghc8102];
+  hackage-db = [ghc884 ghc8102];
+  hledger = [ghc884 ghc8102];
+  hledger-ui = [ghc884 ghc8102];
   hoogle = all;
-  hopenssl = [ghc884 ghc8101];
+  hopenssl = [ghc884 ghc8102];
   hsdns = all;
-  hsemail = [ghc884 ghc8101];
-  hsyslog = [ghc884 ghc8101];
+  hsemail = [ghc884 ghc8102];
+  hsyslog = [ghc884 ghc8102];
   jailbreak-cabal = all;
   language-nix = all;
   nix-paths = all;
-  pandoc = [ghc884 ghc8101];
-  stack = [ghc884 ghc8101];
+  pandoc = [ghc884 ghc8102];
+  stack = [ghc884 ghc8102];
   titlecase = all;
-  xmonad = [ghc884 ghc8101];
-  xmonad-contrib = [ghc884 ghc8101];
+  xmonad = [ghc884 ghc8102];
+  xmonad-contrib = [ghc884 ghc8102];
 
 }

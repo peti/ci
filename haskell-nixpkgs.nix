@@ -68,6 +68,7 @@ mapTestOn {
   hsyslog = [ghc884 ghc8102];
   jailbreak-cabal = all;
   language-nix = all;
+  liquidhaskell = default ++ [ghc8102];
   nix-paths = all;
   pandoc = [ghc884 ghc8102];
   stack = [ghc884 ghc8102];

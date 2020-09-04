@@ -71,7 +71,7 @@ mapTestOn {
   liquidhaskell = [ghc8102];
   nix-paths = all;
   pandoc = [ghc884 ghc8102];
-  stack = [ghc884 ghc8102];
+  stack = default;
   titlecase = all;
   xmonad = [ghc884 ghc8102];
   xmonad-contrib = [ghc884 ghc8102];

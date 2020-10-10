@@ -46,6 +46,7 @@ mapTestOn {
   shellcheck = supportedSystems;
   stack = supportedSystems;
   stylish-cabal = supportedSystems;
+  haskell-language-server = supportedSystems;
 
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;

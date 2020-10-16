@@ -61,7 +61,6 @@ mapTestOn {
   funcmp = all;
   git-annex = [ghc884 ghc8102];
   hackage-db = [ghc884 ghc8102];
-  haskell-language-server = all;
   hledger = [ghc884 ghc8102];
   hledger-ui = [ghc884 ghc8102];
   hoogle = all;

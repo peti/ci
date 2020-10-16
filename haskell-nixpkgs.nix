@@ -31,9 +31,11 @@ let
   mkSystemJob = system: ghc: pkg:
     pkgs.lib.nameValuePair "${ghc}" (pkgs.lib.setAttrByPath [system] ((pkgs.lib.getAttrFromPath ["haskell" "packages" ghc pkg] (pkgsFor system))));
 
+  mkJobSet = sysPkgs: hsPkgs: pkgs.lib.recursiveUpdate (mapTestOn sysPkgs) (mapHaskellTestOn hsPkgs);
+
 in
 
-mapTestOn {
+mkJobSet {
 
   cabal-install = supportedSystems;
   cabal2nix = supportedSystems;
@@ -51,16 +53,16 @@ mapTestOn {
   haskell.compiler = packagePlatforms pkgs.haskell.compiler;
   haskellPackages = packagePlatforms pkgs.haskellPackages;
 
-} // mapHaskellTestOn {
+} {
 
-  Cabal_3_2_0_0 = all;
-  policeman = default;
-  cabal-install = [ghc884 ghc8102];
+  cabal-install = [ghc884 ghc8102 ghc901];
   cabal-plan = default;
+  Cabal_3_2_0_0 = all;
   distribution-nixpkgs = [ghc884 ghc8102];
   funcmp = all;
   git-annex = [ghc884 ghc8102];
   hackage-db = [ghc884 ghc8102];
+  haskell-language-server = all;
   hledger = [ghc884 ghc8102];
   hledger-ui = [ghc884 ghc8102];
   hoogle = all;
@@ -73,6 +75,7 @@ mapTestOn {
   liquidhaskell = [ghc8102];
   nix-paths = all;
   pandoc = [ghc884 ghc8102];
+  policeman = default;
   stack = default;
   titlecase = all;
   xmonad = [ghc884 ghc8102];

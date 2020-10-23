@@ -41,7 +41,6 @@ mkJobSet {
   cabal2nix = supportedSystems;
   darcs = supportedSystems;
   gitAndTools.git-annex = supportedSystems;
-  haskell-ci = supportedSystems;
   hlint = supportedSystems;
   hugs = supportedSystems;
   pandoc = supportedSystems;

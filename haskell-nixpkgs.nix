@@ -56,7 +56,7 @@ mkJobSet {
 
   cabal-install = [ghc884 ghc8102 ghc901];
   cabal-plan = default;
-  Cabal_3_2_0_0 = all;
+  Cabal_3_2_1_0 = all;
   distribution-nixpkgs = [ghc884 ghc8102];
   funcmp = all;
   git-annex = [ghc884 ghc8102];

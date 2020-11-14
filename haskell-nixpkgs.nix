@@ -12,9 +12,9 @@ let
   ghc865  = "ghc865";
   ghc884  = "ghc884";
   ghc8102 = "ghc8102";
-  ghc901 = "ghc901";
+  ghc901  = "ghc901";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc884 ];
+  default = [ ghc8102 ];
   all     = [ ghc865 ghc884 ghc8102 ghc901 ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
@@ -54,30 +54,30 @@ mkJobSet {
 
 } {
 
-  cabal-install = [ghc884 ghc8102 ghc901];
+  cabal-install = all;
   cabal-plan = default;
-  Cabal_3_2_1_0 = all;
-  distribution-nixpkgs = [ghc884 ghc8102];
+  Cabal_3_2_1_0 = [ghc865 ghc884 ghc8102];
+  distribution-nixpkgs = default;
   funcmp = all;
-  git-annex = [ghc884 ghc8102];
-  hackage-db = [ghc884 ghc8102];
+  git-annex = default;
+  hackage-db = default;
   haskell-language-server = all;
-  hledger = [ghc884 ghc8102];
-  hledger-ui = [ghc884 ghc8102];
+  hledger = default;
+  hledger-ui = default;
   hoogle = all;
-  hopenssl = [ghc884 ghc8102];
+  hopenssl = default;
   hsdns = all;
-  hsemail = [ghc884 ghc8102];
-  hsyslog = [ghc884 ghc8102];
+  hsemail = default;
+  hsyslog = default;
   jailbreak-cabal = all;
   language-nix = all;
-  liquidhaskell = [ghc8102];
+  liquidhaskell = default;
   nix-paths = all;
-  pandoc = [ghc884 ghc8102];
+  pandoc = default;
   policeman = default;
   stack = default;
   titlecase = all;
-  xmonad = [ghc884 ghc8102];
-  xmonad-contrib = [ghc884 ghc8102];
+  xmonad = default;
+  xmonad-contrib = default;
 
 }

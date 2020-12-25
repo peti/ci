@@ -11,11 +11,11 @@ let
 
   ghc865  = "ghc865";
   ghc884  = "ghc884";
-  ghc8102 = "ghc8102";
+  ghc8103 = "ghc8103";
   ghc901  = "ghc901";
   ghcHEAD = "ghcHEAD";
-  default = [ ghc8102 ];
-  all     = [ ghc865 ghc884 ghc8102 ghc901 ];
+  default = [ ghc8103 ];
+  all     = [ ghc865 ghc884 ghc8103 ghc901 ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -56,7 +56,7 @@ mkJobSet {
 
   cabal-install = all;
   cabal-plan = default;
-  Cabal_3_2_1_0 = [ghc865 ghc884 ghc8102];
+  Cabal_3_2_1_0 = [ghc865 ghc884 ghc8103];
   distribution-nixpkgs = default;
   funcmp = all;
   git-annex = default;

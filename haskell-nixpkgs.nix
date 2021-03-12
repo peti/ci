@@ -9,13 +9,12 @@ let
 
   pkgsFor = releaseTools.mkPkgsFor null;
 
-  ghc865  = "ghc865";
   ghc884  = "ghc884";
   ghc8104 = "ghc8104";
   ghc901  = "ghc901";
   ghcHEAD = "ghcHEAD";
   default = [ ghc8104 ];
-  all     = [ ghc865 ghc884 ghc8104 ghc901 ];
+  all     = [ ghc884 ghc8104 ghc901 ];
 
   allBut = platforms: pkgs.lib.filter (x: !(pkgs.lib.elem x platforms)) all;
 
@@ -56,7 +55,7 @@ mkJobSet {
 
   cabal-install = all;
   cabal-plan = default;
-  Cabal_3_2_1_0 = [ghc865 ghc884 ghc8104];
+  Cabal_3_4_0_0 = [ghc884 ghc8104];
   distribution-nixpkgs = default;
   funcmp = all;
   git-annex = default;

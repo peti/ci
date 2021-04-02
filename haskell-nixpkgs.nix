@@ -69,7 +69,6 @@ mkJobSet {
   hsyslog = default;
   jailbreak-cabal = all;
   language-nix = all;
-  liquidhaskell = default;
   nix-paths = all;
   pandoc = default;
   policeman = default;
